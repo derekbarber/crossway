@@ -1,13 +1,10 @@
 Crossway::Application.routes.draw do
-  get "site/home"
+  
+  resources :sermon_series
+  resources :pages, except: :show
+  get ':id', to: 'pages#show', as: :page
 
-  get "site/visit"
-
-  get "site/god"
-
-  get "site/connect"
-
-  get "site/identity"
+  match '/home',   to: 'site#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -58,7 +55,7 @@ Crossway::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'site#home'
 
   # See how all your routes lay out with "rake routes"
 

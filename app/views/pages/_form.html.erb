@@ -1,0 +1,27 @@
+<%= simple_form_for @page, :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> Product</legend>
+
+    <% if @page.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:</h2>
+
+        <ul>
+        <% @page.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= f.input :title %>
+    <%= f.input :parent_id, :collection => @pages %>
+    <%= f.input :permalink %>
+    <%= f.input :content %>
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', pages_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>
