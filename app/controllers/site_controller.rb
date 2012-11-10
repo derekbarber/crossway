@@ -1,16 +1,10 @@
 class SiteController < ApplicationController
   def home
+    feed = Feedzirra::Feed.fetch_and_parse("http://crosswaycc.onthecity.org/plaza/topics?format=rss")
+    
+    @entries = feed.entries
+    
+    p feed
   end
 
-  def visit
-  end
-
-  def god
-  end
-
-  def connect
-  end
-
-  def identity
-  end
 end

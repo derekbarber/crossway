@@ -1,2 +1,58 @@
-<h1>Site#home</h1>
-<p>Find me in app/views/site/home.html.erb</p>
+
+<div class="row">
+  <div class="span12" style="height: 20px;">&nbsp;</div>
+</div>
+
+<div class="row">
+  <div class="span12">
+    <img src="assets/img/home/crossway-on-tour-banner.png">
+  </div>
+</div>
+
+<div class="row">
+  <div class="span12" style="height: 40px;">&nbsp;</div>
+</div>
+
+<div class="row">
+  <div class="span3">
+    <p style="color: #848383;">AUGUST 26</p>
+    <img src="assets/img/home/cot-millennium-park.png" />
+  </div>
+  <div class="span3">
+    <p style="color: #848383;">SEPTEMBER 2</p>
+    <img src="assets/img/home/cot-douglas-park.png" />
+  </div>
+  <div class="span3">
+    <p style="color: #848383;">SEPTEMBER 9</p>
+    <img src="assets/img/home/cot-outreach.png" />
+  </div>
+  <div class="span3">
+    <p style="color: #848383;">SEPTEMBER 16</p>
+    <img src="assets/img/home/fall-launch.png" />
+  </div>
+</div>
+
+<div class="row">
+  <div class="span12" style="height: 40px;">&nbsp;</div>
+</div>
+  
+<div class="row">
+  <div class="span6">
+    <table class="table">
+      <% @entries.each do |entry| %>
+    
+        <tr>
+          <td>
+            <%= entry.published %>
+          </td>
+          <td>
+            <%= entry.title %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <div class="span6">
+    
+  </div>
+</div>

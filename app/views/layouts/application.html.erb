@@ -7,8 +7,95 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="main-content">
 
-<%= yield %>
+    <div class="header">
+        <%= image_tag "header.png" %>
+        <div id="member-login">
+          Member Login
+        </div>
+    </div>
+
+    <div class="menu-bar">
+      <div class="menu-container">
+        <ul id="nav-menu">
+          <li><%= link_to_unless_current "HOME", root_path %></li>
+          <li><%= link_to_unless_current "VISIT", page_path("visit") %></li>
+          <li><%= link_to_unless_current "GOD", page_path("god") %></li>
+          <li><%= link_to_unless_current "CONNECT", page_path("connect") %></li>
+          <li><a href="resources.html">RESOURCES</a></li>
+          <li><%= link_to_unless_current "GIVE", page_path("give") %></li>
+          <li><%= link_to_unless_current "IDENTITY", page_path("identity") %></li>
+        </ul>
+
+        <div id="search-container">
+          <input id=search-box type=search results=5 autosave=search_results placeholder=Search name=s>
+        </div>
+
+        <div style="clear: both;"></div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <% flash.each do |name, msg| %>
+        <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+          <a class="close" data-dismiss="alert">×</a>
+          <%= msg %>
+        </div>
+      <% end %>
+
+      <%= yield %>
+
+    </div> <!-- /container -->
+
+    <div class="footer">
+
+      <div class="container">
+
+        <div class="row">
+          <div class="span12">&nbsp;</div>
+        </div>
+
+        <div class="row">
+          <div class="span3">
+            <div class="footer-content">
+              <a href="#" class="footer-link">Contact Us</a>
+            </div>
+          </div>
+          <div class="span3">
+            <div class="footer-content">
+              <a href="#" class="footer-link">Media FAQ</a>
+            </div>
+          </div>
+          <div class="span3">
+            <div class="footer-content">
+              <a href="#" class="footer-link">Site Map</a>
+            </div>
+          </div>
+          <div class="span3">
+            <div class="footer-content" style="width: 100px;">
+              <a href="#" id="social-twitter"></a>
+              <a href="#" id="social-facebook"></a>
+              <a href="http://https://crosswaycc.onthecity.org" target="_blank" id="social-thecity"></a>
+              <a href="http://vimeo.com/user10992899" target="_blank" id="social-vimeo"></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" style="height: 40px;">
+          <div class="span12">&nbsp;</div>
+        </div>
+
+        <div class="row">
+          <div class="span12">
+            <div class="copyright">
+              &copy; 2012 Crossway Community Church.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 </body>
 </html>
