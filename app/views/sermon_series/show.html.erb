@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @sermon_series.title %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%= @sermon_series.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%= @sermon_series.end_date %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @sermon_series.description %>
+</p>
+
+<p>
+  <b>Banner image:</b>
+  <%= @sermon_series.banner_image %>
+</p>
+
+<p>
+  <b>Button image:</b>
+  <%= @sermon_series.button_image %>
+</p>
+
+<p>
+  <b>Current series:</b>
+  <%= @sermon_series.current_series %>
+</p>
+
+
+<%= link_to 'Edit', edit_sermon_series_path(@sermon_series) %> |
+<%= link_to 'Back', sermon_series_index_path %>
