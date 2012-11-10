@@ -1,0 +1,257 @@
+
+@import "bootstrap";
+
+@font-face {
+  font-family: 'nevisfontbold';
+  src: url(/assets/nevis-webfont.eot);
+  src: url(/assets/nevis-webfont.eot?#iefix) format('embedded-opentype'),
+       url(/assets/nevis-webfont.woff) format('woff'),
+       url(/assets/fonts/nevis-webfont.ttf) format('truetype'),
+       url(/assets/fonts/nevis-webfont.svg#webfontbold) format('svg');
+  font-weight: normal;
+  font-style: normal;
+  }
+
+
+body {
+  background-image:url(/assets/background-tile.jpg);
+  background-repeat:repeat;
+  font-family: 'nevisfontbold';
+  padding-top: 0;
+}
+
+p {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.main-content {
+  width: 1335px;
+  background-color: #ffffff;
+  margin-right: auto;
+  margin-left: auto;
+  *zoom: 1;
+}
+
+.box-content {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #999999;
+  padding: 20px;
+  width: 898px;
+  background: #E9EAEE;
+  box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 1px 2px 6px rgba(0,0,0, 0.5);
+  -webkit-box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.image-button {
+  border: none; overflow: hidden; float: left;
+  cursor: hand; 
+  cursor: pointer;
+  border: solid 3px transparent;
+}
+
+.image-button:hover {
+  border: 3px solid #999999;
+}
+
+.image-button-selected {
+  border: 3px solid #CFCF99;
+}
+
+.image-button:hover img {
+  margin: -3px;
+}
+
+.header {
+  padding-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 980px;
+  position: relative;
+}
+
+#member-login {
+  background-color: #000000;
+  width: 120px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  right: 20px;
+  padding: 5px 5px 5px 20px;
+  color: #848383;
+
+  -webkit-border-bottom-right-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  
+}
+
+.menu-bar {
+  background-image: url(/assets/menu-bar.png);
+  width: 1335px;
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.menu-container {
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul#nav-menu {
+  list-style: none;
+  width: 800px;
+  padding: 0;
+  margin: 0;
+}
+
+ul#nav-menu  li {
+  float: left;
+  padding: 20px 25px 5px 5px;
+}
+
+ul#nav-menu li a {
+  font-family: 'nevisfontbold';
+  font-size: 20px;
+  float: left;
+  display: block;
+  color: #848383;
+  text-decoration: none;
+}
+
+#nav-menu li a:hover {
+  color: #eeeeee;
+}
+
+#search-container {
+  float: right;
+  padding: 17px 0px 0px 10px;
+}
+
+#search-box {
+  text-align: right;
+  cursor: pointer;
+  display: block;
+  width: 160px;
+  font-family: Helvetica;
+  font-size: 16px;
+  height: 16px;
+  -webkit-appearance: searchfield;
+  box-sizing: border-box;
+}
+
+.footer {
+  background-color: #e6e6e6;
+  width: 1335px;
+  margin-right: auto;
+  margin-left: auto;
+  height: 120px;
+}
+
+.footer-content {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-family: helvetica;
+  background: url(/assets/footer-spacer.png) no-repeat;
+  background-position: right;
+}
+
+.footer-content a {
+  color: #000000;
+}
+
+.footer-content a:hover {
+  color: #666666;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 11px;
+  color: #333333;
+  font-family: helvetica;
+}
+
+a#social-twitter {
+  display: block;
+  background: url(/assets/social-media-icons.png) no-repeat;
+  height: 25px;
+  width: 25px;
+  float: left;
+}
+
+a#social-twitter:hover {
+  background-position: 0 -25px;
+}
+
+a#social-facebook {
+  display: block;
+  background: url(/assets/social-media-icons.png) no-repeat;
+  height: 25px;
+  width: 25px;
+  background-position: -25px 0;
+  float: left;
+}
+
+a#social-facebook:hover {
+  background-position: -25px -25px;
+}
+
+a#social-thecity {
+   display: block;
+   background: url(/assets/social-media-icons.png) no-repeat;
+   height: 25px;
+   width: 25px;
+   background-position: -50px 0;
+   float: left;
+}
+
+a#social-thecity:hover {
+ background-position: -50px -25px;
+}
+
+a#social-vimeo {
+  display: block;
+  background: url(/assets/social-media-icons.png) no-repeat;
+  height: 25px;
+  width: 25px;
+  background-position: -75px 0;
+  float: left;
+}
+
+a#social-vimeo:hover {
+  background-position: -75px -25px;
+}
+
+/* CSS From the Wireframe.css file */
+
+ul.ministries img {
+	padding: 0 20px 20px 0;
+}
+p.big {
+	font-size: 28px;
+	line-height: 48px;
+	padding: 40px;
+	margin-bottom: 80px;
+}
+.links ul {
+	list-style-type: none;
+}
+.links ul li {
+	float: left;
+	width: 30%;
+	font-size: 18px;
+	line-height: 24px;
+	margin-left: 2px;
+	padding-left: 4px;
+	background-color: #cccccc;
+}
+.links {
+}
