@@ -19,7 +19,7 @@
   
   <div class="span3">
     
-    <button class="btn btn-small"><%= image_tag "rss/rss_icon_smaller_grey.png" %> Subscribe to Blog</button>
+    <button class="btn btn-small"><i class="icon-rss"></i>&nbsp;Subscribe to Blog</button>
   </div>
 
 </div>
@@ -36,9 +36,11 @@
   
   <div class="span2">
     
-    <p><button class="btn btn-small"><i class="icon-twitter"></i> Twitter</button></p>
-    <p><button class="btn btn-small"><i class="icon-envelope"></i> Email</button></p>
-    <p><button class="btn btn-small"><i class="icon-print"></i> Print</button></p>
+    <div style="padding-left: 25px;">
+      <p><button class="btn btn-small" style="width: 80px;"><i class="icon-twitter"></i>&nbsp;Tweet</button></p>
+      <p><button class="btn btn-small" style="width: 80px;"><i class="icon-envelope"></i>&nbsp;Email</button></p>
+      <p><button class="btn btn-small" style="width: 80px;"><i class="icon-print"></i>&nbsp;Print</button></p>
+    </div>
   </div>
   
   <div class="span3">
@@ -46,9 +48,9 @@
     <div class="aside">
       <h5>Recent Blog Entries</h5>
     
-      <ul>
+      <ul class="unstyled">
         <% @posts.each do |post| %>
-          <li><%= link_to post.title, post %></li>
+          <li style="margin-bottom: 10px;"><i class="icon-chevron-right"></i>&nbsp;<%= link_to post.title, post %></li>
         <% end %>
       </ul>
     </div>
