@@ -1,14 +1,12 @@
-<h1>Listing sermon_series</h1>
+<h1>Sermon Series</h1>
 
-<table>
+<table class="table">
   <tr>
     <th>Title</th>
-    <th>Start date</th>
-    <th>End date</th>
+    <th>Date</th>
     <th>Description</th>
-    <th>Banner image</th>
     <th>Button image</th>
-    <th>Current series</th>
+    <th>Current series?</th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,10 +15,9 @@
 <% @sermon_series.each do |sermon_series| %>
   <tr>
     <td><%= sermon_series.title %></td>
-    <td><%= sermon_series.start_date %></td>
+    <td><%= sermon_series.start_date %> - <%= sermon_series.end_date %></td>
     <td><%= sermon_series.end_date %></td>
     <td><%= sermon_series.description %></td>
-    <td><%= sermon_series.banner_image %></td>
     <td><%= sermon_series.button_image %></td>
     <td><%= sermon_series.current_series %></td>
     <td><%= link_to 'Show', sermon_series %></td>

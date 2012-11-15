@@ -1,4 +1,4 @@
-<%= form_for(@sermon_series) do |f| %>
+<%= simple_form_for @sermon_series, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
   <% if @sermon_series.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@sermon_series.errors.count, "error") %> prohibited this sermon_series from being saved:</h2>
@@ -11,35 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+  <%= f.input :title %>
+  <%= f.input :start_date, :as => :date, :start_year => 2009,
+                           :end_year => Date.today.year + 1, :discard_day => true,
+                           :order => [:month, :year] %>
+
+   <%= f.input :end_date, :as => :date, :start_year => 2009,
+                            :end_year => Date.today.year + 1, :discard_day => true,
+                            :order => [:month, :year] %>
+
+  <%= f.input :description, :as => :text %>
+
+  <%= f.input :banner_image, :as => :file %>
+  <%= f.input :button_image, :as => :file %>
+  
+  <%= f.input :current_series %>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= submit_tag 'Cancel', :type => :reset, :class => "btn btn-danger" %>
   </div>
-  <div class="field">
-    <%= f.label :start_date %><br />
-    <%= f.date_select :start_date %>
-  </div>
-  <div class="field">
-    <%= f.label :end_date %><br />
-    <%= f.date_select :end_date %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :banner_image %><br />
-    <%= f.text_field :banner_image %>
-  </div>
-  <div class="field">
-    <%= f.label :button_image %><br />
-    <%= f.text_field :button_image %>
-  </div>
-  <div class="field">
-    <%= f.label :current_series %><br />
-    <%= f.check_box :current_series %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 <% end %>

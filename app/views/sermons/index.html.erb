@@ -1,0 +1,37 @@
+<h1>Listing sermons</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Sermon series</th>
+    <th>Date</th>
+    <th>Scripture reference</th>
+    <th>Description</th>
+    <th>Speaker</th>
+    <th>Audio file</th>
+    <th>Video embed</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sermons.each do |sermon| %>
+  <tr>
+    <td><%= sermon.title %></td>
+    <td><%= sermon.sermon_series_id %></td>
+    <td><%= sermon.date %></td>
+    <td><%= sermon.scripture_reference %></td>
+    <td><%= sermon.description %></td>
+    <td><%= sermon.speaker %></td>
+    <td><%= sermon.audio_file %></td>
+    <td><%= sermon.video_embed %></td>
+    <td><%= link_to 'Show', sermon %></td>
+    <td><%= link_to 'Edit', edit_sermon_path(sermon) %></td>
+    <td><%= link_to 'Destroy', sermon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sermon', new_sermon_path %>

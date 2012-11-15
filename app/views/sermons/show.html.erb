@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @sermon.title %>
+</p>
+
+<p>
+  <b>Sermon series:</b>
+  <%= @sermon.sermon_series_id %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @sermon.date %>
+</p>
+
+<p>
+  <b>Scripture reference:</b>
+  <%= @sermon.scripture_reference %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @sermon.description %>
+</p>
+
+<p>
+  <b>Speaker:</b>
+  <%= @sermon.speaker %>
+</p>
+
+<p>
+  <b>Audio file:</b>
+  <%= @sermon.audio_file %>
+</p>
+
+<p>
+  <b>Video embed:</b>
+  <%= @sermon.video_embed %>
+</p>
+
+
+<%= link_to 'Edit', edit_sermon_path(@sermon) %> |
+<%= link_to 'Back', sermons_path %>
