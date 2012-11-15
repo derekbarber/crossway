@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121108181623) do
+ActiveRecord::Schema.define(:version => 20121115011557) do
 
   create_table "pages", :force => true do |t|
     t.string   "title"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(:version => 20121108181623) do
 
   add_index "pages", ["permalink"], :name => "index_pages_on_permalink"
 
+  create_table "posts", :force => true do |t|
+    t.string   "title"
+    t.string   "author"
+    t.date     "post_date"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "sermon_series", :force => true do |t|
     t.string   "title"
     t.date     "start_date"
@@ -34,6 +43,19 @@ ActiveRecord::Schema.define(:version => 20121108181623) do
     t.boolean  "current_series"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+  end
+
+  create_table "sermons", :force => true do |t|
+    t.string   "title"
+    t.integer  "sermon_series_id"
+    t.date     "date"
+    t.string   "scripture_reference"
+    t.text     "description"
+    t.string   "speaker"
+    t.text     "audio_file"
+    t.text     "video_embed"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
   end
 
 end
