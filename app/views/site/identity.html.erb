@@ -1,0 +1,32 @@
+<ul class="breadcrumb">
+  <li><%= link_to "HOME", root_path %> <span class="divider">/</span></li>
+  <li class="active">IDENTITY</li>
+</ul>
+
+<div class="row">
+  <div class="span6">
+    <div class="row">
+      <div class="span3">
+        <%= link_to image_tag("identity/statementOfFaith.png"), :controller => 'site', :action => 'statement_of_faith' %>
+      </div>
+      <div class="span3">
+        <%= link_to image_tag("identity/partnerships.png"), identity_partnerships_path %>
+      </div>
+    </div>
+  </div>
+
+  <div class="span6" style="text-align: center;">
+    <div style="padding-left: 40px;">
+      <div class="well">
+        <h2>loving jesus</h2>
+        <p> </p>
+        <h2>loving his people</h2>
+        <p> </p>
+        <h2>living to make him known</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

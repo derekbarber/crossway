@@ -5,7 +5,11 @@
 
 <div class="row">
   <div class="span12">
-    <img src="assets/img/home/crossway-on-tour-banner.png">
+    <div class="images">
+    <%= link_to image_tag(@current_sermon_series.banner_image_url, :class => "captify",
+                          :alt => "Current Sermon Series"),
+              { :action => 'index', :controller => 'sermon_series', :title => "Current Sermon Series"} if @current_sermon_series.banner_image? %>
+    </div>
   </div>
 </div>
 
@@ -15,35 +19,55 @@
 
 <div class="row">
   <div class="span3">
-    <p style="color: #848383;">AUGUST 26</p>
-    <img src="assets/img/home/cot-millennium-park.png" />
+    <%= image_tag "home/home_recent_sermon.png", :class => "captify", :alt => "Most Recent Sermon" %>
   </div>
   <div class="span3">
-    <p style="color: #848383;">SEPTEMBER 2</p>
-    <img src="assets/img/home/cot-douglas-park.png" />
+    <%= image_tag "home/home_nehemiah.png", :class => "captify", :alt => "Sermon Archive" %>
+
   </div>
   <div class="span3">
-    <p style="color: #848383;">SEPTEMBER 9</p>
-    <img src="assets/img/home/cot-outreach.png" />
+    <%= image_tag "home/home_blog.png", :class => "captify", :alt => "The Crossway Blog" %>
+
   </div>
   <div class="span3">
-    <p style="color: #848383;">SEPTEMBER 16</p>
-    <img src="assets/img/home/fall-launch.png" />
+    <%= image_tag "home/home_news.png", :class => "captify", :alt => "Latest News" %>
+
   </div>
 </div>
 
 <div class="row">
   <div class="span12" style="height: 40px;">&nbsp;</div>
 </div>
-  
+
 <div class="row">
   <div class="span6">
-    <table class="table">
-      <% @entries.each do |entry| %>
-    
+    <table class="table table-striped">
+      <tr>
+        <th colspan="2"><h4>Recent Blog Posts</h4></th>
+      </tr>
+      <% @posts.each do |post| %>
+
         <tr>
           <td>
-            <%= entry.published %>
+            <%= post.post_date.strftime("%b %d, %Y") %>
+          </td>
+          <td>
+            <%= link_to post.title, post %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <div class="span6">
+    <table class="table table-striped">
+      <tr>
+        <th colspan="2"><h4>Latest News</h4></th>
+      </tr>
+      <% @entries.each do |entry| %>
+
+        <tr>
+          <td>
+            <%= entry.published.strftime("%b %d, %Y") %>
           </td>
           <td>
             <%= entry.title %>
@@ -52,7 +76,5 @@
       <% end %>
     </table>
   </div>
-  <div class="span6">
-    
-  </div>
 </div>
+
