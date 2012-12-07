@@ -1,40 +1,36 @@
+<ul class="breadcrumb">
+  <li><%= link_to "Home", root_path %> <span class="divider">/</span></li>
+  <li><%= link_to "Resources", root_path %> <span class="divider">/</span></li>
+  <li><%= link_to "Sermon Series", sermon_series_path %> <span class="divider">/</span></li>
+  <li class="active"><%= @sermon_series.title %></li>
+</ul>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @sermon_series.title %>
-</p>
+<div class="row one-column">
 
-<p>
-  <b>Start date:</b>
-  <%= @sermon_series.start_date %>
-</p>
+  <div class="span3">
+    <%= image_tag @sermon_series.button_image_url %>
+  </div>
+  
+  <div class="span9">
 
-<p>
-  <b>End date:</b>
-  <%= @sermon_series.end_date %>
-</p>
+    <h2><%= @sermon_series.title %></h2>
+    
+    <p><%= @sermon_series.title %></p>
+    
+    <p>
+      <%= @sermon_series.start_date %> -   <%= @sermon_series.end_date %>
+    </p>
+    
+  </div>
+</div>
 
-<p>
-  <b>Description:</b>
-  <%= @sermon_series.description %>
-</p>
+<% @sermons.each do |sermon| %>
 
-<p>
-  <b>Banner image:</b>
-  <%= @sermon_series.banner_image %>
-</p>
-
-<p>
-  <b>Button image:</b>
-  <%= @sermon_series.button_image %>
-</p>
-
-<p>
-  <b>Current series:</b>
-  <%= @sermon_series.current_series %>
-</p>
-
+  <%= sermon.title%>
+  
+<% end %>
 
 <%= link_to 'Edit', edit_sermon_series_path(@sermon_series) %> |
 <%= link_to 'Back', sermon_series_index_path %>

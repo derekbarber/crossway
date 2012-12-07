@@ -14,6 +14,7 @@ class SermonSeriesController < ApplicationController
   # GET /sermon_series/1.json
   def show
     @sermon_series = SermonSeries.find(params[:id])
+    @sermons = @sermon_series.sermons.all
 
     respond_to do |format|
       format.html # show.html.erb
