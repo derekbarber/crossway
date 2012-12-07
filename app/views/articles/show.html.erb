@@ -1,0 +1,61 @@
+<% content_for :head, auto_discovery_link_tag(:atom, articles_url(format: "atom")) %>
+
+<ul class="breadcrumb">
+  <li><%= link_to "Home", root_path %> <span class="divider">/</span></li>
+  <li><%= link_to "Resources", root_path %> <span class="divider">/</span></li>
+  <li><%= link_to "Blog", articles_path %> <span class="divider">/</span></li>
+  <li class="active"><%= @article.title %></li>
+</ul>
+
+<div class="row one-column">
+
+  <div class="span10">
+
+    <h3><%= @article.title %></h3>
+
+    <p>by <%= @article.author %> | <%= @article.published_at.strftime("%B %d, %Y") %></p>
+    </p>
+
+  </div>
+  
+  <div class="span2">
+    
+    <%= link_to articles_url(format: "atom"), :class => "btn btn-small" do %>
+      <i class="icon-rss"></i>&nbsp;Subscribe to Blog
+    <% end %>
+  </div>
+
+</div>
+
+<hr>
+
+<div class="row one-column">
+
+  <div class="span7">
+    
+    <%= simple_format @article.content %>
+
+  </div>
+  
+  <div class="span2">
+    
+    <div style="padding-left: 25px;">
+      <p><button class="btn btn-small" style="width: 80px;"><i class="icon-twitter"></i>&nbsp;Tweet</button></p>
+      <p><button class="btn btn-small" style="width: 80px;"><i class="icon-envelope"></i>&nbsp;Email</button></p>
+      <p><button class="btn btn-small" style="width: 80px;"><i class="icon-print"></i>&nbsp;Print</button></p>
+    </div>
+  </div>
+  
+  <div class="span3">
+    
+    <div class="aside">
+      <h5>Recent Blog Entries</h5>
+    
+      <ul class="unstyled">
+        <% @articles.each do |article| %>
+        <li style="margin-bottom: 10px;"><i class="icon-chevron-right"></i>&nbsp;<%= link_to article.title, article %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
