@@ -8,7 +8,7 @@ class SiteController < ApplicationController
 
     @current_sermon_series = SermonSeries.where(:current_series => true).first
     
-    @posts = Post.first(4)
+    @articles = Article.order("published_at desc").first(4)
 
   end
 
@@ -32,15 +32,32 @@ class SiteController < ApplicationController
 
   end
 
+  def the_city
+  end
+  
+
+  def resources
+
+  end
+
   def give
 
   end
+
 
   def identity
 
   end
 
   def statement_of_faith
+
+  end
+
+  def staff
+
+  end
+
+  def lay_elders
 
   end
 

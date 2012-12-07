@@ -1,5 +1,7 @@
 Crossway::Application.routes.draw do
   
+  resources :articles
+
   resources :posts
 
   resources :sermons
@@ -16,10 +18,14 @@ Crossway::Application.routes.draw do
   match '/connect',   to: 'site#connect'
   match '/connect/community-groups', to: 'site#community_groups'
   match '/connect/ministries',   to: 'site#ministries'
+  match '/connect/the-city',   to: 'site#the_city'
   match '/give',   to: 'site#give'
+  match '/resources',   to: 'site#resources'
   match '/identity',   to: 'site#identity'
   match '/identity/statement-of-faith',   to: 'site#statement_of_faith'
   match '/identity/partnerships',   to: 'site#partnerships'
+  match '/identity/staff',   to: 'site#staff'
+  match '/identity/lay-elders',   to: 'site#lay_elders'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

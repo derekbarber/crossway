@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <%= yield :head %>
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -17,6 +18,7 @@
   <%= favicon_link_tag 'ico/apple-touch-icon-114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
   <%= favicon_link_tag 'ico/apple-touch-icon-72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
   <%= favicon_link_tag 'ico/apple-touch-icon-57-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '57x57' %>
+
 </head>
 <body>
   <div class="main-content">
@@ -30,12 +32,16 @@
 
     <div class="menu-bar">
       <div class="menu-container">
-        <ul id="nav-menu">
+        <ul class="nav-menu" role="navigation">
           <li><%= link_to_unless_current "HOME", root_path %></li>
           <li><%= link_to_unless_current "VISIT", visit_path %></li>
           <li><%= link_to_unless_current "GOD", god_path %></li>
-          <li><%= link_to_unless_current "CONNECT", connect_path %></li>
-          <li><a href="resources.html">RESOURCES</a></li>
+          <li class="dropdown"><%= link_to "CONNECT", connect_path, {:id => "connect-menu", :class => "dropdown-toggle", "data-target" => "#", "data-toggle" => "dropdown"}  %>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="connect-menu">
+              <li><%= link_to "Ministries", connect_ministries_path %></li>
+            </ul>
+          </li>
+          <li><%= link_to_unless_current "RESOURCES", resources_path %></li>
           <li><%= link_to_unless_current "GIVE", give_path %></li>
           <li><%= link_to_unless_current "IDENTITY", identity_path %></li>
         </ul>

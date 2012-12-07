@@ -43,16 +43,16 @@
   <div class="span6">
     <table class="table table-striped">
       <tr>
-        <th colspan="2"><h4>Recent Blog Articles</h4></th>
+        <th colspan="2"><h4>Recent Blog Posts</h4></th>
       </tr>
-      <% @articles.each do |article| %>
+      <% @posts.each do |post| %>
 
         <tr>
           <td>
-            <%= article.published_at.strftime("%b %d, %Y") %>
+            <%= post.post_date.strftime("%b %d, %Y") %>
           </td>
           <td>
-            <%= link_to article.title, article %>
+            <%= link_to post.title, post %>
           </td>
         </tr>
       <% end %>
