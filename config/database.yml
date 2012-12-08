@@ -23,12 +23,3 @@ test:
   pool: 5
   username: derekbarber
   password:
-
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: crossway_production
-  #database: db/production.sqlite3
-  pool: 5
-  username: derekbarber
-  password:
