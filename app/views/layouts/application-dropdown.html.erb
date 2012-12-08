@@ -24,10 +24,10 @@
   <div class="main-content">
 
     <div class="header">
-      <%= image_tag "header.png" %>
-      <div id="member-login">
-        <%= link_to "Member Login", "https://crosswaycc.onthecity.org", :target => "blank" %>
-      </div>
+        <%= image_tag "header.png" %>
+        <div id="member-login">
+          Member Login
+        </div>
     </div>
 
     <div class="menu-bar">
@@ -36,7 +36,11 @@
           <li><%= link_to_unless_current "HOME", root_path %></li>
           <li><%= link_to_unless_current "VISIT", visit_path %></li>
           <li><%= link_to_unless_current "GOD", god_path %></li>
-          <li><%= link_to_unless_current "CONNECT", connect_path %></li>
+          <li class="dropdown"><%= link_to "CONNECT", connect_path, {:id => "connect-menu", :class => "dropdown-toggle", "data-target" => "#", "data-toggle" => "dropdown"}  %>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="connect-menu">
+              <li><%= link_to "Ministries", connect_ministries_path %></li>
+            </ul>
+          </li>
           <li><%= link_to_unless_current "RESOURCES", resources_path %></li>
           <li><%= link_to_unless_current "GIVE", give_path %></li>
           <li><%= link_to_unless_current "IDENTITY", identity_path %></li>
@@ -62,7 +66,9 @@
       <%= yield %>
 
       <hr>
+      
       <br />
+      
     </div> <!-- /container -->
 
     <div class="footer">
@@ -91,9 +97,9 @@
           </div>
           <div class="span3">
             <div class="footer-content" style="width: 100px;">
-              <a href="http://twitter.com/crosswayonline" id="social-twitter"></a>
-              <a href="https://www.facebook.com/CrosswayOnline" target="_blank" id="social-facebook"></a>
-              <a href="https://crosswaycc.onthecity.org" target="_blank" id="social-thecity"></a>
+              <a href="#" id="social-twitter"></a>
+              <a href="#" id="social-facebook"></a>
+              <a href="http://https://crosswaycc.onthecity.org" target="_blank" id="social-thecity"></a>
               <a href="http://vimeo.com/user10992899" target="_blank" id="social-vimeo"></a>
             </div>
           </div>
@@ -112,7 +118,7 @@
         </div>
       </div>
     </div>
-  </div>
+
 <!-- RefTagger from Logos. Visit http://www.logos.com/reftagger. This code should appear directly before the </body> tag. -->
 <script src="http://bible.logos.com/jsapi/referencetagging.js" type="text/javascript"> </script> 
 <script type="text/javascript">

@@ -1,0 +1,49 @@
+<ul class="breadcrumb">
+  <li><%= link_to "Home", root_path %> <span class="divider">/</span></li>
+  <li class="active">Latest News</li>
+</ul>
+
+<h2>Latest News</h2>
+
+<hr>
+
+<div class="row one-column">
+  <div class="span8">
+    <% @entries.each do |entry| %>
+
+      <h3><%= entry.title %></h3>
+
+      <p style="border-top: 1px #cccccc dotted; padding: 4px;">
+        by <%= entry.author %> | <strong><%= entry.published.strftime("%B %d, %Y") %></strong></p>
+      </p>
+
+      <div class="well well-small">
+        <%= simple_format entry.summary %>
+
+        <div class="pull-right">
+          <%= link_to "View this on The City", entry.url, :target => "blank" %>
+        </div>
+        
+        <div class="clearfix"></div>
+      </div>
+      <hr>
+
+  <% end %>
+
+  </div>
+
+  <div class="span4">
+
+    <h5>Recent Items</h5>
+
+    <ul class="unstyled">
+      <% @entries.each do |entry| %>
+      <li style="margin-bottom: 20px;"><i class="icon-chevron-right"></i>&nbsp;<%= link_to entry.title, entry.url %></li>
+      <% end %>
+    </ul>
+  </div>
+
+
+</div>
+
+

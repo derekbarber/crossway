@@ -1,7 +1,7 @@
 <ul class="breadcrumb">
   <li><%= link_to "Home", root_path %> <span class="divider">/</span></li>
   <li><%= link_to "Resources", root_path %> <span class="divider">/</span></li>
-  <li><%= link_to "Sermon Series", sermon_series_path %> <span class="divider">/</span></li>
+  <li><%= link_to "Sermon Series", { :action => 'index', :controller => 'sermon_series' } %> <span class="divider">/</span></li>
   <li class="active"><%= @sermon_series.title %></li>
 </ul>
 
@@ -12,24 +12,24 @@
   <div class="span3">
     <%= image_tag @sermon_series.button_image_url %>
   </div>
-  
+
   <div class="span9">
 
     <h2><%= @sermon_series.title %></h2>
-    
+
     <p><%= @sermon_series.title %></p>
-    
+
     <p>
       <%= @sermon_series.start_date %> -   <%= @sermon_series.end_date %>
     </p>
-    
+
   </div>
 </div>
 
 <% @sermons.each do |sermon| %>
 
   <%= sermon.title%>
-  
+
 <% end %>
 
 <%= link_to 'Edit', edit_sermon_series_path(@sermon_series) %> |

@@ -1,3 +1,7 @@
+<ul class="breadcrumb">
+  <li><%= link_to "Home", root_path %> <span class="divider">/</span></li>
+  <li class="active">Resources</li>
+</ul>
 
 <div class="row">
   <div class="span12" style="height: 20px;">&nbsp;</div>
@@ -23,58 +27,14 @@
   </div>
   <div class="span3">
     <%= image_tag "home/home_nehemiah.png", :class => "captify", :alt => "Sermon Archive" %>
+  </div>
+  <div class="span3">
+    <%= link_to image_tag("home/home_blog.png", :class => "captify", :alt => "The Crossway Blog"), articles_path %>
 
   </div>
   <div class="span3">
-    <%= image_tag "home/home_blog.png", :class => "captify", :alt => "The Crossway Blog" %>
+    <%= image_tag "resources/teaching.png", :class => "captify", :alt => "Teaching" %>
 
-  </div>
-  <div class="span3">
-    <%= image_tag "home/home_news.png", :class => "captify", :alt => "Latest News" %>
-
-  </div>
-</div>
-
-<div class="row">
-  <div class="span12" style="height: 40px;">&nbsp;</div>
-</div>
-
-<div class="row">
-  <div class="span6">
-    <table class="table table-striped">
-      <tr>
-        <th colspan="2"><h4>Recent Blog Posts</h4></th>
-      </tr>
-      <% @posts.each do |post| %>
-
-        <tr>
-          <td>
-            <%= post.post_date.strftime("%b %d, %Y") %>
-          </td>
-          <td>
-            <%= link_to post.title, post %>
-          </td>
-        </tr>
-      <% end %>
-    </table>
-  </div>
-  <div class="span6">
-    <table class="table table-striped">
-      <tr>
-        <th colspan="2"><h4>Latest News</h4></th>
-      </tr>
-      <% @entries.each do |entry| %>
-
-        <tr>
-          <td>
-            <%= entry.published.strftime("%b %d, %Y") %>
-          </td>
-          <td>
-            <%= entry.title %>
-          </td>
-        </tr>
-      <% end %>
-    </table>
   </div>
 </div>
 

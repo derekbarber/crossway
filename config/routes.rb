@@ -5,14 +5,16 @@ Crossway::Application.routes.draw do
   resources :posts
 
   resources :sermons
-
   resources :sermon_series
-  resources :pages, except: :show
+  
+  #resources :pages, except: :show
   #get ':id', to: 'pages#show', as: :page
   #put ':id', to: 'pages#update', as: :page
   #delete ':id', to: 'pages#destroy', as: :page
 
   match '/home',   to: 'site#home'
+  match '/news',   to: 'site#news'
+  match '/events',   to: 'site#events'
   match '/visit',   to: 'site#visit'
   match '/god',   to: 'site#god'
   match '/connect',   to: 'site#connect'
@@ -26,6 +28,7 @@ Crossway::Application.routes.draw do
   match '/identity/partnerships',   to: 'site#partnerships'
   match '/identity/staff',   to: 'site#staff'
   match '/identity/lay-elders',   to: 'site#lay_elders'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
