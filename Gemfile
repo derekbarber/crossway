@@ -28,7 +28,7 @@ end
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'feedzirra'
-gem 'rmagick'
+#gem 'rmagick'
 gem 'carrierwave'
 
 group :test do
