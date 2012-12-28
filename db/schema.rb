@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121121234052) do
+ActiveRecord::Schema.define(:version => 20121228000111) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -32,6 +32,17 @@ ActiveRecord::Schema.define(:version => 20121121234052) do
   end
 
   add_index "pages", ["permalink"], :name => "index_pages_on_permalink"
+
+  create_table "people", :force => true do |t|
+    t.string   "name"
+    t.string   "image"
+    t.text     "content"
+    t.integer  "role"
+    t.boolean  "enabled"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "title"
+  end
 
   create_table "posts", :force => true do |t|
     t.string   "title"
@@ -65,6 +76,13 @@ ActiveRecord::Schema.define(:version => 20121121234052) do
     t.text     "video_embed"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end

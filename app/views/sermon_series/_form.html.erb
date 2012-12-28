@@ -20,7 +20,7 @@
                             :end_year => Date.today.year + 1, :discard_day => true,
                             :order => [:month, :year] %>
 
-  <%= f.input :description, :as => :text %>
+  <%= f.input :description, :as => :text, :input_html => { :class => 'input-xlarge', :rows => 5 } %>
 
   <%= f.input :banner_image, :as => :file %>
   <%= f.input :button_image, :as => :file %>

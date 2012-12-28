@@ -68,11 +68,15 @@ class SiteController < ApplicationController
   end
 
   def staff
-
+    @staff = People.where(:role => 1)
+  end
+  
+  def staff_profile
+    @staff_profile = People.find(params[:id])
   end
 
   def lay_elders
-
+    @staff = People.where(:role => 2)
   end
 
 end

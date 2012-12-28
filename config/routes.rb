@@ -1,12 +1,20 @@
 Crossway::Application.routes.draw do
-  
+
+  get 'signup', to: 'users#new', as: 'signup'
+  get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+
+  resources :users
+
+  resources :people
+
   resources :articles
 
   resources :posts
 
   resources :sermons
   resources :sermon_series
-  
+
   #resources :pages, except: :show
   #get ':id', to: 'pages#show', as: :page
   #put ':id', to: 'pages#update', as: :page

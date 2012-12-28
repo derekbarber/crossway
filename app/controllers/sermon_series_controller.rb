@@ -1,4 +1,5 @@
 class SermonSeriesController < ApplicationController
+  before_filter :authorize, only: [:edit, :update]
   # GET /sermon_series
   # GET /sermon_series.json
   def index

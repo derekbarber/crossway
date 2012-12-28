@@ -1,0 +1,16 @@
+<%= simple_form_for @person, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :title %>
+    <%= f.input :content, :as => :text, :input_html => { :class => 'input-xlarge', :rows => 7 } %>
+    <%= f.input :image, :as => :file %>
+    <%= f.input :role, :input_html => { :class => 'span2' }, :collection => { "Staff" => 1, "Lay Elder" => 2 }, :selected => 1 %>
+    <%= f.input :enabled %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
