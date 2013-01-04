@@ -1,60 +1,89 @@
 <ul class="breadcrumb">
   <li><%= link_to "Home", root_path %> <span class="divider">/</span></li>
   <li><%= link_to "Identity", identity_path %> <span class="divider">/</span></li>
-  <li class="active">Staff</li>
+  <% if @elder_profile %>
+  <li><%= link_to "Lay Elders", :controller => "site", :action => "lay_elders" %> <span class="divider">/</span></li>
+    <li class="active"><%= @elder_profile.name %></li>
+  <% else %>
+    <li class="active">Lay Elders</li>
+  <% end %>
+
 </ul>
+
+<% if @elder_profile %>
+
+  <div class="row">
+
+    <div class="span3">
+      <% if @elder_profile.image_url %>
+        <%= image_tag(@elder_profile.image_url) %>
+      <% else %>
+        <img src="http://placehold.it/200x160" alt="">
+      <% end %>
+    </div>
+    <div class="span6">
+      <h2><%= @elder_profile.name %></h2>
+      <p><%= @elder_profile.title %></p>
+    </div>
+
+    <div class="span3">
+
+      <div class="aside">
+        <h5>Lay Elders</h5>
+
+        <ul class="unstyled">
+          <% @lay_elders.each do |lay_elder| %>
+          <li style="margin-bottom: 10px;"><i class="icon-chevron-right"></i>&nbsp;<%= link_to lay_elder.name, { :controller => "site", :action => "lay_elders", :id => lay_elder.id } %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span12">
+      <%= simple_format @elder_profile.content %>
+    </div>
+
+  </div>
+
+<% else %>
 
 <h2>Lay Elders</h2>
 
 <div class="row">
-  <div class="span3">
+  <% row_count = 0 %>
 
-    <ul class="thumbnails">
-      <li class="span3">
-        <a href="#" class="thumbnail">
-          <img src="http://placehold.it/200x160" alt="">
-          <h4>Scott Burnett</h4>
-          <p>Elder of Member Care</p>
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div class="span3">
-    <ul class="thumbnails">
-      <li class="span3">
-        <a href="#" class="thumbnail">
-          <img src="http://placehold.it/200x160" alt="">
-          <h4>Dan Evans</h4>
-          <p>Elder of Parent / Teen Youth Ministry and Evangelism</p>
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div class="span3">
-    <ul class="thumbnails">
-      <li class="span3">
-        <a href="#" class="thumbnail">
-          <img src="http://placehold.it/200x160" alt="">
-          <h4>Glenn Murray</h4>
-          <p>Elder of Finance and Ministry Strategy</p>
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div class="span3">
-    <ul class="thumbnails">
-      <li class="span3">
-        <a href="#" class="thumbnail">
-          <img src="http://placehold.it/200x160" alt="">
-          <h4>Derek Barber</h4>
-          <p>Elder of Equipping</p>
-        </a>
-      </li>
-    </ul>    
-  </div>
+  <% @lay_elders.each do |lay_elder| %>
+
+    <div class="span3">
+      <ul class="thumbnails">
+        <li class="span3">
+          <%= link_to({ :controller => "site", :action => "lay_elders", :id => lay_elder.id }, { :class => "thumbnail" }) do %>
+            <% if lay_elder.image_url %>
+              <%= image_tag(lay_elder.image_url) %>
+            <% else %>
+              <img src="http://placehold.it/200x160" alt="">
+            <% end %>
+
+            <h4><%= lay_elder.name %></h4>
+            <p><%= lay_elder.title %></p>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+
+    <% if (((row_count+=1) % 4) == 0) %>
+      </div>
+      <div class="row">
+    <% end %>
+
+  <% end %>
 </div>
 
 </div>
+
+<% end %>
 
 <div class="row">
 <div class="span12" style="height: 40px;"> </div>

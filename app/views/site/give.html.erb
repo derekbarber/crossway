@@ -1,0 +1,35 @@
+<ul class="breadcrumb">
+  <li><%= link_to "Home", root_path %> <span class="divider">/</span></li>
+  <li class="active">Give</li>
+</ul>
+
+
+<div class="row one-column">
+
+  <div class="span12">
+
+    <div class="content">
+      <p>
+        We have a tremendous opportunity to proclaim the gospel by giving generously. Giving invigorates our devotion to Christ and frees us from the tyranny of consumerism. It provides an outlet for compassion and allows us to proclaim His sufficiency and provision. As people of faith, we give faithfully.
+      </p>
+
+      <form action="" method="POST" id="payment-form">
+        <div class="form-row">
+          <label>Card Number</label>
+          <input type="text" size="20" autocomplete="off" class="card-number"/>
+        </div>
+        <div class="form-row">
+          <label>CVC</label>
+          <input type="text" size="4" autocomplete="off" class="card-cvc"/>
+        </div>
+        <div class="form-row">
+          <label>Expiration (MM/YYYY)</label>
+          <input type="text" size="2" class="card-expiry-month"/>
+          <span> / </span>
+          <input type="text" size="4" class="card-expiry-year"/>
+        </div>
+        <button type="submit" class="submit-button">Submit Payment</button>
+      </form>
+    </div>
+  </div>
+</div>

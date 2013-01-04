@@ -17,10 +17,10 @@
 
     <h2><%= @sermon_series.title %></h2>
 
-    <p><%= @sermon_series.title %></p>
+    <h5><%= @sermon_series. description %></h5>
 
     <p>
-      <%= @sermon_series.start_date %> -   <%= @sermon_series.end_date %>
+      <i><%= @sermon_series.start_date.strftime("%b %d, %Y") %> -   <%= @sermon_series.end_date.strftime("%b %d, %Y") %></i>
     </p>
 
   </div>
@@ -31,6 +31,8 @@
   <%= sermon.title%>
 
 <% end %>
+
+
 
 <%= link_to 'Edit', edit_sermon_series_path(@sermon_series) %> |
 <%= link_to 'Back', sermon_series_index_path %>
