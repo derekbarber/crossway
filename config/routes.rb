@@ -1,17 +1,7 @@
 Crossway::Application.routes.draw do
 
-  get 'signup', to: 'users#new', as: 'signup'
-  get 'login', to: 'sessions#new', as: 'login'
-  get 'logout', to: 'sessions#destroy', as: 'logout'
-
-  resources :users
-
-  resources :people
-
   resources :articles
-
   resources :posts
-
   resources :sermons
   resources :sermon_series
 
@@ -37,6 +27,19 @@ Crossway::Application.routes.draw do
   match '/identity/staff',   to: 'site#staff'
   match '/identity/lay-elders',   to: 'site#lay_elders'
 
+  namespace :admin do
+    root to: "home#index"
+    resources :users
+    resources :people
+    resources :sessions, :only => [:create]
+    get 'signup', to: 'users#new', as: 'signup'
+    get 'login', to: 'sessions#new', as: 'login'
+    get 'logout', to: 'sessions#destroy', as: 'logout'
+
+    resources :articles
+    resources :sermons
+    resources :sermon_series
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

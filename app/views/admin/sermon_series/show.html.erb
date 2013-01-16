@@ -1,6 +1,6 @@
 <ul class="breadcrumb">
   <li><%= link_to "Home", root_path %> <span class="divider">/</span></li>
-  <li><%= link_to "Resources", resources_path %> <span class="divider">/</span></li>
+  <li><%= link_to "Resources", root_path %> <span class="divider">/</span></li>
   <li><%= link_to "Sermon Series", { :action => 'index', :controller => 'sermon_series' } %> <span class="divider">/</span></li>
   <li class="active"><%= @sermon_series.title %></li>
 </ul>
@@ -26,28 +26,13 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="span12" style="height: 40px;">&nbsp;</div>
-</div>
+<% @sermons.each do |sermon| %>
 
-<div class="row">
-  <% row_count = 0 %>
+  <%= sermon.title%>
 
-  <% @sermons.each do |sermon| %>
+<% end %>
 
-    <div class="span3">
-      <div class="images">
-      <%= link_to image_tag(@sermon_series.button_image_url, :class => "captify",
-                            :alt => "#{sermon.title}"), sermon,
-                { :title => "#{sermon.title}"} if sermon_series.button_image? %>
-      </div>
 
-    </div>
 
-    <% if (((row_count+=1) % 4) == 0) %>
-      </div>
-      <div class="row">
-    <% end %>
-
-  <% end %>
-</div>
+<%= link_to 'Edit', edit_sermon_series_path(@sermon_series) %> |
+<%= link_to 'Back', sermon_series_index_path %>

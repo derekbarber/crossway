@@ -30,11 +30,11 @@ gem 'simple_form'
 gem 'feedzirra'
 gem 'rmagick'
 gem 'carrierwave'
+gem 'inherited_resources'
 
 group :test do
   gem 'capybara', '1.1.2'
 end
-
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
