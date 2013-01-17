@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require captify
+//= require mediaelement_rails
 //= require_tree .

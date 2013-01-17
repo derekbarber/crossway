@@ -8,8 +8,6 @@
     <th>Scripture reference</th>
     <th>Speaker</th>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @sermons.each do |sermon| %>
@@ -20,12 +18,9 @@
     <td><%= sermon.scripture_reference %></td>
     <td><%= sermon.speaker %></td>
     <td><%= link_to 'Show', sermon %></td>
-    <td><%= link_to 'Edit', edit_sermon_path(sermon) %></td>
-    <td><%= link_to 'Destroy', sermon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Sermon', new_sermon_path %>

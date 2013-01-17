@@ -13,16 +13,20 @@
 
   <div class="row">
 
-    <div class="span3">
-      <% if @staff_profile.image_url %>
-        <%= image_tag(@staff_profile.image_url) %>
-      <% else %>
-        <img src="http://placehold.it/200x160" alt="">
-      <% end %>
-    </div>
-    <div class="span6">
-      <h2><%= @staff_profile.name %></h2>
-      <p><%= @staff_profile.title %></p>
+    <div class="span9">
+      <div class="media">
+        <a class="pull-left">
+          <% if @staff_profile.image_url %>
+            <%= image_tag(@staff_profile.image_url, :class => 'media-object') %>
+          <% else %>
+            <%= image_tag("http://placehold.it/200x160", :class => 'media-object') %>
+          <% end %>
+        </a>
+        <div class="media-body">
+          <h3 class="media-heading"><%= @staff_profile.name %></h3>
+          <h4><%= @staff_profile.title %></h4>
+        </div>
+      </div>
     </div>
 
     <div class="span3">

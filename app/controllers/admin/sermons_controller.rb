@@ -28,6 +28,7 @@ module Admin
     # GET /sermons/new.json
     def new
       @sermon = Sermon.new
+      @sermon_series = SermonSeries.all.collect { |sermon_series| [sermon_series.title, sermon_series.id] }
 
       respond_to do |format|
         format.html # new.html.erb
@@ -38,12 +39,14 @@ module Admin
     # GET /sermons/1/edit
     def edit
       @sermon = Sermon.find(params[:id])
+      @sermon_series = SermonSeries.all.collect { |sermon_series| [sermon_series.title, sermon_series.id] }
     end
 
     # POST /sermons
     # POST /sermons.json
     def create
       @sermon = Sermon.new(params[:sermon])
+      
 
       respond_to do |format|
         if @sermon.save

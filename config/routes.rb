@@ -1,9 +1,9 @@
 Crossway::Application.routes.draw do
 
-  resources :articles
+  resources :articles, :only => [:index, :show]
   resources :posts
-  resources :sermons
-  resources :sermon_series
+  resources :sermons, :only => [:index, :show]
+  resources :sermon_series, :only => [:index, :show]
 
   #resources :pages, except: :show
   #get ':id', to: 'pages#show', as: :page

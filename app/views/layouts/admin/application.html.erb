@@ -33,8 +33,8 @@
           <li><%= link_to_unless_current "HOME", admin_root_path %></li>
           <li><%= link_to_unless_current "PROFILES", admin_people_path %></li>
           <li><%= link_to_unless_current "USERS", admin_users_path %></li>
-          <li><%= link_to_unless_current "SERMONS", admin_sermon_series_path %></li>
-          <li><%= link_to_unless_current "Blog", { :action => 'index', :controller => 'admin_sermon_series' } %></li>
+          <li><%= link_to_unless_current "SERMONS", { :action => 'index', :controller => 'sermon_series' }  %></li>
+          <li><%= link_to_unless_current "BLOG", admin_articles_path %></li>
         </ul>
 
         <div style="clear: both;"></div>
@@ -67,7 +67,7 @@
         <div class="row">
           <div class="span12">
             <div class="copyright">
-              &copy; 2012 Crossway Community Church.
+              &copy; 2013 Crossway Community Church.
             </div>
           </div>
         </div>

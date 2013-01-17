@@ -1,4 +1,4 @@
-<%= simple_form_for @sermon_series, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
+<%= simple_form_for([:admin, @sermon_series], :html => { :class => 'form-horizontal', :multipart => true }) do |f| %>
   <% if @sermon_series.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@sermon_series.errors.count, "error") %> prohibited this sermon_series from being saved:</h2>

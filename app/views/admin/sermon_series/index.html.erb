@@ -15,12 +15,12 @@
     <td><%= link_to sermon_series.title, sermon_series %></td>
     <td><%= sermon_series.start_date %> - <%= sermon_series.end_date %></td>
     <td><%= sermon_series.current_series %></td>
-    <td><%= link_to 'Edit', edit_sermon_series_path(sermon_series) %></td>
-    <td><%= link_to 'Destroy', sermon_series, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Edit', edit_admin_sermon_series_path(sermon_series), :class => 'btn' %></td>
+    <td><%= link_to 'Destroy', sermon_series, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn' %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Sermon series', new_sermon_series_path %>
+<%= link_to 'New Sermon series', new_admin_sermon_series_path %>
