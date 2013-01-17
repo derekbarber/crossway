@@ -52,6 +52,8 @@ class SiteController < ApplicationController
 
   def resources
     @current_sermon_series = SermonSeries.where(:current_series => true).first
+
+    @previous_sermon_series = SermonSeries.order("start_date desc").second
   end
 
   def give

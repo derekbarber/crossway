@@ -19,12 +19,12 @@
 
       <p><%= @sermon.scripture_reference %></p>
       <p><%= @sermon.speaker %></p>
-    
+
       <p>
         <i><%= @sermon.date.strftime("%b %d, %Y") %></i>
       </p>
     </div>
-    
+
     <div class="clearfix"></div>
 
     <div class="well well-small span5">
@@ -35,7 +35,7 @@
 
       <p><%= link_to "Download MP3 (Right-click and click 'Save As')", @sermon.audio_file_url %></p>
     </div>
-    
+
     <% if @sermon.video_embed.length > 0 %>
       <div class="well well-small span7">
         <h3>Watch Clip</h3>

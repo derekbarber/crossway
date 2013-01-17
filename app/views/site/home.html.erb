@@ -25,7 +25,7 @@
   </div>
   <div class="span3">
     <%= link_to image_tag(@previous_sermon_series.button_image_url, :class => "captify", 
-                          :alt => "Sermon Archive"), { :action => 'index', :controller => 'sermon_series' } %>
+                          :alt => "Previous Sermon Series"), @previous_sermon_series %>
   </div>
   <div class="span3">
     <%= link_to image_tag("home/home_blog.png", :class => "captify", :alt => "The Crossway Blog"), articles_path %>
