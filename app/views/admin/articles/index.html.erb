@@ -1,24 +1,10 @@
-<% content_for :head, auto_discovery_link_tag(:atom, articles_url(format: "atom")) %>
-
-
-<ul class="breadcrumb">
-  <li><%= link_to "Home", root_path %> <span class="divider">/</span></li>
-  <li><%= link_to "Resources", root_path %> <span class="divider">/</span></li>
-  <li class="active">Blog</li>
-</ul>
-
 <div class="row one-column">
 
-  <div class="span10">
+  <div class="span12">
 
-    <h3>Crossway Blog</h3>
+    <h3>Manage Crossway Blog</h3>
   </div>
   
-  <div class="span2">
-    
-    <button class="btn btn-small"><i class="icon-rss"></i>&nbsp;Subscribe to Blog</button>
-  </div>
-
 </div>
 
 <table class="table table-striped">
@@ -37,7 +23,7 @@
     <td><%= article.author %></td>
     <td><%= article.published_at %></td>
     <td><%= link_to 'Show', article, :class => 'btn' %></td>
-    <td><%= link_to 'Edit', edit_article_path(article), :class => 'btn' %></td>
+    <td><%= link_to 'Edit', edit_admin_article_path(article), :class => 'btn' %></td>
     <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn' %></td>
   </tr>
 <% end %>
@@ -45,4 +31,4 @@
 
 <br />
 
-<%= link_to 'New Blog Article', new_article_path %>
+<%= link_to 'New Blog Article', new_admin_article_path %>

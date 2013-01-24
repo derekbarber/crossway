@@ -3,3 +3,17 @@
     <h3>Crossway Admin System</h3>
   </div>
 </div>
+
+<div class="row one-column">
+  <div class="span12">
+    <h4>What would you like to do today?</h4>
+    
+    <ul>
+      <li><%= link_to "Manage Profiles", admin_people_path %></li>
+      <li><%= link_to "Manage Users", admin_users_path %></li>
+      <li><%= link_to "Manage Sermons", admin_sermons_path %></li>
+      <li><%= link_to "Manage Sermon Series", { :action => 'index', :controller => 'sermon_series' }  %></li>
+      <li><%= link_to "Manage Blog Articles", admin_articles_path %></li>
+    </ul>
+  </div>
+</div>

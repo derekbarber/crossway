@@ -2,7 +2,7 @@ class SermonsController < ApplicationController
   # GET /sermons
   # GET /sermons.json
   def index
-    @sermons = Sermon.all
+    @sermons = Sermon.order("date desc").all
 
     respond_to do |format|
       format.html # index.html.erb

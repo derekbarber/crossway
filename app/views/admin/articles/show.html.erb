@@ -1,14 +1,6 @@
-<% content_for :head, auto_discovery_link_tag(:atom, articles_url(format: "atom")) %>
-
-<ul class="breadcrumb">
-  <li><%= link_to "Home", root_path %> <span class="divider">/</span></li>
-  <li><%= link_to "Resources", root_path %> <span class="divider">/</span></li>
-  <li><%= link_to "Blog", articles_path %> <span class="divider">/</span></li>
-  <li class="active"><%= @article.title %></li>
-</ul>
 
 <div class="row one-column">
-  <div class="span10">
+  <div class="span12">
 
     <h3><%= @article.title %></h3>
 
@@ -17,12 +9,6 @@
 
   </div>
 
-  <div class="span2">
-
-    <%= link_to articles_url(format: "atom"), :class => "btn btn-small" do %>
-      <i class="icon-rss"></i>&nbsp;Subscribe to Blog
-    <% end %>
-  </div>
 </div>
 
 <hr>

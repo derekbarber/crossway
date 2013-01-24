@@ -32,6 +32,8 @@ gem 'rmagick'
 gem 'carrierwave'
 gem 'inherited_resources'
 gem 'mediaelement_rails'
+gem 'ckeditor'
+gem 'mini_magick'
 
 group :test do
   gem 'capybara', '1.1.2'

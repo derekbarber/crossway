@@ -29,14 +29,21 @@
 
     <div class="menu-bar">
       <div class="menu-container">
-        <ul class="nav-menu" role="navigation">
-          <li><%= link_to_unless_current "HOME", admin_root_path %></li>
-          <li><%= link_to_unless_current "PROFILES", admin_people_path %></li>
-          <li><%= link_to_unless_current "USERS", admin_users_path %></li>
-          <li><%= link_to_unless_current "SERMONS", { :action => 'index', :controller => 'sermon_series' }  %></li>
-          <li><%= link_to_unless_current "BLOG", admin_articles_path %></li>
-        </ul>
-
+        <% if current_user %>
+          <ul class="nav-menu" role="navigation">
+            <li><%= link_to_unless_current "HOME", admin_root_path %></li>
+            <li><%= link_to_unless_current "PROFILES", admin_people_path %></li>
+            <li><%= link_to_unless_current "USERS", admin_users_path %></li>
+            <li><%= link_to_unless_current "SERMONS", admin_sermons_path  %></li>
+            <li><%= link_to_unless_current "SERIES", { :action => 'index', :controller => 'sermon_series' }  %></li>
+            <li><%= link_to_unless_current "BLOG", admin_articles_path %></li>
+            <li><%= link_to "SIGN OUT", admin_logout_path %></li>
+          </ul>
+        <% else %>
+          <ul class="nav-menu" role="navigation">
+            <li>ADMIN SYSTEM</li>
+          </ul>
+        <% end %>
         <div style="clear: both;"></div>
       </div>
     </div>

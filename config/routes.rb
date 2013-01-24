@@ -1,5 +1,7 @@
 Crossway::Application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
+
   resources :articles, :only => [:index, :show]
   resources :posts
   resources :sermons, :only => [:index, :show]
