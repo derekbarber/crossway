@@ -34,6 +34,7 @@ gem 'inherited_resources'
 gem 'mediaelement_rails'
 gem 'ckeditor'
 gem 'mini_magick'
+gem 'active_attr'
 
 group :test do
   gem 'capybara', '1.1.2'

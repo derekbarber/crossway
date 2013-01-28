@@ -85,4 +85,10 @@ class SiteController < ApplicationController
     @lay_elders = Person.where(:role => 2)
   end
 
+  def sitemap
+  end
+  
+  def terms
+  end
+  
 end

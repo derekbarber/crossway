@@ -11,6 +11,9 @@ Crossway::Application.routes.draw do
   #get ':id', to: 'pages#show', as: :page
   #put ':id', to: 'pages#update', as: :page
   #delete ':id', to: 'pages#destroy', as: :page
+  
+  match 'contact' => 'contact#new', :as => 'contact', :via => :get
+  match 'contact' => 'contact#create', :as => 'contact', :via => :post
 
   match '/home',   to: 'site#home'
   match '/news',   to: 'site#news'
@@ -28,6 +31,9 @@ Crossway::Application.routes.draw do
   match '/identity/partnerships',   to: 'site#partnerships'
   match '/identity/staff',   to: 'site#staff'
   match '/identity/lay-elders',   to: 'site#lay_elders'
+  
+  match '/terms', to: 'site#terms'
+  match '/sitemap', to: 'site#sitemap'
 
   namespace :admin do
     root to: "home#index"

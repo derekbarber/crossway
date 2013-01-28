@@ -7,8 +7,8 @@
   <div class="span12">
     <div class="images">
     <%= link_to image_tag(@current_sermon_series.banner_image_url, :class => "captify",
-                          :alt => "Current Sermon Series"), @current_sermon_series,
-              { :title => "Current Sermon Series"} if @current_sermon_series.banner_image? %>
+                          :alt => "Most Recent Sermon"), @latest_sermon,
+              { :title => "Latest Sermon"} if @current_sermon_series.banner_image? %>
     </div>
   </div>
 </div>
@@ -19,13 +19,13 @@
 
 <div class="row">
   <div class="span3">
-    <%= link_to image_tag(@current_sermon_series.button_image_url, :class => "captify",
-                          :alt => "Most Recent Sermon"), @latest_sermon,
-              { :title => "Most Recent Sermons"} %>
+    <%= link_to image_tag(@previous_sermon_series.button_image_url, :class => "captify", 
+                          :alt => "Sermon Series Archive"), 
+                          { :action => 'index', :controller => 'sermon_series', :title => "Sermon Archive"} %>
   </div>
   <div class="span3">
-    <%= link_to image_tag(@previous_sermon_series.button_image_url, :class => "captify", 
-                          :alt => "Previous Sermon Series"), @previous_sermon_series %>
+    <%= link_to image_tag("home/staff_button.png", :class => "captify", :alt => "Meet the Staff"), identity_staff_path %>
+
   </div>
   <div class="span3">
     <%= link_to image_tag("home/home_blog.png", :class => "captify", :alt => "The Crossway Blog"), articles_path %>

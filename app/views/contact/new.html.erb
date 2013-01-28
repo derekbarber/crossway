@@ -1,0 +1,46 @@
+<ul class="breadcrumb">
+  <li><%= link_to "Home", root_path %> <span class="divider">/</span></li>
+  <li class="active">Contact Us</li>
+</ul>
+
+<h2>Contact Us</h2>
+
+<hr>
+
+<div class="row one-column">
+  <div class="span8">
+
+    <%= simple_form_for @message, :url => contact_path, :html => { :class => 'form-horizontal' }  do |f| %>
+
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :name %>
+      <%= f.input :email %>
+      <%= f.input :content, :as => :text, :input_html => {  :class => 'span4', :rows => 6 }  %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Send Message" %>
+    </div>
+
+    <% end %>
+
+  </div>
+
+  <div class="span4">
+    <div class="well">
+      <h4>Church Office</h4>
+      <address>
+        #201 - 20334 56th Ave.<br>
+        Langley, B.C.
+      </address>
+
+      <h4>Phone</h4>
+      604-510-6002
+
+      <h4>Office Hourse</h4>
+      Monday - Thursday, 8am - 4pm
+    </div>
+  </div>
+</div>

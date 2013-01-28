@@ -58,5 +58,19 @@ module Crossway
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    config.action_mailer.smtp_settings = {
+      address: "smtp.gmail.com",
+      port: 587,
+      domain: "crossway.ca",
+      authentication: :plain,
+      enable_starttle_auto: true,
+      user_name: ENV["GMAIL_USERNAME"],
+      password: ENV["GMAIL_PASSWORD"]
+    }
+    
+    config.action_mailer.default_url_options = {
+      :host => "crossway.ca"
+    }
   end
 end
