@@ -16,7 +16,7 @@ class SermonsController < ApplicationController
   def show
     @sermon = Sermon.find(params[:id])
     @sermon_series = SermonSeries.find(@sermon.sermon_series_id)
-    @sermons = @sermon_series.sermons.order("date desc").all
+    @sermons = @sermon_series.sermons.order("date asc").all
 
     respond_to do |format|
       format.html # show.html.erb
