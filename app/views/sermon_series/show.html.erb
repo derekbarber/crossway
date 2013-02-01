@@ -32,6 +32,7 @@
 
 <div class="row">
   <% row_count = 0 %>
+  <% sermon_count = 1 %>
 
   <% @sermons.each do |sermon| %>
 
@@ -40,9 +41,10 @@
         <li class="span3">
           <%= link_to(sermon, { :class => "thumbnail" }) do %>
             <%= image_tag(@sermon_series.button_image_url, :alt => @sermon_series.title) %>
-            <h4><%= sermon.title %></h4>
+            <h4><%= "#{sermon_count}. #{sermon.title}" %></h4>
             <p><strong><%= sermon.speaker %></strong></p>
             <p><%= sermon.scripture_reference %></p>
+            <% sermon_count+=1 %>
           <% end %>
         </li>
       </ul>
