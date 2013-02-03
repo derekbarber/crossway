@@ -21,7 +21,7 @@ module Admin
       @user = User.new(params[:user])
       if @user.save
         session[:user_id] = @user.id
-        redirect_to root_url, notice: "Thank you for signing up!"
+        redirect_to admin_users_url, notice: "User was successfully created."
       else
         render "new"
       end
@@ -39,7 +39,7 @@ module Admin
 
       respond_to do |format|
         if @user.update_attributes(params[:user])
-          format.html { redirect_to @user, notice: 'Person was successfully updated.' }
+          format.html { redirect_to admin_users_path, notice: 'User was successfully updated.' }
           format.json { head :no_content }
         else
           format.html { render action: "edit" }
