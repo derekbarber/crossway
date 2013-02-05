@@ -65,6 +65,10 @@ class SiteController < ApplicationController
 
   end
 
+  def recommended_ministries
+
+  end
+
   def statement_of_faith
 
   end

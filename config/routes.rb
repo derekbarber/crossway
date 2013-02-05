@@ -28,6 +28,7 @@ Crossway::Application.routes.draw do
   match '/resources',   to: 'site#resources'
   match '/identity',   to: 'site#identity'
   match '/identity/statement-of-faith',   to: 'site#statement_of_faith'
+  match '/identity/recommended-ministries',   to: 'site#recommended_ministries'
   match '/identity/partnerships',   to: 'site#partnerships'
   match '/identity/staff',   to: 'site#staff'
   match '/identity/lay-elders',   to: 'site#lay_elders'
