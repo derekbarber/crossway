@@ -17,12 +17,12 @@
 
 <p>
   <b>Content:</b>
-  <%= @person.content %>
+  <%= @person.content.html_safe %>
 </p>
 
 <p>
   <b>Role:</b>
-  <%= @person.role %>
+  <%= @person.role_text %>
 </p>
 
 <p>

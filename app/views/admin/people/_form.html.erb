@@ -6,7 +6,8 @@
     <%= f.input :title %>
     <%= f.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} }  %>
     <%= f.input :image, :as => :file %>
-    <%= f.input :role, :input_html => { :class => 'span2' }, :collection => { "Staff" => 1, "Lay Elder" => 2 }, :selected => 1 %>
+    <%= f.input :role, :input_html => { :class => 'span2' }, :collection => { "Staff" => 1, "Lay Elder" => 2 } %>
+    <%= f.input :display_order, :input_html => { :class => 'span2' }, :collection => { 1 => 1, 2 => 2, 3 => 3, 4 => 4, 5 => 5, 6 => 6 } %>
     <%= f.input :enabled %>
   </div>
 

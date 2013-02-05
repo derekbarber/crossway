@@ -14,7 +14,7 @@
   <tr>
     <td><%= person.name %></td>
     <td><%= person.title %></td>
-    <td><%= person.role %></td>
+    <td><%= person.role_text %></td>
     <td><%= link_to 'Show', admin_person_path(person), :class => 'btn'  %></td>
     <td><%= link_to 'Edit', edit_admin_person_path(person), :class => 'btn' %></td>
     <td><%= link_to 'Destroy', admin_person_path(person), method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn' %></td>

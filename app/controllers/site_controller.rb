@@ -78,7 +78,7 @@ class SiteController < ApplicationController
       @staff_profile = Person.find(params[:id])
     end
 
-    @staff = Person.where(:role => 1)
+    @staff = Person.where(:role => 1).order("display_order asc")
   end
 
   def lay_elders
@@ -86,7 +86,7 @@ class SiteController < ApplicationController
       @elder_profile = Person.find(params[:id])
     end
 
-    @lay_elders = Person.where(:role => 2)
+    @lay_elders = Person.where(:role => 2).order("display_order asc")
   end
 
   def sitemap
