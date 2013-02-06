@@ -17,7 +17,7 @@
     <div class="form-inputs">
       <%= f.input :name %>
       <%= f.input :email %>
-      <%= f.input :content, :as => :text, :input_html => {  :class => 'span4', :rows => 6 }  %>
+      <%= f.input :content, :as => :text, :label => 'Message', :input_html => {  :class => 'span4', :rows => 6 }  %>
     </div>
 
     <div class="form-actions">
@@ -30,16 +30,19 @@
 
   <div class="span4">
     <div class="well">
-      <h4>Church Office</h4>
+      <h3>Church Office</h3>
       <address>
         #201 - 20334 56th Ave.<br>
         Langley, B.C.
       </address>
 
+      <h4>Email</h4>
+      info@crossway.ca
+
       <h4>Phone</h4>
       604-510-6002
 
-      <h4>Office Hourse</h4>
+      <h4>Office Hours</h4>
       Monday - Thursday, 8am - 4pm
     </div>
   </div>
