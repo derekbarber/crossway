@@ -35,6 +35,7 @@ gem 'mediaelement_rails'
 gem 'ckeditor'
 gem 'mini_magick'
 gem 'active_attr'
+gem 'figaro'
 
 group :test do
   gem 'capybara', '1.1.2'
