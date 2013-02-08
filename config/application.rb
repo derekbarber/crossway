@@ -67,7 +67,7 @@ module Crossway
       address: "smtp.gmail.com",
       port: 587,
       domain: "crossway.ca",
-      authentication: :plain,
+      authentication: "plain",
       enable_starttle_auto: true,
       user_name: ENV["GMAIL_USERNAME"],
       password: ENV["GMAIL_PASSWORD"]
