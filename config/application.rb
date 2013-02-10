@@ -59,7 +59,7 @@ module Crossway
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    #config.action_mailer.delivery_method = :sendmail
+    config.action_mailer.delivery_method = :smtp
 
     config.action_mailer.raise_delivery_errors = true
 
