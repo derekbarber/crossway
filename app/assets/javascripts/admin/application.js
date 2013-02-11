@@ -16,4 +16,5 @@
 //= require captify
 //= require mediaelement_rails
 //= require ckeditor/init
+//= require dataTables/jquery.dataTables
 //= require_tree .
