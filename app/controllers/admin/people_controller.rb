@@ -13,17 +13,6 @@ module Admin
       end
     end
 
-    # GET /people/1
-    # GET /people/1.json
-    def show
-      @person = Person.find(params[:id])
-
-      respond_to do |format|
-        format.html # show.html.erb
-        format.json { render json: @person }
-      end
-    end
-
     # GET /people/new
     # GET /people/new.json
     def new
@@ -79,7 +68,7 @@ module Admin
       @person.destroy
 
       respond_to do |format|
-        format.html { redirect_to people_url }
+        format.html { redirect_to admin_people_url }
         format.json { head :no_content }
       end
     end

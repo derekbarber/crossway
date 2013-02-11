@@ -13,18 +13,6 @@ module Admin
       end
     end
 
-    # GET /sermon_series/1
-    # GET /sermon_series/1.json
-    def show
-      @sermon_series = SermonSeries.find(params[:id])
-      @sermons = @sermon_series.sermons.all
-
-      respond_to do |format|
-        format.html # show.html.erb
-        format.json { render json: @sermon_series }
-      end
-    end
-
     # GET /sermon_series/new
     # GET /sermon_series/new.json
     def new
@@ -48,7 +36,7 @@ module Admin
 
       respond_to do |format|
         if @sermon_series.save
-          format.html { redirect_to @sermon_series, notice: 'Sermon series was successfully created.' }
+          format.html { redirect_to admin_sermon_series_index_path, notice: 'Sermon series was successfully created.' }
           format.json { render json: @sermon_series, status: :created, location: @sermon_series }
         else
           format.html { render action: "new" }
@@ -64,7 +52,7 @@ module Admin
 
       respond_to do |format|
         if @sermon_series.update_attributes(params[:sermon_series])
-          format.html { redirect_to @sermon_series, notice: 'Sermon series was successfully updated.' }
+          format.html { redirect_to admin_sermon_series_index_path, notice: 'Sermon series was successfully updated.' }
           format.json { head :no_content }
         else
           format.html { render action: "edit" }
@@ -80,7 +68,7 @@ module Admin
       @sermon_series.destroy
 
       respond_to do |format|
-        format.html { redirect_to sermon_series_index_url }
+        format.html { redirect_to admin_sermon_series_index_path }
         format.json { head :no_content }
       end
     end

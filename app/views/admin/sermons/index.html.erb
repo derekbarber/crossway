@@ -21,7 +21,7 @@
     <td><%= sermon.speaker %></td>
     <td><%= link_to 'Show', admin_sermon_path(sermon), :class => 'btn' %></td>
     <td><%= link_to 'Edit', edit_admin_sermon_path(sermon), :class => 'btn' %></td>
-    <td><%= link_to 'Destroy', sermon, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn' %></td>
+    <td><%= link_to 'Destroy', admin_sermon_path(sermon), method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn' %></td>
   </tr>
 <% end %>
 </table>

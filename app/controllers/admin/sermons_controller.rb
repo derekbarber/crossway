@@ -13,17 +13,6 @@ module Admin
       end
     end
 
-    # GET /sermons/1
-    # GET /sermons/1.json
-    def show
-      @sermon = Sermon.find(params[:id])
-
-      respond_to do |format|
-        format.html # show.html.erb
-        format.json { render json: @sermon }
-      end
-    end
-
     # GET /sermons/new
     # GET /sermons/new.json
     def new

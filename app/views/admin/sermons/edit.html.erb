@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', admin_sermons_path(@sermon) %> |
-<%= link_to 'Back', admin_sermons_path %>
+<%= link_to 'Show on Site', @sermon, :class => 'btn btn-primary', :target => "_blank" %>
+<%= link_to 'Back', admin_sermons_path, :class => 'btn btn-primary' %>
