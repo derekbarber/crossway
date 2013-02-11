@@ -18,6 +18,8 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'bootstrap-sass', '~> 2.1.1.0'
   gem 'font-awesome-rails'
+  gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+  gem 'jquery-ui-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -35,7 +37,7 @@ gem 'mediaelement_rails'
 gem 'ckeditor'
 gem 'mini_magick'
 gem 'active_attr'
-gem 'figaro'
+gem 'will_paginate'
 
 group :test do
   gem 'capybara', '1.1.2'
