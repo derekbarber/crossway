@@ -33,7 +33,7 @@
       <p>by <%= article.author %> | <%= article.published_at.strftime("%B %d, %Y") %></p>
       </p>
 
-      <%= simple_format article.content %>
+      simple_format(article.content, {}, {:sanitize => false})
 
       <hr>
     <% end %>
