@@ -1,6 +1,6 @@
 class NotificationsMailer < ActionMailer::Base
   default from: "info@crossway.ca"
-  default to: "derek@crossway.ca"
+  default to: ["derek@crossway.ca", "info@crossway.ca"]
 
   def new_message(message)
     @message = message

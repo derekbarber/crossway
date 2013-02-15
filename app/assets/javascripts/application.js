@@ -15,5 +15,4 @@
 //= require bootstrap
 //= require captify
 //= require mediaelement_rails
-//= require ckeditor/init
 //= require_tree .

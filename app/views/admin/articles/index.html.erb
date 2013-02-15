@@ -13,8 +13,6 @@
     <th>Author</th>
     <th>Post date</th>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @articles.each do |article| %>
@@ -22,8 +20,10 @@
     <td><%= article.title %></td>
     <td><%= article.author %></td>
     <td><%= article.published_at %></td>
-    <td><%= link_to 'Edit', edit_admin_article_path(article), :class => 'btn' %></td>
-    <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn' %></td>
+    <td>
+      <%= link_to 'Edit', edit_admin_article_path(article), :class => 'btn' %>&nbsp;
+      <%= link_to 'Destroy', admin_article_path(article), method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn' %>
+    </td>
   </tr>
 <% end %>
 </table>

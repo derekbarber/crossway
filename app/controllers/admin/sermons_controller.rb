@@ -9,7 +9,7 @@ module Admin
 
       respond_to do |format|
         format.html # index.html.erb
-        format.json { render json: @sermons }
+        format.json { render json: SermonsDatatable.new(view_context) }
       end
     end
 
@@ -36,10 +36,9 @@ module Admin
     def create
       @sermon = Sermon.new(params[:sermon])
       
-
       respond_to do |format|
         if @sermon.save
-          format.html { redirect_to @sermon, notice: 'Sermon was successfully created.' }
+          format.html { redirect_to admin_sermons_url, notice: 'Sermon was successfully created.' }
           format.json { render json: @sermon, status: :created, location: @sermon }
         else
           format.html { render action: "new" }
@@ -55,7 +54,7 @@ module Admin
 
       respond_to do |format|
         if @sermon.update_attributes(params[:sermon])
-          format.html { redirect_to @sermon, notice: 'Sermon was successfully updated.' }
+          format.html { redirect_to admin_sermons_url, notice: 'Sermon was successfully updated.' }
           format.json { head :no_content }
         else
           format.html { render action: "edit" }
@@ -71,7 +70,7 @@ module Admin
       @sermon.destroy
 
       respond_to do |format|
-        format.html { redirect_to sermons_url }
+        format.html { redirect_to admin_sermons_url }
         format.json { head :no_content }
       end
     end

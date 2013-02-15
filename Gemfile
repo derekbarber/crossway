@@ -38,6 +38,7 @@ gem 'ckeditor'
 gem 'mini_magick'
 gem 'active_attr'
 gem 'will_paginate'
+gem 'sitemap_generator'
 
 group :test do
   gem 'capybara', '1.1.2'

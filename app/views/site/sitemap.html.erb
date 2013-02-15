@@ -5,27 +5,40 @@
 
 <h2>Site Map</h2>
 
-<hr>
-
 <div class="row one-column">
   <div class="span6">
 
-    <h3>Visit</h3>
+    <h3><%= link_to "Visit", visit_path %></h3>
 
-    <h3>God</h3>
+    <h3><%= link_to "God", god_path %></h3>
 
-    <h3>Connect</h3>
+    <h3><%= link_to "Connect", connect_path %></h3>
+    <p>
+      <ul>
+        <li><%= link_to "Community Groups", :controller => 'site', :action => 'community_groups' %></li>
+        <li><%= link_to "Ministries", connect_ministries_path %></li>
+        <li><%= link_to "The City", :controller => 'site', :action => 'the_city' %></li>
+      </ul>
+    </p>
+          
 
-    <h3>Resources</h3>
+    <h3><%= link_to "Resources", resources_path %></h3>
 
   </div>
 
   <div class="span6">
 
-    <h3>Give</h3>
+    <h3><%= link_to "Give", give_path %></h3>
 
-    <h3>Identity</h3>
-
+    <h3><%= link_to "Identity", identity_path %></h3>
+    <p>
+      <ul>
+        <li><%= link_to "Statement of Faith", :controller => 'site', :action => 'statement_of_faith' %></li>
+        <li><%= link_to "Recommended Ministries", :controller => 'site', :action => 'recommended_ministries' %></li>
+        <li><%= link_to "Staff", identity_staff_path %></li>
+        <li><%= link_to "Lay Elders", :controller => 'site', :action => 'lay_elders' %></li>
+      </ul>
+    </p>
 
   </div>
 
