@@ -8,6 +8,8 @@ class SermonsController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @sermons }
       format.atom { render :layout => false }
+      
+      format.rss { redirect_to feed_path(:format => :atom), :status => :moved_permanently }
     end
   end
 

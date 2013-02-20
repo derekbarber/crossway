@@ -15,9 +15,11 @@
 
   <div class="span2">
 
-    <button class="btn btn-small"><i class="icon-rss"></i>&nbsp;Subscribe to Blog</button>
-  </div>
+    <%= link_to articles_url(format: "atom"), :class => "btn btn-small" do %>
+      <i class="icon-rss"></i>&nbsp;Subscribe to Blog
+    <% end %>
 
+  </div>
 </div>
 
 <hr>
