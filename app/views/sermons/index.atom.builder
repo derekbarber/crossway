@@ -18,7 +18,8 @@ atom_feed({'xmlns:itunes' => 'http://www.itunes.com/dtds/podcast-1.0.dtd', 'vers
   feed.tag!('itunes:explicit', "No")
 
   @sermons.each do |sermon|
-    feed.entry sermon, published: sermon.date do |entry|
+    #feed.entry sermon, published: sermon.date do |entry|
+    feed.tag!('item') do |entry|
       entry.title sermon.title
       entry.tag!("itunes:email", "info@crossway.ca")
       entry.tag!("itunes:author", sermon.speaker)
