@@ -30,25 +30,31 @@
 
     <% @articles.each do |article| %>
 
-      <h3><%= article.title %></h3>
+      <div style="border-bottom: solid 1px #999999; padding-bottom: 20px; padding-top: 10px;">
+        <h3><%= link_to article.title, article %></h3>
 
-      <p>by <%= article.author %> | <%= article.published_at.strftime("%B %d, %Y") %></p>
-      </p>
+        <p style="font-size: 90%;">by <%= article.author %> &nbsp;|&nbsp; <%= article.published_at.strftime("%B %d, %Y") %></p>
+        </p>
 
-      <%= simple_format(article.content, {}, {:sanitize => false}) %>
+        <div>
+          <%= image_tag article.image_url if article.image? %>
+        </div>
 
-      <hr>
+        <%= simple_format(article.content, {}, {:sanitize => false}) %>
+
+      </div>
     <% end %>
 
   </div>
 
   <div class="span2">
-
+    <!--
     <div style="padding-left: 25px;">
       <p><button class="btn btn-small" style="width: 80px;"><i class="icon-twitter"></i>&nbsp;Tweet</button></p>
       <p><button class="btn btn-small" style="width: 80px;"><i class="icon-envelope"></i>&nbsp;Email</button></p>
       <p><button class="btn btn-small" style="width: 80px;"><i class="icon-print"></i>&nbsp;Print</button></p>
     </div>
+    -->
   </div>
 
   <div class="span3">

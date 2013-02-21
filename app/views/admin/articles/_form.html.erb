@@ -5,7 +5,9 @@
     <%= f.input :title, :input_html => { :class => 'span6'} %>
     <%= f.input :author %>
     <%= f.input :published_at %>
+    <%= f.input :image, :as => :file %>
     <%= f.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} }  %>
+    <%= f.input :status, :input_html => { :class => 'span3' }, :collection => { 1 => "Published", 2 => "Draft" } %>
   </div>
 
   <div class="form-actions">

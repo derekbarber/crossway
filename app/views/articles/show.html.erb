@@ -31,6 +31,10 @@
 
   <div class="span7">
 
+    <div>
+      <%= image_tag @article.image_url if @article.image? %>
+    </div>
+
     <%= simple_format(@article.content, {}, {:sanitize => false}) %>
 
   </div>
@@ -38,9 +42,13 @@
   <div class="span2">
 
     <div style="padding-left: 25px;">
-      <p><button class="btn btn-small" style="width: 80px;"><i class="icon-twitter"></i>&nbsp;Tweet</button></p>
-      <p><button class="btn btn-small" style="width: 80px;"><i class="icon-envelope"></i>&nbsp;Email</button></p>
-      <p><button class="btn btn-small" style="width: 80px;"><i class="icon-print"></i>&nbsp;Print</button></p>
+      <p><a href="https://twitter.com/share?url=<%= articles_url(@article) %>" class="btn btn-small" style="width: 80px;" data-lang="en"><i class="icon-twitter"></i>&nbsp;Tweet</a></p>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+      <!--
+      <p><a class="btn btn-small" style="width: 80px;"><i class="icon-envelope"></i>&nbsp;Email</a></p>
+      <p><a class="btn btn-small" style="width: 80px;"><i class="icon-print"></i>&nbsp;Print</a></p>
+      -->
     </div>
   </div>
 
