@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130220230914) do
+ActiveRecord::Schema.define(:version => 20130228214001) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(:version => 20130220230914) do
     t.text     "video_embed"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+    t.string   "audio_file_duration"
   end
 
   create_table "users", :force => true do |t|

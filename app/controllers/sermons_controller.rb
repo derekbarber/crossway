@@ -7,9 +7,9 @@ class SermonsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @sermons }
-      format.atom { render :layout => false }
+      format.rss { render :layout => false }
       
-      format.rss { redirect_to feed_path(:format => :atom), :status => :moved_permanently }
+      format.atom { redirect_to feed_path(:format => :rss), :status => :moved_permanently }
     end
   end
 
