@@ -1,0 +1,75 @@
+<ul class="breadcrumb">
+  <li><%= link_to "Home", root_path %> <span class="divider">/</span></li>
+  <li class="active">Give</li>
+</ul>
+
+<div class="row one-column">
+
+  <div class="span12">
+
+    <div class="content">
+      <p>
+        We have a tremendous opportunity to proclaim the gospel by giving generously. Giving invigorates our devotion to Christ and frees us from the tyranny of consumerism. It provides an outlet for compassion and allows us to proclaim His sufficiency and provision. As people of faith, we give faithfully.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span4">
+    <div class="well">
+      <h3>Online Giving</h3>
+
+      <%= form_tag charges_path do %>
+        <article>
+          <label class="amount">
+            <span>Please specify the amount you would like to donate to the work of ministry at Crossway Church: </span>
+            <div class="input-prepend input-append">
+              <span class="add-on">$</span>
+              <input class="span2" id="give-amount" type="text">
+            </div>
+          </label>
+        </article>
+
+        <button id="customButton" class="btn btn-primary">Donate</button>
+
+        <script>
+           $('#customButton').click(function(){
+             var token = function(res){
+               var $input = $('<input type=hidden name=stripeToken />').val(res.id);
+               $('form').append($input).submit();
+             };
+
+             StripeCheckout.open({
+               key:         '<%= Rails.configuration.stripe[:publishable_key] %>',
+               address:     false,
+               amount:      $('#give-amount').val()*100,
+               name:        'Crossway Church',
+               description: 'Online Donation',
+               panelLabel:  'Checkout',
+               token:       token
+             });
+
+             return false;
+           });
+         </script>
+
+      <% end %>
+    </div>
+  </div>
+  <div class="span4">
+    <div class="well">
+      <h3>Debit / Preauthorized Payment</h3>
+      <p>Please visit the Info Centre on a Sunday to give using our debit machine. You can also sign up there
+        for a preauthorized payment plan so that your monthly giving can be debited automatically on a
+        monthly basis.</p>
+    </div>
+  </div>
+  <div class="span4">
+    <div class="well">
+      <h3>Cash & Cheques</h3>
+      <p>Please make cheques payable to Crossway Church. These cheques may be dropped in the offering basket
+      during our worship service or you may bring them in person to the church office during our office hours.</p>
+    </div>
+  </div>
+</div>

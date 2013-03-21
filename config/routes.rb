@@ -6,6 +6,7 @@ Crossway::Application.routes.draw do
   resources :posts
   resources :sermons, :only => [:index, :show]
   resources :sermon_series, :only => [:index, :show]
+  resources :charges
 
   #resources :pages, except: :show
   #get ':id', to: 'pages#show', as: :page
@@ -25,6 +26,7 @@ Crossway::Application.routes.draw do
   match '/connect/ministries',   to: 'site#ministries'
   match '/connect/the-city',   to: 'site#the_city'
   match '/give',   to: 'site#give'
+  match '/give-new',   to: 'site#give-new'
   match '/resources',   to: 'site#resources'
   match '/identity',   to: 'site#identity'
   match '/identity/statement-of-faith',   to: 'site#statement_of_faith'
