@@ -4,7 +4,8 @@
   <title>Welcome to Crossway Church | Surrey, BC Canada</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
-  <script src="http://code.jquery.com/jquery-migrate-1.1.0.js"></script>
+  <%= javascript_include_tag "http://code.jquery.com/jquery-migrate-1.1.0.js", "application" %>
+  <%= javascript_include_tag "https://checkout.stripe.com/v2/checkout.js", "application" %>
   <%= csrf_meta_tags %>
   <%= yield :head %>
 

@@ -2,7 +2,9 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.order("published_at desc")
+    @articles = Article.order("published_at desc").paginate(:page => params[:page], :per_page => 4)
+
+    @recent_articles = Article.last(4)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -19,7 +21,7 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
 
-    @articles = Article.first(4)
+    @articles = Article.last(4)
     
     respond_to do |format|
       format.html # show.html.erb

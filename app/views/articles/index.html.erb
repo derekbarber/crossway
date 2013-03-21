@@ -10,7 +10,7 @@
 
   <div class="span10">
 
-    <h3>Crossway Blog</h3>
+    <h2>Crossway Blog</h2>
   </div>
 
   <div class="span2">
@@ -21,8 +21,6 @@
 
   </div>
 </div>
-
-<hr>
 
 <div class="row one-column">
 
@@ -45,6 +43,8 @@
       </div>
     <% end %>
 
+
+    <%= will_paginate @articles %>
   </div>
 
   <div class="span2">
@@ -60,13 +60,14 @@
   <div class="span3">
 
     <div class="aside">
-      <h5>Recent Blog Entries</h5>
+      <h5>More Blog Entries</h5>
 
       <ul class="unstyled">
-        <% @articles.each do |article| %>
+        <% @recent_articles.each do |article| %>
         <li style="margin-bottom: 10px;"><i class="icon-chevron-right"></i>&nbsp;<%= link_to article.title, article %></li>
         <% end %>
       </ul>
     </div>
   </div>
 </div>
+
