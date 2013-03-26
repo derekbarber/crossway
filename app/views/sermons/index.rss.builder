@@ -38,7 +38,7 @@ xml.rss "xmlns:itunes" => "http://www.itunes.com/dtds/podcast-1.0.dtd",  "xmlns:
         xml.itunes :subtitle, sermon.scripture_reference
         xml.itunes :summary, "#{sermon.title}: #{sermon.scripture_reference}"
         xml.itunes :explicit, 'no'
-        if sermon.audio_file_duration > 0
+        if sermon.audio_file_duration? && sermon.audio_file_duration > 0
           xml.itunes :duration, sermon.audio_file_duration
         end
       end
