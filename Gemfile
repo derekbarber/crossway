@@ -15,8 +15,9 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'jquery-migrate-rails'
 gem 'simple_form'
-gem 'feedzirra'
+gem 'feedzirra', git: "https://github.com/pauldix/feedzirra.git"
 gem 'rmagick'
 gem 'carrierwave'
 gem 'inherited_resources'
@@ -38,6 +39,7 @@ group :test do
   gem "factory_girl_rails"
   gem 'capybara'
   gem 'guard-rspec'
+  gem 'ruby-prof'
 end
 
 gem 'bcrypt-ruby', '~> 3.0.0'
