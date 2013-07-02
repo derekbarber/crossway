@@ -26,7 +26,7 @@
             <span>Please specify the amount you would like to donate to the work of ministry at Crossway Church: </span>
             <div class="input-prepend input-append">
               <span class="add-on">$</span>
-              <input class="span2" id="charge_amount" type="text">
+              <input class="span2" id="charge_amount" name="charge_amount" type="text">
             </div>
           </label>
         </article>
@@ -42,7 +42,7 @@
 
              StripeCheckout.open({
                key:         '<%= Rails.configuration.stripe[:publishable_key] %>',
-               address:     false,
+               address:     true,
                amount:      $('#charge_amount').val()*100,
                name:        'Crossway Church',
                description: 'Online Donation',
