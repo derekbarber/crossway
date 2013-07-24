@@ -41,6 +41,7 @@ end
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'unicorn'
 gem 'capistrano'
+gem 'capistrano-rbenv'
 
 # add these gems to help with the transition:
 gem 'protected_attributes'
