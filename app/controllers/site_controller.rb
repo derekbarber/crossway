@@ -1,6 +1,5 @@
 class SiteController < ApplicationController
   def home
-
     @current_sermon_series = SermonSeries.where(:current_series => true).first
 
     @latest_sermon = Sermon.order("date desc").first
@@ -45,6 +44,22 @@ class SiteController < ApplicationController
   def ministries
 
   end
+
+  def family_ministries
+
+  end
+  
+  def outreach_inistries
+
+  end
+
+  def service_ministries
+
+  end
+
+  def creative_ministries
+
+  end  
 
   def the_city
   end

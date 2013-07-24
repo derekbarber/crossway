@@ -12,18 +12,38 @@
   </div>
 
   <div class="span4">
-
     <div class="content">
-      <%= link_to image_tag("connect/ministries.png"), connect_ministries_path %>
+      <%= link_to image_tag("connect/family-ministries.png"), :controller => 'site', :action => 'family_ministries' %>
     </div>
   </div>
-  
-  <div class="span4">
 
+  <div class="span4">
+    <div class="content">
+      <%= link_to image_tag("connect/outreach-ministries.png"), :controller => 'site', :action => 'outreach_ministries' %>
+    </div>
+  </div>
+</div>
+
+<div class="row one-column">
+
+  <div class="span4">
+    <div class="content">
+      <%= link_to image_tag("connect/service-ministries.png"), :controller => 'site', :action => 'service_ministries' %>
+    </div>
+  </div>
+
+  <div class="span4">
     <div class="content">
       <%= link_to image_tag("connect/the-city.png"), :controller => 'site', :action => 'the_city' %>
     </div>
   </div>
+
+  <div class="span4">
+    <div class="content">
+      <%= link_to image_tag("connect/creative-ministries.png"), :controller => 'site', :action => 'creative_ministries' %>
+    </div>
+  </div>
+
 </div>
 
 </div>

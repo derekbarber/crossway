@@ -16,7 +16,48 @@
 </div>
 
 <div class="row">
-  <div class="span6">
+  <div class="span4">
+    <div class="well">
+      <h3>Online Giving</h3>
+
+      <%= form_tag charges_path do %>
+        <article>
+          <label class="amount">
+            <span>Please specify the amount you would like to donate to the work of ministry at Crossway Church: </span>
+            <div class="input-prepend input-append">
+              <span class="add-on">$</span>
+              <input class="span2" id="charge_amount" name="charge_amount" type="text">
+            </div>
+          </label>
+        </article>
+
+        <button id="donateButton" class="btn btn-primary">Donate</button>
+
+        <script>
+           $('#donateButton').click(function(){
+             var token = function(res){
+               var $input = $('<input type=hidden name=stripeToken />').val(res.id);
+               $('form').append($input).submit();
+             };
+
+             StripeCheckout.open({
+               key:         '<%= Rails.configuration.stripe[:publishable_key] %>',
+               address:     true,
+               amount:      $('#charge_amount').val()*100,
+               name:        'Crossway Church',
+               description: 'Online Donation',
+               panelLabel:  'Checkout',
+               token:       token
+             });
+
+             return false;
+           });
+         </script>
+
+      <% end %>
+    </div>
+  </div>
+  <div class="span4">
     <div class="well">
       <h3>Debit / Preauthorized Payment</h3>
       <p>Please visit the Info Centre on a Sunday to give using our debit machine. You can also sign up there
@@ -24,7 +65,7 @@
         monthly basis.</p>
     </div>
   </div>
-  <div class="span6">
+  <div class="span4">
     <div class="well">
       <h3>Cash & Cheques</h3>
       <p>Please make cheques payable to Crossway Church. These cheques may be dropped in the offering basket

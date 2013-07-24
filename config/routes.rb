@@ -14,29 +14,33 @@ Crossway::Application.routes.draw do
   #delete ':id', to: 'pages#destroy', as: :page
   
   match 'contact' => 'contact#new', :as => 'contact', :via => :get
-  match 'contact' => 'contact#create', :as => 'contact', :via => :post
+  resources :contact
+  #match 'contact' => 'contact#create', :as => 'contact', :via => :post
 
-  match '/home',   to: 'site#home'
-  match '/news',   to: 'site#news'
-  match '/events',   to: 'site#events'
-  match '/visit',   to: 'site#visit'
-  match '/god',   to: 'site#god'
-  match '/connect',   to: 'site#connect'
-  match '/connect/community-groups', to: 'site#community_groups'
-  match '/connect/ministries',   to: 'site#ministries'
-  match '/connect/the-city',   to: 'site#the_city'
-  match '/give',   to: 'site#give'
-  match '/give-new',   to: 'site#give-new'
-  match '/resources',   to: 'site#resources'
-  match '/identity',   to: 'site#identity'
-  match '/identity/statement-of-faith',   to: 'site#statement_of_faith'
-  match '/identity/recommended-ministries',   to: 'site#recommended_ministries'
-  match '/identity/partnerships',   to: 'site#partnerships'
-  match '/identity/staff',   to: 'site#staff'
-  match '/identity/lay-elders',   to: 'site#lay_elders'
+  get '/home',   to: 'site#home'
+  get '/news',   to: 'site#news'
+  get '/events',   to: 'site#events'
+  get '/visit',   to: 'site#visit'
+  get '/god',   to: 'site#god'
+  get '/connect',   to: 'site#connect'
+  get '/connect/community-groups', to: 'site#community_groups'
+  get '/connect/ministries',   to: 'site#ministries'
+  get '/connect/family-ministries',   to: 'site#family_ministries'
+  get '/connect/outreach-ministries',   to: 'site#outreach_ministries'
+  get '/connect/service-ministries',   to: 'site#service_ministries'
+  get '/connect/creative-ministries',   to: 'site#creative_ministries'
+  get '/connect/the-city',   to: 'site#the_city'
+  get '/give',   to: 'site#give'
+  get '/resources',   to: 'site#resources'
+  get '/identity',   to: 'site#identity'
+  get '/identity/statement-of-faith',   to: 'site#statement_of_faith'
+  get '/identity/recommended-ministries',   to: 'site#recommended_ministries'
+  get '/identity/partnerships',   to: 'site#partnerships'
+  get '/identity/staff',   to: 'site#staff'
+  get '/identity/lay-elders',   to: 'site#lay_elders'
   
-  match '/terms', to: 'site#terms'
-  match '/sitemap', to: 'site#sitemap'
+  get '/terms', to: 'site#terms'
+  get '/sitemap', to: 'site#sitemap'
 
   namespace :admin do
     root to: "home#index"
