@@ -27,14 +27,6 @@ GIT
       sax-machine (~> 0.2.0.rc1)
 
 GIT
-  remote: git://github.com/plataformatec/mail_form.git
-  revision: 9eb221a9c5e3f6dad631a547c7518fc0d1cde070
-  specs:
-    mail_form (1.5.0.rc)
-      actionmailer (>= 3.2, < 5)
-      activemodel (>= 3.2, < 5)
-
-GIT
   remote: git://github.com/plataformatec/simple_form.git
   revision: 87323fd625802f3aea7fd7d8a2fd64016b18cdaa
   specs:
@@ -296,7 +288,6 @@ DEPENDENCIES
   jquery-migrate-rails
   jquery-rails
   jquery-ui-rails
-  mail_form (~> 1.5.0.rc)!
   mediaelement_rails
   mini_magick
   pg

@@ -4,16 +4,13 @@ class ContactController < ApplicationController
   end
 
   def create
-    begin
-      @contact_form = ContactForm.new(params[:contact_form])
-      @contact_form.request = request
-      if @contact_form.deliver
-        redirect_to root_url, notice: "Message sent! Thank you for contacting us."
-      else 
-        render :new 
-      end
-    rescue
-      ScriptError flash[:error] = 'Sorry, this message appears to be spam and was not delivered.' 
+    @contact_form = ContactForm.new(params[:contact_form])
+    if @contact_form.valid?
+      NotificationsMailer.new_message(@contact_form).deliver
+      redirect_to root_url, notice: "Message sent! Thank you for contacting us."
+    else
+      flash.now.alert = "Please fill all fields."
+      render "new"
     end
   end
 end
