@@ -3,9 +3,9 @@ class SermonSeriesController < ApplicationController
   # GET /sermon_series
   # GET /sermon_series.json
   def index
-    @sermon_series = SermonSeries.order("start_date desc").where(:current_series => false)
+    @sermon_series = SermonSeries.order("start_date desc")
 
-    @current_sermon_series = SermonSeries.where(:current_series => true).first
+    #@current_sermon_series = SermonSeries.where(:current_series => true).first
 
     @latest_sermon = Sermon.order("date desc").first
 

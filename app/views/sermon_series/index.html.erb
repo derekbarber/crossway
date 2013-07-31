@@ -6,21 +6,7 @@
 
 <p id="notice"><%= notice %></p>
 
-<h2>Sermon Series</h2>
-
-<div class="row">
-  <div class="span12">
-    <div class="images">
-    <%= link_to image_tag(@current_sermon_series.banner_image_url, :class => "captify",
-                          :alt => "Current Sermon Series - #{@current_sermon_series.title}"), @current_sermon_series,
-              { :title => "Current Sermon Series - #{@current_sermon_series.title}"} if @current_sermon_series.banner_image? %>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="span12" style="height: 40px;">&nbsp;</div>
-</div>
+<h2>Sermon Series Archive</h2>
 
 <div class="row">
   <% row_count = 0 %>
