@@ -14,9 +14,9 @@
 
 <div class="row">
   <div class="span6">
-    <%= link_to image_tag("identity/staff.png"), identity_staff_path %>
+    <%= link_to image_tag("identity/staff.png"), :controller => 'people', :action => 'staff' %>
   </div>
   <div class="span6">
-    <%= link_to image_tag("identity/lay-elders.png"), :controller => 'site', :action => 'lay_elders' %>
+    <%= link_to image_tag("identity/lay-elders.png"), :controller => 'people', :action => 'lay_elders' %>
   </div>
 </div>

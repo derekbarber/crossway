@@ -7,6 +7,7 @@ Crossway::Application.routes.draw do
   resources :sermons, :only => [:index, :show]
   resources :sermon_series, :only => [:index, :show]
   resources :charges
+  resources :people, :only => [:index, :show]
 
   #resources :pages, except: :show
   #get ':id', to: 'pages#show', as: :page
@@ -36,9 +37,10 @@ Crossway::Application.routes.draw do
   get '/identity/statement-of-faith',   to: 'site#statement_of_faith'
   get '/identity/recommended-ministries',   to: 'site#recommended_ministries'
   get '/identity/partnerships',   to: 'site#partnerships'
-  get '/identity/staff',   to: 'site#staff'
-  get '/identity/lay-elders',   to: 'site#lay_elders'
-  
+
+  get '/identity/staff',   to: 'people#staff'
+  get '/identity/lay-elders',   to: 'people#lay_elders'
+
   get '/terms', to: 'site#terms'
   get '/sitemap', to: 'site#sitemap'
 

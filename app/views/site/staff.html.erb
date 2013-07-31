@@ -30,7 +30,6 @@
     </div>
 
     <div class="span3">
-
       <div class="aside">
         <h5>Staff</h5>
 
@@ -61,7 +60,7 @@
     <div class="span3">
       <ul class="thumbnails">
         <li class="span3">
-          <%= link_to({ :controller => "site", :action => "staff", :id => staff.id }, { :class => "thumbnail" }) do %>
+          <%= link_to({ :controller => "site", :action => "staff", :id => staff.id}, { :class => "thumbnail" }) do %>
             <% if staff.image_url %>
               <%= image_tag(staff.image_url) %>
             <% else %>

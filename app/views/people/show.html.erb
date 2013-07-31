@@ -1,0 +1,62 @@
+<ul class="breadcrumb">
+  <li><%= link_to "Home", root_path %> <span class="divider">/</span></li>
+  <li><%= link_to "Identity", identity_path %> <span class="divider">/</span></li>
+  <% if @person.is_staff? %>
+    <li><%= link_to "Staff", :controller => "people", :action => "staff" %> <span class="divider">/</span></li>
+    <li class="active"><%= @person.name %></li>
+  <% elsif @person.is_lay_elder? %>
+    <li><%= link_to "Lay Elders", :controller => "people", :action => "lay_elders" %> <span class="divider">/</span></li>
+    <li class="active"><%= @person.name %></li>
+  <% end %>
+</ul>
+
+<div class="row">
+
+  <div class="span9">
+    <div class="media">
+      <a class="pull-left">
+        <% if @person.image_url %>
+          <%= image_tag(@person.image_url, :class => 'media-object') %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x160", :class => 'media-object') %>
+        <% end %>
+      </a>
+      <div class="media-body">
+        <h3 class="media-heading"><%= @person.name %></h3>
+        <h4><%= @person.title %></h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="span3">
+    <div class="aside">
+      <% if @person.is_staff? %>
+        <h5>Staff</h5>
+
+        <ul class="unstyled">
+          <% @staff.each do |staff| %>
+          <li style="margin-bottom: 10px;"><i class="icon-chevron-right"></i>&nbsp;<%= link_to staff.name, person_path(staff) %></li>
+          <% end %>
+        </ul>
+      <% elsif @person.is_lay_elder? %>
+        <h5>Lay Elders</h5>
+        
+        <ul class="unstyled">
+          <% @lay_elders.each do |lay_elder| %>
+          <li style="margin-bottom: 10px;"><i class="icon-chevron-right"></i>&nbsp;<%= link_to lay_elder.name, person_path(lay_elder) %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span12">
+    <%= @person.content.html_safe %>
+  </div>
+</div>
+
+<div class="row">
+<div class="span12" style="height: 40px;"> </div>
+</div>
