@@ -16,10 +16,13 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
-
+    @article = Article.friendly.find(params[:id])
     @articles = Article.last(4)
-    
+
+    if request.path != article_path(@article)
+      redirect_to @article, status: :moved_permanently
+    end
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @article }

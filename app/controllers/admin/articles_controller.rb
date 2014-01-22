@@ -30,7 +30,7 @@ module Admin
 
     # GET /articles/1/edit
     def edit
-      @article = Article.find(params[:id])
+      @article = Article.friendly.find(params[:id])
     end
 
     # POST /articles
@@ -52,7 +52,7 @@ module Admin
     # PUT /articles/1
     # PUT /articles/1.json
     def update
-      @article = Article.find(params[:id])
+      @article = Article.friendly.find(params[:id])
 
       respond_to do |format|
         if @article.update_attributes(params[:article])
@@ -68,7 +68,7 @@ module Admin
     # DELETE /articles/1
     # DELETE /articles/1.json
     def destroy
-      @article = Article.find(params[:id])
+      @article = Article.friendly.find(params[:id])
       @article.destroy
 
       respond_to do |format|

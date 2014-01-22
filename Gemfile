@@ -1,16 +1,16 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
+ruby '2.1.0'
 
-gem 'rails', '4.0.0'
+gem 'rails', '4.0.2'
 
 gem 'bootstrap-sass', '~> 2.3.2.0'
 gem 'carrierwave'
 gem 'ckeditor'
-gem 'coffee-rails', '~> 4.0.0'
 gem 'feedzirra', github: "pauldix/feedzirra"
 gem 'font-awesome-rails'
-gem 'inherited_resources', github: 'josevalim/inherited_resources'
+gem 'friendly_id'
+gem 'inherited_resources'
 gem 'jquery-rails'
 gem 'jquery-migrate-rails'
 gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
@@ -19,9 +19,7 @@ gem 'mediaelement_rails'
 gem 'mini_magick'
 gem 'pg'
 gem "ransack", github: "ernie/ransack", branch: "rails-4"
-gem 'rmagick'
-gem 'sass-rails',   '~> 4.0.0'
-gem 'simple_form', '~> 3.0.0.rc', github: 'plataformatec/simple_form'
+gem 'simple_form'
 gem 'sitemap_generator'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'will_paginate'
@@ -31,6 +29,11 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
+# Gems used only for assets and not required
+# in production environments by default.
+gem 'sass-rails'
+gem 'coffee-rails'
+
 group :test do
   gem "factory_girl_rails"
   gem 'capybara'
@@ -38,7 +41,7 @@ group :test do
   gem 'ruby-prof'
 end
 
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'unicorn'
 gem 'capistrano'
 gem 'capistrano-rbenv'
