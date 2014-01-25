@@ -1,6 +1,6 @@
 require "bundler/capistrano"
 require "capistrano-rbenv"
-set :rbenv_ruby_version, "2.0.0-p247"
+set :rbenv_ruby_version, "2.1.0"
 
 server "173.255.247.219", :web, :app, :db, primary: true
 

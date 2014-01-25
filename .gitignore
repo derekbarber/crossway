@@ -18,3 +18,5 @@
 public/uploads
 /config/database.yml
 /config/initializers/stripe.rb
+
+Gemfile.lock
