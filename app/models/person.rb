@@ -1,5 +1,5 @@
 class Person < ActiveRecord::Base
-  attr_accessible :content, :image, :name, :title, :role, :enabled, :display_order
+  #attr_accessible :content, :image, :name, :title, :role, :enabled, :display_order
 
   mount_uploader :image, PersonImageUploader
 

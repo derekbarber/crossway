@@ -1,7 +1,5 @@
 class SermonSeriesController < ApplicationController
 
-  # GET /sermon_series
-  # GET /sermon_series.json
   def index
     @sermon_series = SermonSeries.order("start_date desc")
 
@@ -15,8 +13,6 @@ class SermonSeriesController < ApplicationController
     end
   end
 
-  # GET /sermon_series/1
-  # GET /sermon_series/1.json
   def show
     @sermon_series = SermonSeries.find(params[:id])
     @sermons = @sermon_series.sermons.order("date asc").all

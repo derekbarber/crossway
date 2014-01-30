@@ -1,5 +1,6 @@
 module Admin
   class ArticlesController < ApplicationController
+    before_action :load_article, only: [:edit, :update, :destroy]
     before_filter :authorize
 
     # GET /articles
@@ -17,26 +18,16 @@ module Admin
       end
     end
 
-    # GET /articles/new
-    # GET /articles/new.json
+
     def new
       @article = Article.new
-
-      respond_to do |format|
-        format.html # new.html.erb
-        format.json { render json: @article }
-      end
     end
 
-    # GET /articles/1/edit
     def edit
-      @article = Article.friendly.find(params[:id])
     end
 
-    # POST /articles
-    # POST /articles.json
     def create
-      @article = Article.new(params[:article])
+      @article = Article.new(article_params)
 
       respond_to do |format|
         if @article.save
@@ -49,32 +40,27 @@ module Admin
       end
     end
 
-    # PUT /articles/1
-    # PUT /articles/1.json
     def update
-      @article = Article.friendly.find(params[:id])
-
-      respond_to do |format|
-        if @article.update_attributes(params[:article])
-          format.html { redirect_to admin_articles_url, notice: 'Article was successfully updated.' }
-          format.json { head :no_content }
-        else
-          format.html { render action: "edit" }
-          format.json { render json: @article.errors, status: :unprocessable_entity }
-        end
+      if @article.update_attributes(article_params)
+        redirect_to admin_articles_url, notice: 'Article was successfully updated.'
+      else
+        render action: "edit"
       end
     end
 
-    # DELETE /articles/1
-    # DELETE /articles/1.json
     def destroy
-      @article = Article.friendly.find(params[:id])
       @article.destroy
+      redirect_to admin_articles_url, notice: 'Article was successfully destroyed.'
+    end
 
-      respond_to do |format|
-        format.html { redirect_to admin_articles_url }
-        format.json { head :no_content }
-      end
+  private
+
+    def load_article
+      @article = Article.friendly.find(params[:id])
+    end
+
+    def article_params
+      params.require(:article).permit(:author, :content, :published_at, :title, :image, :status)
     end
   end
 end

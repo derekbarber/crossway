@@ -59,5 +59,10 @@ module Admin
         format.json { head :no_content }
       end
     end
+  private
+
+    def user_params
+      params.require(:article).permit(:author, :content, :published_at, :title, :image, :status)
+    end
   end
 end

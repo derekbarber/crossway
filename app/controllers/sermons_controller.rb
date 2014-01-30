@@ -1,6 +1,5 @@
 class SermonsController < ApplicationController
-  # GET /sermons
-  # GET /sermons.json
+
   def index
     @sermons = Sermon.order("date desc").all
 
@@ -8,13 +7,11 @@ class SermonsController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @sermons }
       format.rss { render :layout => false }
-      
+
       format.atom { redirect_to feed_path(:format => :rss), :status => :moved_permanently }
     end
   end
 
-  # GET /sermons/1
-  # GET /sermons/1.json
   def show
     @sermon = Sermon.find(params[:id])
     @sermon_series = SermonSeries.find(@sermon.sermon_series_id)

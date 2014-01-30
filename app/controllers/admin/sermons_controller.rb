@@ -2,8 +2,6 @@ module Admin
   class SermonsController < ApplicationController
     before_filter :authorize
 
-    # GET /sermons
-    # GET /sermons.json
     def index
       @sermons = Sermon.all
 
@@ -13,8 +11,6 @@ module Admin
       end
     end
 
-    # GET /sermons/new
-    # GET /sermons/new.json
     def new
       @sermon = Sermon.new
       @sermon_series = SermonSeries.all.collect { |sermon_series| [sermon_series.title, sermon_series.id] }
@@ -25,16 +21,13 @@ module Admin
       end
     end
 
-    # GET /sermons/1/edit
     def edit
       @sermon = Sermon.find(params[:id])
       @sermon_series = SermonSeries.all.collect { |sermon_series| [sermon_series.title, sermon_series.id] }
     end
 
-    # POST /sermons
-    # POST /sermons.json
     def create
-      @sermon = Sermon.new(params[:sermon])
+      @sermon = Sermon.new(sermon_params)
       
       respond_to do |format|
         if @sermon.save
@@ -47,13 +40,11 @@ module Admin
       end
     end
 
-    # PUT /sermons/1
-    # PUT /sermons/1.json
     def update
       @sermon = Sermon.find(params[:id])
 
       respond_to do |format|
-        if @sermon.update_attributes(params[:sermon])
+        if @sermon.update_attributes(sermon_params)
           format.html { redirect_to admin_sermons_url, notice: 'Sermon was successfully updated.' }
           format.json { head :no_content }
         else
@@ -63,8 +54,6 @@ module Admin
       end
     end
 
-    # DELETE /sermons/1
-    # DELETE /sermons/1.json
     def destroy
       @sermon = Sermon.find(params[:id])
       @sermon.destroy
@@ -73,6 +62,13 @@ module Admin
         format.html { redirect_to admin_sermons_url }
         format.json { head :no_content }
       end
+    end
+
+  private
+
+    def sermon_params
+      params.require(:sermon).permit(:audio_file, :date, :description, :scripture_reference, :sermon_series_id, 
+        :speaker, :title, :video_embed, :audio_file_duration)
     end
   end
 end

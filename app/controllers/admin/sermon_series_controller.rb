@@ -1,9 +1,7 @@
 module Admin
   class SermonSeriesController < ApplicationController
     before_filter :authorize
-    
-    # GET /sermon_series
-    # GET /sermon_series.json
+
     def index
       @sermon_series = SermonSeries.all
 
@@ -13,8 +11,6 @@ module Admin
       end
     end
 
-    # GET /sermon_series/new
-    # GET /sermon_series/new.json
     def new
       @sermon_series = SermonSeries.new
 
@@ -24,15 +20,12 @@ module Admin
       end
     end
 
-    # GET /sermon_series/1/edit
     def edit
       @sermon_series = SermonSeries.find(params[:id])
     end
 
-    # POST /sermon_series
-    # POST /sermon_series.json
     def create
-      @sermon_series = SermonSeries.new(params[:sermon_series])
+      @sermon_series = SermonSeries.new(sermon_series_params)
 
       respond_to do |format|
         if @sermon_series.save
@@ -45,13 +38,11 @@ module Admin
       end
     end
 
-    # PUT /sermon_series/1
-    # PUT /sermon_series/1.json
     def update
       @sermon_series = SermonSeries.find(params[:id])
 
       respond_to do |format|
-        if @sermon_series.update_attributes(params[:sermon_series])
+        if @sermon_series.update_attributes(sermon_series_params)
           format.html { redirect_to admin_sermon_series_index_path, notice: 'Sermon series was successfully updated.' }
           format.json { head :no_content }
         else
@@ -61,8 +52,6 @@ module Admin
       end
     end
 
-    # DELETE /sermon_series/1
-    # DELETE /sermon_series/1.json
     def destroy
       @sermon_series = SermonSeries.find(params[:id])
       @sermon_series.destroy
@@ -71,6 +60,13 @@ module Admin
         format.html { redirect_to admin_sermon_series_index_path }
         format.json { head :no_content }
       end
+    end
+
+  private
+
+    def sermon_series_params
+      params.require(:sermon_series).permit(:banner_image, :button_image, :current_series, :description, 
+        :end_date, :start_date, :title, :banner_image_url, :button_image_url)
     end
   end
 end
