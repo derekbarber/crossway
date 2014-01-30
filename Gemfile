@@ -6,7 +6,7 @@ gem 'rails', '4.0.2'
 
 gem 'bootstrap-sass', '~> 2.3.2.0'
 gem 'carrierwave'
-gem 'ckeditor'
+gem 'bootsy'
 gem 'feedzirra', github: "pauldix/feedzirra"
 gem 'font-awesome-rails'
 gem 'friendly_id'
@@ -45,8 +45,5 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'unicorn'
 gem 'capistrano', '2.15.5'
 gem 'capistrano-rbenv', '1.0.5'
-
-# add these gems to help with the transition:
-gem 'protected_attributes'
 
 # gem 'debugger'
