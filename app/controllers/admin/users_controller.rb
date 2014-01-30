@@ -18,7 +18,7 @@ module Admin
     end
 
     def create
-      @user = User.new(params[:user])
+      @user = User.new(user_params)
       if @user.save
         session[:user_id] = @user.id
         redirect_to admin_users_url, notice: "User was successfully created."
@@ -38,7 +38,7 @@ module Admin
       @user = User.find(params[:id])
 
       respond_to do |format|
-        if @user.update_attributes(params[:user])
+        if @user.update_attributes(user_params)
           format.html { redirect_to admin_users_path, notice: 'User was successfully updated.' }
           format.json { head :no_content }
         else
@@ -62,7 +62,7 @@ module Admin
   private
 
     def user_params
-      params.require(:article).permit(:author, :content, :published_at, :title, :image, :status)
+      params.require(:user).permit(:name, :username, :email, :password, :password_confirmation)
     end
   end
 end

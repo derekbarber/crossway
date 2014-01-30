@@ -6,7 +6,7 @@
     <%= f.input :author %>
     <%= f.input :published_at %>
     <%= f.input :image, :as => :file %>
-    <%= f.input :content, :as => :bootsy %>
+    <%= f.input :content, as: :text, :input_html => { :rows => 7 , :style => 'width: 100%'} %>
     <%= f.input :status, :input_html => { :class => 'span3' }, :collection => { 1 => "Published", 2 => "Draft" } %>
   </div>
 

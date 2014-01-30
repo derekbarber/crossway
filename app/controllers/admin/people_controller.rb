@@ -43,7 +43,7 @@ module Admin
     end
 
     def person_params
-      params.require(:person).permit(:content, :image, :name, :title, :role, :enabled, :display_order)
+      params.require(:person).permit(:content, :image, :name, :title, :role, :enabled, :display_order, :bootsy_image_gallery_id)
     end
   end
 end
