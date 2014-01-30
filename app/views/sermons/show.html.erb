@@ -51,7 +51,7 @@
 
         <ol>
           <% @sermons.each do |sermon| %>
-          <li style="margin-bottom: 10px;">&nbsp;<%= link_to "#{sermon.title} (#{sermon.scripture_reference})", sermon %></li>
+            <li style="margin-bottom: 10px;">&nbsp;<%= link_to "#{sermon.full_title}", sermon %></li>
           <% end %>
         </ol>
       </div>
