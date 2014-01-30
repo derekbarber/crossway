@@ -1,7 +1,6 @@
 Crossway::Application.routes.draw do
 
-  mount Ckeditor::Engine => '/ckeditor'
-
+  mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   resources :articles, :only => [:index, :show]
   resources :posts
   resources :sermons, :only => [:index, :show]

@@ -13,10 +13,10 @@
 //= require jquery
 //= require jquery-migrate-min
 //= require jquery_ujs
+//= require bootsy
 //= require bootstrap
 //= require captify
 //= require mediaelement_rails
-//= require ckeditor/init
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
 //= require_tree .
