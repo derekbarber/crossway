@@ -3,7 +3,7 @@ class ContactForm
   include ActiveModel::Conversion
   extend ActiveModel::Naming
 
-  attr_accessor :name, :email, :content
+  #attr_accessor :name, :email, :content
 
   validates :name, :email, :content, :presence => true
   validates :email, :format => { :with => %r{.+@.+\..+} }, :allow_blank => true
