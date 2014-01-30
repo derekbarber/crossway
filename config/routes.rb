@@ -8,11 +8,6 @@ Crossway::Application.routes.draw do
   resources :charges
   resources :people, :only => [:index, :show]
 
-  #resources :pages, except: :show
-  #get ':id', to: 'pages#show', as: :page
-  #put ':id', to: 'pages#update', as: :page
-  #delete ':id', to: 'pages#destroy', as: :page
-  
   match 'contact' => 'contact#new', :as => 'contact', :via => :get
   resources :contact
   #match 'contact' => 'contact#create', :as => 'contact', :via => :post
