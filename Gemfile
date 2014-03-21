@@ -1,27 +1,29 @@
 source 'https://rubygems.org'
 
-ruby '2.1.0'
+ruby '2.1.1'
 
-gem 'rails', '4.0.3'
+gem 'rails', '4.0.4'
 
-gem 'bootstrap-sass', '~> 2.3.2.0'
+gem 'bootstrap-sass', '~> 3.1.0'
+gem 'bootstrap_form'
 gem 'carrierwave'
 gem 'bootsy'
-gem 'feedzirra', github: "pauldix/feedzirra"
+gem 'devise'
+gem 'feedzirra'
 gem 'font-awesome-rails'
 gem 'friendly_id'
+gem 'haml-rails'
 gem 'inherited_resources'
 gem 'jquery-rails'
 gem 'jquery-migrate-rails'
-gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 gem 'jquery-ui-rails'
 gem 'mediaelement_rails'
 gem 'mini_magick'
 gem 'pg'
-gem "ransack", github: "ernie/ransack", branch: "rails-4"
-gem 'simple_form'
+gem "ransack"
 gem 'sitemap_generator'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'rails_admin'
 gem 'will_paginate'
 gem 'uglifier', '>= 1.3.0'
 

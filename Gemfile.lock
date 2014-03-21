@@ -1,33 +1,4 @@
 GIT
-  remote: git://github.com/ernie/ransack.git
-  revision: 0a77a1b89cf6e00e0a63f93bfebaa7934a21ce93
-  branch: rails-4
-  specs:
-    ransack (1.1.0)
-      actionpack (>= 4.0)
-      activerecord (>= 4.0)
-      activesupport (>= 4.0)
-      i18n
-      polyamorous (~> 0.6.0)
-
-GIT
-  remote: git://github.com/pauldix/feedzirra.git
-  revision: 18832a89e2860488b3380d87583c354924d43743
-  specs:
-    feedzirra (0.7.1)
-      curb (~> 0.8.1)
-      loofah (~> 1.2.1)
-      sax-machine (~> 0.2.1)
-
-GIT
-  remote: git://github.com/rweng/jquery-datatables-rails.git
-  revision: 788a7b24caf8fe58a5493aa3f6a065879a9f752a
-  specs:
-    jquery-datatables-rails (1.12.2)
-      jquery-rails
-      sass-rails
-
-GIT
   remote: https://github.com/stripe/stripe-ruby
   revision: 637d5899f614a6f4d0fa2147f9b3b8b1c8b39b28
   specs:
@@ -39,37 +10,40 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    actionmailer (4.0.3)
-      actionpack (= 4.0.3)
+    actionmailer (4.0.4)
+      actionpack (= 4.0.4)
       mail (~> 2.5.4)
-    actionpack (4.0.3)
-      activesupport (= 4.0.3)
+    actionpack (4.0.4)
+      activesupport (= 4.0.4)
       builder (~> 3.1.0)
       erubis (~> 2.7.0)
       rack (~> 1.5.2)
       rack-test (~> 0.6.2)
-    activemodel (4.0.3)
-      activesupport (= 4.0.3)
+    activemodel (4.0.4)
+      activesupport (= 4.0.4)
       builder (~> 3.1.0)
-    activerecord (4.0.3)
-      activemodel (= 4.0.3)
+    activerecord (4.0.4)
+      activemodel (= 4.0.4)
       activerecord-deprecated_finders (~> 1.0.2)
-      activesupport (= 4.0.3)
+      activesupport (= 4.0.4)
       arel (~> 4.0.0)
     activerecord-deprecated_finders (1.0.3)
-    activesupport (4.0.3)
-      i18n (~> 0.6, >= 0.6.4)
+    activesupport (4.0.4)
+      i18n (~> 0.6, >= 0.6.9)
       minitest (~> 4.2)
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     arel (4.0.2)
-    atomic (1.1.14)
-    bcrypt-ruby (3.1.2)
-    bootstrap-sass (2.3.2.2)
+    atomic (1.1.16)
+    bcrypt (3.1.7)
+    bcrypt-ruby (3.1.5)
+      bcrypt (>= 3.1.3)
+    bootstrap-sass (3.1.1.0)
       sass (~> 3.2)
-    bootsy (2.0.6)
-      carrierwave (~> 0.9.0)
+    bootstrap_form (2.0.1)
+    bootsy (2.0.7)
+      carrierwave (~> 0.10.0)
       mini_magick (~> 3.7.0)
       remotipart (~> 1.2.1)
     builder (3.1.4)
@@ -90,10 +64,11 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    carrierwave (0.9.0)
+    carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       json (>= 1.7)
+      mime-types (>= 1.16)
     celluloid (0.15.2)
       timers (~> 1.1.0)
     celluloid-io (0.15.0)
@@ -107,34 +82,47 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
-    curb (0.8.5)
+    devise (3.2.4)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.0.2)
     factory_girl (4.4.0)
       activesupport (>= 3.0.0)
-    factory_girl_rails (4.4.0)
+    factory_girl_rails (4.4.1)
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
+    feedzirra (0.8.0)
     ffi (1.9.3)
     font-awesome-rails (4.0.3.1)
       railties (>= 3.2, < 5.0)
     formatador (0.2.4)
     friendly_id (5.0.3)
       activerecord (>= 4.0.0)
-    guard (2.4.0)
+    guard (2.5.1)
       formatador (>= 0.2.4)
-      listen (~> 2.1)
+      listen (~> 2.6)
       lumberjack (~> 1.0)
       pry (>= 0.9.12)
       thor (>= 0.18.1)
-    guard-rspec (4.2.6)
+    guard-rspec (4.2.8)
       guard (~> 2.1)
       rspec (>= 2.14, < 4.0)
+    haml (4.0.5)
+      tilt
+    haml-rails (0.5.3)
+      actionpack (>= 4.0.1)
+      activesupport (>= 4.0.1)
+      haml (>= 3.1, < 5.0)
+      railties (>= 4.0.1)
     has_scope (0.6.0.rc)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
-    highline (1.6.20)
+    highline (1.6.21)
     hike (1.2.3)
     i18n (0.6.9)
     inherited_resources (1.4.1)
@@ -147,19 +135,20 @@ GEM
     jquery-ui-rails (4.2.0)
       railties (>= 3.2.16)
     json (1.8.1)
+    kaminari (0.15.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     kgio (2.9.2)
-    listen (2.5.0)
+    listen (2.7.1)
       celluloid (>= 0.15.2)
       celluloid-io (>= 0.15.0)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
-    loofah (1.2.1)
-      nokogiri (>= 1.4.4)
     lumberjack (1.0.4)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mediaelement_rails (0.5.1)
+    mediaelement_rails (0.7.0)
       jquery-rails (>= 1.0)
       railties (>= 3.1)
     method_source (0.8.2)
@@ -168,7 +157,8 @@ GEM
       subexec (~> 0.2.1)
     mini_portile (0.5.2)
     minitest (4.7.5)
-    multi_json (1.8.4)
+    multi_json (1.9.2)
+    nested_form (0.3.2)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
@@ -179,6 +169,7 @@ GEM
     nio4r (1.0.0)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
+    orm_adapter (0.5.0)
     pg (0.17.1)
     polyamorous (0.6.4)
       activerecord (>= 3.0)
@@ -188,23 +179,44 @@ GEM
       method_source (~> 0.8)
       slop (~> 3.4)
     rack (1.5.2)
+    rack-pjax (0.7.0)
+      nokogiri (~> 1.5)
+      rack (~> 1.3)
     rack-test (0.6.2)
       rack (>= 1.0)
-    rails (4.0.3)
-      actionmailer (= 4.0.3)
-      actionpack (= 4.0.3)
-      activerecord (= 4.0.3)
-      activesupport (= 4.0.3)
+    rails (4.0.4)
+      actionmailer (= 4.0.4)
+      actionpack (= 4.0.4)
+      activerecord (= 4.0.4)
+      activesupport (= 4.0.4)
       bundler (>= 1.3.0, < 2.0)
-      railties (= 4.0.3)
+      railties (= 4.0.4)
       sprockets-rails (~> 2.0.0)
-    railties (4.0.3)
-      actionpack (= 4.0.3)
-      activesupport (= 4.0.3)
+    rails_admin (0.6.1)
+      builder (~> 3.1)
+      coffee-rails (~> 4.0)
+      font-awesome-rails (>= 3.0)
+      haml (~> 4.0)
+      jquery-rails (~> 3.0)
+      jquery-ui-rails (~> 4.0)
+      kaminari (~> 0.14)
+      nested_form (~> 0.3)
+      rack-pjax (~> 0.7)
+      rails (~> 4.0)
+      remotipart (~> 1.0)
+      safe_yaml (~> 1.0)
+      sass-rails (~> 4.0)
+    railties (4.0.4)
+      actionpack (= 4.0.4)
+      activesupport (= 4.0.4)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     raindrops (0.13.0)
     rake (10.1.1)
+    ransack (1.1.0)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
+      polyamorous (~> 0.6.0)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.3)
       ffi (>= 0.5.0)
@@ -217,7 +229,7 @@ GEM
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
-    rspec-core (2.14.7)
+    rspec-core (2.14.8)
     rspec-expectations (2.14.5)
       diff-lcs (>= 1.1.3, < 2.0)
     rspec-mocks (2.14.6)
@@ -230,20 +242,16 @@ GEM
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
     ruby-prof (0.14.2)
-    sass (3.2.14)
+    safe_yaml (1.0.1)
+    sass (3.3.3)
     sass-rails (4.0.1)
       railties (>= 4.0.0, < 5.0)
       sass (>= 3.1.10)
       sprockets-rails (~> 2.0.0)
-    sax-machine (0.2.1)
-      nokogiri (~> 1.6.0)
-    simple_form (3.0.1)
-      actionpack (>= 4.0.0, < 4.1)
-      activemodel (>= 4.0.0, < 4.1)
-    sitemap_generator (5.0.0)
+    sitemap_generator (5.0.1)
       builder
-    slop (3.4.7)
-    sprockets (2.11.0)
+    slop (3.5.0)
+    sprockets (2.12.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
@@ -254,21 +262,23 @@ GEM
       sprockets (~> 2.8)
     subexec (0.2.3)
     thor (0.18.1)
-    thread_safe (0.1.3)
-      atomic
+    thread_safe (0.2.0)
+      atomic (>= 1.1.7, < 2)
     tilt (1.4.1)
     timers (1.1.0)
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.38)
-    uglifier (2.4.0)
+    tzinfo (0.3.39)
+    uglifier (2.5.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     unicorn (4.8.2)
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    warden (1.2.3)
+      rack (>= 1.0)
     will_paginate (3.0.5)
     xpath (2.0.0)
       nokogiri (~> 1.3)
@@ -278,32 +288,34 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt-ruby (~> 3.1.2)
-  bootstrap-sass (~> 2.3.2.0)
+  bootstrap-sass (~> 3.1.0)
+  bootstrap_form
   bootsy
   capistrano (= 2.15.5)
   capistrano-rbenv (= 1.0.5)
   capybara
   carrierwave
   coffee-rails
+  devise
   factory_girl_rails
-  feedzirra!
+  feedzirra
   font-awesome-rails
   friendly_id
   guard-rspec
+  haml-rails
   inherited_resources
-  jquery-datatables-rails!
   jquery-migrate-rails
   jquery-rails
   jquery-ui-rails
   mediaelement_rails
   mini_magick
   pg
-  rails (= 4.0.3)
-  ransack!
+  rails (= 4.0.4)
+  rails_admin
+  ransack
   rspec-rails
   ruby-prof
   sass-rails
-  simple_form
   sitemap_generator
   stripe!
   uglifier (>= 1.3.0)
