@@ -1,0 +1,22 @@
+%h1 Listing books
+
+%table
+  %tr
+    %th Title
+    %th Subtitle
+    %th Author
+    %th Image
+    %th Book category
+    %th Url
+
+  - @books.each do |book|
+    %tr
+      %td= book.title
+      %td= book.subtitle
+      %td= book.author
+      %td= book.image
+      %td= book.book_category_id
+      %td= book.url
+
+%br
+
