@@ -1,6 +1,8 @@
 Crossway::Application.routes.draw do
 
-  mount Bootsy::Engine => '/bootsy', as: 'bootsy'
+  devise_for :users
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   resources :articles, :only => [:index, :show]
   resources :posts
   resources :sermons, :only => [:index, :show]
@@ -38,7 +40,7 @@ Crossway::Application.routes.draw do
   get '/terms', to: 'site#terms'
   get '/sitemap', to: 'site#sitemap'
 
-  namespace :admin do
+  namespace :manage do
     root to: "home#index"
     resources :users
     resources :people
