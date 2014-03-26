@@ -1,0 +1,48 @@
+.row
+  .col-md-10.col-md-offset-1
+    = link_to image_tag(@current_sermon_series.banner_image_url.to_s, :class => "caption img-responsive", 
+                  :"data-caption" => "Most Recent Sermon", :id => "header-image"), @latest_sermon,
+      { :title => "Latest Sermon" } if @current_sermon_series.banner_image?
+
+.row
+  .col-md-12{style: "height: 20px;"}
+
+.row
+  .col-md-10.col-md-offset-1
+    .pull-left
+      = link_to image_tag(@previous_sermon_series.button_image_url.to_s, :class => "img-thumbnail",
+        :"data-caption" => "Sermon Series Archive"),
+        { :action => 'index', :controller => 'sermon_series', :title => "Sermon Archive"}
+    .pull-left
+      = link_to image_tag("home/meetthestaff_button.png", :class => "img-thumbnail", :"data-caption" => "Meet the Staff"), identity_staff_path
+    .pull-left
+      = link_to image_tag("home/home_blog.png", :class => "img-thumbnail", :"data-caption" => "Visit the Blog"), articles_path
+    .pull-left
+      = link_to image_tag("home/home_news.png", :class => "img-thumbnail", :"data-caption" => "Latest News"), news_path
+
+.row
+  .col-md-12{style: "height: 40px;"}
+
+.row
+  .col-md-5.col-md-offset-1
+    %table.table.table-striped
+      %tr
+        %th{colspan: "2"}
+          %h4 From the Blog
+      - @articles.each do |article|
+        %tr
+          %td{style: "width: 110px;"}
+            = article.published_at.strftime("%b %d, %Y")
+          %td
+            = link_to article.title, article
+  .col-md-5
+    %table.table.table-striped
+      %tr
+        %th{colspan: "2"}
+          %h4 Latest News
+      - @entries.each do |entry|
+        %tr
+          %td{style: "width: 110px;"}
+            = entry.published.strftime("%b %d, %Y")
+          %td
+            = link_to entry.title, entry.url

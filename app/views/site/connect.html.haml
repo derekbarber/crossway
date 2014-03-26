@@ -1,0 +1,23 @@
+%ul.breadcrumb
+  %li= link_to "Home", root_path
+  %li.active Connect
+.row
+  .col-md-4
+    .content
+      = link_to image_tag("connect/community-groups.png"), :controller => 'site', :action => 'community_groups'
+  .col-md-4
+    .content
+      = link_to image_tag("connect/family-ministries.png"), :controller => 'site', :action => 'family_ministries'
+  .col-md-4
+    .content
+      = link_to image_tag("connect/outreach-ministries.png"), :controller => 'site', :action => 'outreach_ministries'
+.row
+  .col-md-4
+    .content
+      = link_to image_tag("connect/service-ministries.png"), :controller => 'site', :action => 'service_ministries'
+  .col-md-4
+    .content
+      = link_to image_tag("connect/the-city.png"), :controller => 'site', :action => 'the_city'
+  .col-md-4
+    .content
+      = link_to image_tag("connect/creative-ministries.png"), :controller => 'site', :action => 'creative_ministries'

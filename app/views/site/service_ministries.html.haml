@@ -1,0 +1,50 @@
+%ul.breadcrumb
+  %li
+    = link_to "Home", root_path
+    %span.divider /
+  %li
+    = link_to "Connect", connect_path
+    %span.divider /
+  %li.active Service Ministries
+.row.one-column
+  .col-md-4
+    = image_tag("connect/service-ministries.png")
+  .col-md-8
+    .alert.alert-block
+      %h2 Service Ministries
+      %p
+        %em "Having gifts that differ according to the grace given to us, let us use them"
+        \- Romans 12:6
+      %p
+        What goes on during a public worship service is dependent upon the contribution of many volunteers who are working behind
+        the scenes. Our Service ministries may be less visible but they are some of the most vital components of our church.
+        We are blessed to have many volunteers who serve in these various ministries week after week.
+.row
+  .col-md-12
+.row
+  .col-md-4
+    .well.well-small
+      %h4 Usher/Greeting
+  .col-md-4
+    .well.well-small
+      %h4 Info Centre
+  .col-md-4
+    .well.well-small
+      %h4 Counters
+.row
+  .col-md-4
+    .well.well-small
+      %h4 Setup
+  .col-md-4
+    .well.well-small
+      %h4 Security
+  .col-md-4
+    .well.well-small
+      %h4 Parking
+.row
+  .col-md-12
+    %h4 Get Involved
+    %p
+      To get involved in any of these service ministries, please #{link_to "get in touch with us.", contact_path}
+.row
+  .col-md-12{style: "height: 40px;"}  

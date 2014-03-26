@@ -1,0 +1,56 @@
+%ul.breadcrumb
+  %li
+    = link_to "Home", root_path
+    %span.divider /
+  %li
+    = link_to "Identity", identity_path
+    %span.divider /
+  - if @staff_profile
+    %li
+      = link_to "Staff", :controller => "site", :action => "staff"
+      %span.divider /
+    %li.active= @staff_profile.name
+  - else
+    %li.active Staff
+- if @staff_profile
+  .row
+    .col-md-9
+      .media
+        %a.pull-left
+          - if @staff_profile.image_url
+            = image_tag(@staff_profile.image_url, :class => 'media-object')
+          - else
+            = image_tag("http://placehold.it/200x160", :class => 'media-object')
+        .media-body
+          %h3.media-heading= @staff_profile.name
+          %h4= @staff_profile.title
+    .col-md-3
+      .aside
+        %h5 Staff
+        %ul.unstyled
+          - @staff.each do |staff|
+            %li{style: "margin-bottom: 10px;"}
+              %i.icon-chevron-right>
+               #{link_to staff.name, { :controller => "site", :action => "staff", :id => staff.id }}
+  .row
+    .col-md-12
+      = @staff_profile.content.html_safe
+- else
+  %h2 Staff
+  .row
+    - row_count = 0
+    - @staff.each do |staff|
+      .col-md-3
+        %ul.thumbnails
+          %li.col-md-3
+            = link_to({ :controller => "site", :action => "staff", :id => staff.id}, { :class => "thumbnail" }) do
+              - if staff.image_url
+                = image_tag(staff.image_url)
+              - else
+                %img{alt: "", src: "http://placehold.it/200x160"}/
+              %h4= staff.name
+              %p= staff.title
+      - if (((row_count+=1) % 4) == 0)
+  .row
+.row
+  .col-md-12{style: "height: 40px;"}  

@@ -1,0 +1,27 @@
+%ul.breadcrumb
+  %li
+    = link_to "Home", root_path
+    %span.divider /
+  %li.active Latest News
+%h2 Latest News
+%hr/
+.row.one-column
+  .col-md-8
+    - @entries.each do |entry|
+      %h3= entry.title
+      %p{style: "border-top: 1px #cccccc dotted; padding: 4px;"}
+        by #{entry.author} |
+        %strong= entry.published.strftime("%B %d, %Y")
+      .well.well-small
+        = simple_format entry.summary
+        .pull-right
+          = link_to "View this on The City", entry.url, :target => "blank"
+        .clearfix
+      %hr/
+  .col-md-4
+    %h5 Recent Items
+    %ul.unstyled
+      - @entries.each do |entry|
+        %li{style: "margin-bottom: 20px;"}
+          %i.icon-chevron-right>
+          \ #{link_to entry.title, entry.url}

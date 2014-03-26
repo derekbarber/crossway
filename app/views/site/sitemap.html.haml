@@ -1,0 +1,26 @@
+%ul.breadcrumb
+  %li
+    = link_to "Home", root_path
+    %span.divider /
+  %li.active Site Map
+%h2 Site Map
+.row.one-column
+  .col-md-6
+    %h3= link_to "Visit", visit_path
+    %h3= link_to "God", god_path
+    %h3= link_to "Connect", connect_path
+    %p
+    %ul
+      %li= link_to "Community Groups", :controller => 'site', :action => 'community_groups'
+      %li= link_to "Ministries", connect_ministries_path
+      %li= link_to "The City", :controller => 'site', :action => 'the_city'
+    %h3= link_to "Resources", resources_path
+  .col-md-6
+    %h3= link_to "Give", give_path
+    %h3= link_to "Identity", identity_path
+    %p
+    %ul
+      %li= link_to "Statement of Faith", :controller => 'site', :action => 'statement_of_faith'
+      %li= link_to "Recommended Ministries", :controller => 'site', :action => 'recommended_ministries'
+      %li= link_to "Staff", identity_staff_path
+      %li= link_to "Lay Elders", :controller => 'site', :action => 'lay_elders'

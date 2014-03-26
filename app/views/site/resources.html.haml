@@ -1,0 +1,30 @@
+%ul.breadcrumb
+  %li
+    = link_to "Home", root_path
+  %li.active Resources
+
+.row
+  .col-md-12{style: "height: 20px;"}
+
+.row
+  .col-md-10.col-md-offset-1
+    .images
+      = link_to image_tag(@current_sermon_series.banner_image_url, :class => "img-responsive",
+        :alt => "Current Sermon Series"), @current_sermon_series if @current_sermon_series.banner_image?
+
+.row
+  .col-md-12{style: "height: 20px;"}
+
+.row
+  .col-md-10.col-md-offset-1
+    .pull-left
+      = link_to image_tag(@previous_sermon_series.button_image_url, :class => "img-thumbnail",
+        :alt => "Previous Sermon Series"), @previous_sermon_series
+    .pull-left
+      = link_to image_tag("home/home_nehemiah.png", :class => "img-thumbnail", :alt => "Sermon Archive"),
+        { :action => 'index', :controller => 'sermon_series', :title => "Sermon Archive"}
+    .pull-left
+      = link_to image_tag("home/home_blog.png", :class => "img-thumbnail", :alt => "The Crossway Blog"), articles_path
+    .pull-left
+      = image_tag "resources/teaching.png", :class => "img-thumbnail", :alt => "Teaching"
+
