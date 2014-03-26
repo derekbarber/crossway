@@ -13,6 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require captify
-//= require mediaelement_rails
+//= require fitvids
 //= require_tree .

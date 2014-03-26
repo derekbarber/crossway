@@ -1,0 +1,22 @@
+.navbar-wrapper
+  .container
+    .navbar.navbar-inverse.navbar-static-top{role: "navigation"}
+      .container
+        .navbar-header
+          %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+        .navbar-collapse.collapse
+          %ul.nav.navbar-nav
+            = navbar_list_item "HOME", root_path
+            = navbar_list_item "VISIT", visit_path
+            = navbar_list_item "GOD", god_path
+            = navbar_list_item "CONNECT", connect_path
+            = navbar_list_item "RESOURCES", resources_path
+            = navbar_list_item "GIVE", give_path
+            = navbar_list_item "IDENTITY", identity_path
+
+          %form{class:"navbar-form navbar-right"}
+            %input{type:"text", class:"form-control", placeholder:"Search..."}
