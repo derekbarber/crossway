@@ -6,16 +6,15 @@ gem 'rails', '4.0.4'
 
 gem 'bootstrap-sass', '~> 3.1.0'
 gem 'bootstrap_form'
+gem 'bourbon'
 gem 'carrierwave'
-gem 'bootsy'
 gem 'devise'
-gem 'feedzirra'
+gem 'feedjira'
 gem 'font-awesome-rails'
 gem 'friendly_id'
 gem 'haml-rails'
 gem 'inherited_resources'
 gem 'jquery-rails'
-gem 'jquery-migrate-rails'
 gem 'jquery-ui-rails'
 gem 'mediaelement_rails'
 gem 'mini_magick'
@@ -33,7 +32,7 @@ end
 
 # Gems used only for assets and not required
 # in production environments by default.
-gem 'sass-rails'
+gem 'sass-rails', "~> 4.0.2"
 gem 'coffee-rails'
 
 group :test do
