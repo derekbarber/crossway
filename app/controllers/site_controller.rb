@@ -8,19 +8,19 @@ class SiteController < ApplicationController
 
     @articles = Article.order("published_at desc").first(4)
 
-    feed = Feedzirra::Feed.fetch_and_parse("http://crosswaycc.onthecity.org/plaza/topics?format=rss")
+    feed = Feedjira::Feed.fetch_and_parse("http://crosswaycc.onthecity.org/plaza/topics?format=rss")
     @entries = feed.entries.first(4)
 
   end
 
   def news
-    news_feed = Feedzirra::Feed.fetch_and_parse("http://crosswaycc.onthecity.org/plaza/topics?format=rss")
+    news_feed = Feedjira::Feed.fetch_and_parse("http://crosswaycc.onthecity.org/plaza/topics?format=rss")
 
     @entries = news_feed.entries
   end
 
   def events
-    event_feed = Feedzirra::Feed.fetch_and_parse("http://crosswaycc.onthecity.org/plaza/events?format=rss")
+    event_feed = Feedjira::Feed.fetch_and_parse("http://crosswaycc.onthecity.org/plaza/events?format=rss")
 
     @entries = event_feed.entries
   end
@@ -86,22 +86,6 @@ class SiteController < ApplicationController
 
   def statement_of_faith
 
-  end
-
-  def staff
-    if (params[:id])
-      @staff_profile = Person.find(params[:id])
-    end
-
-    @staff = Person.staff
-  end
-
-  def lay_elders
-    if (params[:id])
-      @elder_profile = Person.find(params[:id])
-    end
-
-    @lay_elders = Person.lay_elders
   end
 
   def sitemap

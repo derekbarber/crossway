@@ -9,7 +9,7 @@ class PeopleController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @sermon_series }
+      format.json { render json: @staff }
     end
   end
 
@@ -25,7 +25,7 @@ class PeopleController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @sermon_series }
+      format.json { render json: @lay_elders }
     end
   end
 
@@ -34,7 +34,7 @@ class PeopleController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @sermon_series }
+      format.json { render json: @staff }
     end
   end
 
@@ -43,7 +43,7 @@ class PeopleController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @sermon_series }
+      format.json { render json: @lay_elders }
     end
   end
 end
