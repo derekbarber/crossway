@@ -1,13 +1,13 @@
-<ul class="breadcrumb">
-  <li><%= link_to "Home", root_path %> <span class="divider">/</span></li>
-  <li class="active">Give</li>
-</ul>
-
-<div class="row">
-  <div class="span12">
-    <div class="well">
-
-      <h2>Thank you for your donation of <strong>$<%= @amount %>.00</strong>!</h2>
-    </div>
-  </div>
-</div>
+%ul.breadcrumb
+  %li
+    = link_to "Home", root_path
+    %span.divider /
+  %li.active Give
+.row
+  .span12
+    .well
+      %h2
+        Thank you for your donation of
+        = succeed "!" do
+          %strong
+            $#{@amount}.00

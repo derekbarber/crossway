@@ -1,15 +1,16 @@
 %ul.breadcrumb
   %li
     = link_to "Home", root_path
-    %span.divider /
   %li.active Identity
 .row
-  .col-md-6
+  .col-md-5.col-md-offset-1
     = link_to image_tag("identity/statement-of-faith.png"), :controller => 'site', :action => 'statement_of_faith'
-  .col-md-6
+  .col-md-5
     = link_to image_tag("identity/recommended-ministries.png"), :controller => 'site', :action => 'recommended_ministries'
 .row
-  .col-md-6
+  .col-md-12{style: "height: 20px;"}
+.row
+  .col-md-5.col-md-offset-1
     = link_to image_tag("identity/staff.png"), :controller => 'people', :action => 'staff'
-  .col-md-6
+  .col-md-5
     = link_to image_tag("identity/lay-elders.png"), :controller => 'people', :action => 'lay_elders'
