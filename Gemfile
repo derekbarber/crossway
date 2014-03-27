@@ -23,7 +23,6 @@ gem "ransack"
 gem 'sitemap_generator'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'rails_admin'
-gem 'will_paginate'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
