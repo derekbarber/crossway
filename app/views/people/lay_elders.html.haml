@@ -1,0 +1,21 @@
+%ul.breadcrumb
+  %li
+    = link_to "Home", root_path
+  %li
+    = link_to "Identity", identity_path
+  %li.active Lay Elders
+%h2 Lay Elders
+.row
+  - @lay_elders.each do |lay_elder|
+    .span3
+      %ul.thumbnails
+        %li.span3
+          = link_to(person_path(lay_elder), { :class => "thumbnail" }) do
+            - if lay_elder.image_url
+              = image_tag(lay_elder.image_url)
+            - else
+              %img{alt: "", src: "http://placehold.it/200x160"}/
+            %h4= lay_elder.name
+            %p= lay_elder.title
+.row
+  .span12{style: "height: 40px;"}  

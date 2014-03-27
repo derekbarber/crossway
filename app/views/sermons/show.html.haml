@@ -1,0 +1,38 @@
+%ul.breadcrumb
+  %li
+    = link_to "Home", root_path
+  %li
+    = link_to "Resources", resources_path
+  %li
+    = link_to "Sermon Series", { :action => 'index', :controller => 'sermon_series' }
+  %li
+    = link_to "#{@sermon_series.title}", @sermon_series
+  %li.active= @sermon.title
+
+.row
+  .col-md-8.col-md-offset-1
+    .pull-left{style: "margin: 14px;"}
+      = image_tag @sermon_series.button_image_url
+    .media-body
+      %h4= @sermon.title
+      %p= @sermon.scripture_reference
+      %p= @sermon.speaker
+      %p
+        %i= @sermon.date.strftime("%b %d, %Y")
+    .clearfix
+    .well.well-small.span5
+      %h3 Listen
+      %audio{controls: "controls", loop: "loop"}
+        %source{src: @sermon.audio_file_url, type: "audio/mpeg"}
+      %p= link_to "Download MP3 (Right-click and click 'Save As')", @sermon.audio_file_url
+    - if @sermon.video_embed.length > 0
+      .well.well-small.span7
+        %h3 Watch Clip
+        %iframe{allowfullscreen: "", frameborder: "0", height: "304", mozallowfullscreen: "", src: "http://player.vimeo.com/video/#{@sermon.video_embed}?byline=0&portrait=0", webkitallowfullscreen: "", width: "540"}
+  .col-md-3
+    .aside-sermons
+      %h5= @sermon_series.title
+      %ol
+        - @sermons.each do |sermon|
+          %li{style: "margin-bottom: 10px;"}
+            \ #{link_to "#{sermon.full_title}", sermon}

@@ -1,0 +1,49 @@
+%ul.breadcrumb
+  %li
+    = link_to "Home", root_path
+    %span.divider /
+  %li
+    = link_to "Identity", identity_path
+    %span.divider /
+  - if @person.is_staff?
+    %li
+      = link_to "Staff", :controller => "people", :action => "staff"
+      %span.divider /
+    %li.active= @person.name
+  - elsif @person.is_lay_elder?
+    %li
+      = link_to "Lay Elders", :controller => "people", :action => "lay_elders"
+      %span.divider /
+    %li.active= @person.name
+.row
+  .span9
+    .media
+      %a.pull-left
+        - if @person.image_url
+          = image_tag(@person.image_url, :class => 'media-object')
+        - else
+          = image_tag("http://placehold.it/200x160", :class => 'media-object')
+      .media-body
+        %h3.media-heading= @person.name
+        %h4= @person.title
+  .span3
+    .aside
+      - if @person.is_staff?
+        %h5 Staff
+        %ul.unstyled
+          - @staff.each do |staff|
+            %li{style: "margin-bottom: 10px;"}
+              %i.icon-chevron-right>
+               #{link_to staff.name, person_path(staff)}
+      - elsif @person.is_lay_elder?
+        %h5 Lay Elders
+        %ul.unstyled
+          - @lay_elders.each do |lay_elder|
+            %li{style: "margin-bottom: 10px;"}
+              %i.icon-chevron-right>
+               #{link_to lay_elder.name, person_path(lay_elder)}
+.row
+  .span12
+    = @person.content.html_safe
+.row
+  .span12{style: "height: 40px;"}  

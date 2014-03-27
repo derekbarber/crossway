@@ -1,0 +1,24 @@
+%ul.breadcrumb
+  %li
+    = link_to "Home", root_path
+  %li
+    = link_to "Identity", identity_path
+  %li.active Staff
+
+%h2 Staff
+
+.row
+  - @staff.each do |staff|
+    .col-sm-6.col-md-4
+      .thumbnail
+        = link_to(person_path(staff), { :class => "thumbnail" }) do
+          - if staff.image_url
+            = image_tag(staff.image_url)
+          - else
+            %img{alt: "", src: "http://placehold.it/200x160"}/
+        .caption
+          %h4= staff.name
+          %p= staff.title
+
+.row
+  .span12{style: "height: 40px;"}

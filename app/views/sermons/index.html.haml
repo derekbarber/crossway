@@ -1,0 +1,19 @@
+- content_for :head, auto_discovery_link_tag(:atom, sermons_url(format: "atom"))
+%h1 Listing sermons
+%table.table.table-striped
+  %tr
+    %th Title
+    %th Sermon series
+    %th Date
+    %th Scripture reference
+    %th Speaker
+    %th
+  - @sermons.each do |sermon|
+    %tr
+      %td= sermon.title
+      %td= sermon.sermon_series_id
+      %td= sermon.date
+      %td= sermon.scripture_reference
+      %td= sermon.speaker
+      %td= link_to 'Show', sermon
+%br/

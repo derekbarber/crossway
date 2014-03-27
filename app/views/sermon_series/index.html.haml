@@ -1,0 +1,15 @@
+%ul.breadcrumb
+  %li
+    = link_to "Home", root_path
+  %li
+    = link_to "Resources", resources_path
+  %li.active Sermon Series
+
+%h2 Sermon Series Archive
+.row
+  - @sermon_series.each do |sermon_series|
+    .col-sm-4.col-md-3
+      .images
+        = link_to image_tag(sermon_series.button_image_url, :class => "captify", |
+                      :alt => "#{sermon_series.title}"), sermon_series,          |
+          { :title => "#{sermon_series.title}"} if sermon_series.button_image?   |

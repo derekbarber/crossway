@@ -1,0 +1,76 @@
+- content_for :head, auto_discovery_link_tag(:atom, articles_url(format: "atom"))
+%ul.breadcrumb
+  %li
+    = link_to "Home", root_path
+    %span.divider /
+  %li
+    = link_to "Resources", root_path
+    %span.divider /
+  %li.active Blog
+.blog-header
+  %h1.blog-title The Crossway Blog
+  %p.lead.blog-description The official example template of creating a blog with Bootstrap.
+.row.one-column
+  .col-sm-8.blog-main
+    - @articles.each do |article|
+      .blog-post
+        %h2.blog-post-title= link_to article.title, article
+        %p.blog-post-meta
+          by #{article.author}  |  #{article.published_at.strftime("%B %d, %Y")}
+        %div
+          = image_tag article.image_url if article.image?
+        = simple_format(article.content, {}, {:sanitize => false})
+    = will_paginate @articles
+  .col-sm-3.col-sm-offset-1.blog-sidebar
+    .sidebar-module.sidebar-module-inset
+      = link_to articles_url(format: "atom"), :class => "btn btn-small" do
+        %i.icon-rss>
+        \ Subscribe to Blog
+      %h4 About
+      %p
+        Etiam porta
+        %em sem malesuada magna
+        mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
+    .sidebar-module
+      %h4 Archives
+      %ol.list-unstyled
+        %li
+          %a{href: "#"} January 2014
+        %li
+          %a{href: "#"} December 2013
+        %li
+          %a{href: "#"} November 2013
+        %li
+          %a{href: "#"} October 2013
+        %li
+          %a{href: "#"} September 2013
+        %li
+          %a{href: "#"} August 2013
+        %li
+          %a{href: "#"} July 2013
+        %li
+          %a{href: "#"} June 2013
+        %li
+          %a{href: "#"} May 2013
+        %li
+          %a{href: "#"} April 2013
+        %li
+          %a{href: "#"} March 2013
+        %li
+          %a{href: "#"} February 2013
+    .sidebar-module
+      %h4 Elsewhere
+      %ol.list-unstyled
+        %li
+          %a{href: "#"} GitHub
+        %li
+          %a{href: "#"} Twitter
+        %li
+          %a{href: "#"} Facebook
+    .aside
+      %h5 More Blog Entries
+      %ul.unstyled
+        - @recent_articles.each do |article|
+          %li{style: "margin-bottom: 10px;"}
+            %i.icon-chevron-right>
+            \ #{link_to article.title, article}
