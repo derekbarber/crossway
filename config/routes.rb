@@ -1,10 +1,9 @@
 Crossway::Application.routes.draw do
 
-  resources :books
-
   devise_for :users
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
+  resources :books
   resources :articles, :only => [:index, :show]
   resources :posts
   resources :sermons, :only => [:index, :show]
