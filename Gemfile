@@ -2,9 +2,9 @@ source 'https://rubygems.org'
 
 ruby '2.1.1'
 
-gem 'rails', '4.0.4'
+gem 'rails', '4.1.1'
 
-gem 'bootstrap-sass', '~> 3.1.0'
+gem 'bootstrap-sass', '~> 3.1.1'
 gem 'bootstrap_form'
 gem 'bourbon'
 gem 'carrierwave'
@@ -31,7 +31,7 @@ end
 
 # Gems used only for assets and not required
 # in production environments by default.
-gem 'sass-rails', "~> 4.0.2"
+gem 'sass-rails', "~> 4.0.3"
 gem 'coffee-rails'
 
 group :test do
@@ -44,6 +44,7 @@ end
 gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'unicorn'
 gem 'capistrano', '2.15.5'
+gem 'capistrano-ext'
 gem 'capistrano-rbenv', '1.0.5'
 
 # gem 'debugger'
