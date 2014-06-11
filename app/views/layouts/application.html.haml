@@ -3,8 +3,8 @@
   %head
     %title Welcome to Crossway Church | Surrey, BC Canada
     = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "https://checkout.stripe.com/v2/checkout.js"
     = javascript_include_tag "application"
-    = javascript_include_tag "https://checkout.stripe.com/v2/checkout.js", "application"
     = csrf_meta_tags
     = yield :head
     / HTML5 shim, for IE6-8 support of HTML5 elements
@@ -47,6 +47,6 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
 
-    = javascript_include_tag '//platform.twitter.com/widgets.js'
-    = javascript_include_tag 'social-sharing'
+    -#= javascript_include_tag '//platform.twitter.com/widgets.js'
+    -#= javascript_include_tag 'social-sharing'
 

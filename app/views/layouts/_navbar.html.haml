@@ -13,10 +13,39 @@
             = navbar_list_item "HOME", root_path
             = navbar_list_item "VISIT", visit_path
             = navbar_list_item "GOD", god_path
-            = navbar_list_item "CONNECT", connect_path
+            %li{class: current_page?(connect_path) ? 'dropdown active' : 'dropdown'}
+              = link_to "#", class: "dropdown-toggle", :"data-toggle" => "dropdown" do
+                CONNECT <b class='caret'></b>
+              %ul{class: "dropdown-menu"}
+                %li
+                  = link_to "Community Groups", :controller => 'site', :action => 'community_groups'
+                %li
+                  = link_to "Children & Families", :controller => 'site', :action => 'family_ministries'
+                %li
+                  = link_to "Outreach", :controller => 'site', :action => 'outreach_ministries'
+                %li
+                  = link_to "Service", :controller => 'site', :action => 'service_ministries'
+                %li
+                  = link_to "The City", :controller => 'site', :action => 'the_city'
+                %li
+                  = link_to "Creative", :controller => 'site', :action => 'creative_ministries'
+                %li
+                  = link_to "Get Involved", :controller => 'site', :action => 'creative_ministries'
             = navbar_list_item "RESOURCES", resources_path
             = navbar_list_item "GIVE", give_path
-            = navbar_list_item "IDENTITY", identity_path
-
+            %li{class: current_page?(identity_path) ? 'dropdown active' : 'dropdown'}
+              = link_to "#", class: "dropdown-toggle", :"data-toggle" => "dropdown" do
+                IDENTITY <b class='caret'></b>
+              %ul{class: "dropdown-menu"}
+                %li
+                  = link_to "Statement of Faith", :controller => 'site', :action => 'statement_of_faith'
+                %li
+                  = link_to "Covenant Membership", :controller => 'site', :action => 'covenant_membership'
+                %li
+                  = link_to "Recommended Ministries", :controller => 'site', :action => 'recommended_ministries'
+                %li
+                  = link_to "Staff", :controller => 'people', :action => 'staff'
+                %li
+                  = link_to "Lay Elders", :controller => 'people', :action => 'lay_elders'
           %form{class:"navbar-form navbar-right"}
             %input{type:"text", class:"form-control", placeholder:"Search..."}

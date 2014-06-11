@@ -9,8 +9,10 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require 'custom'
  *= require 'font-awesome'
  *= require mediaelement_rails
  *= require captionjs
- *= require_tree .
+ *= require 'article'
+ *= require 'footer'
  */

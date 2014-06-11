@@ -75,6 +75,10 @@ class SiteController < ApplicationController
 
   end
 
+  def covenant_membership
+
+  end
+
 
   def identity
 
