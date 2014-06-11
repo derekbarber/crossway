@@ -2,6 +2,7 @@ server "staging.crossway.ca", :web, :app, :db, primary: true
 
 set :branch, "develop"
 set :deploy_to, "/home/#{user}/apps/#{application}-staging"
+set :rails_env, 'staging'
 
 set :shared_children, shared_children + %w{public/uploads}
 

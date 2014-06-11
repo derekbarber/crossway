@@ -2,6 +2,7 @@ server "crossway.ca", :web, :app, :db, primary: true
 
 set :branch, "master"
 set :deploy_to, "/home/#{user}/apps/#{application}"
+set :rails_env, 'production'
 
 set :shared_children, shared_children + %w{public/uploads}
 
