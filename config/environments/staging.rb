@@ -19,7 +19,7 @@ Crossway::Application.configure do
   config.assets.compile = false
 
   # Generate digests for assets URLs
-  config.assets.digest = true
+  config.assets.digest = false
 
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
@@ -32,7 +32,7 @@ Crossway::Application.configure do
   # config.force_ssl = true
 
   # See everything in the log (default is :info)
-  # config.log_level = :debug
+  config.log_level = :debug
 
   # Prepend all log lines with the following tags
   # config.log_tags = [ :subdomain, :uuid ]
