@@ -86,49 +86,6 @@ a:hover {
 }
 */
 
-.section-header {
-  background-image: url(/assets/section-page-header1.png);
-  height: 299px;
-  color: #ffffff;
-  padding: 20px;
-}
-
-.section-header-text {
-  color: #ffffff;
-}
-
-.box-content {
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  border: 1px solid #999999;
-  padding: 20px;
-  background: #E9EAEE;
-  box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 1px 2px 6px rgba(0,0,0, 0.5);
-  -webkit-box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
-}
-
-.image-button {
-  border: none; overflow: hidden; float: left;
-  cursor: hand;
-  cursor: pointer;
-  border: solid 3px transparent;
-}
-
-.image-button:hover {
-  border: 3px solid #999999;
-}
-
-.image-button-selected {
-  border: 3px solid #CFCF99;
-}
-
-.image-button:hover img {
-  margin: -3px;
-}
-
-
 
 .header {
   padding: 25px 0px;
@@ -279,29 +236,6 @@ ul.nav-menu li a {
 
 }
 
-/* Carousel base class */
-.carousel {
-  height: 380px;
-  margin-bottom: 30px;
-}
-/* Since positioning the image, we need to help out the caption */
-.carousel-caption {
-  z-index: 10;
-}
-
-/* Declare heights because of positioning of img element */
-.carousel .item {
-  height: 380px;
-  background-color: #dedede;
-}
-.carousel-inner > .item > img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  height: 380px;
-}
-
 
 /* Ministries Page */
 
@@ -404,4 +338,327 @@ ul.nav-menu li a {
 	margin: 0;
 	font-size: 15px;
 	color: #676666;
+}
+
+
+/*--------------------------------------------------------------------------
++	Portfolio Style
+--------------------------------------------------------------------------*/
+.portfolio-item {
+  position: relative;
+  background: #FFF;
+  margin-bottom: 20px;
+  border: 8px solid #FFF;
+  -webkit-border-radius: 5px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 5px;
+  -moz-background-clip: padding;
+  border-radius: 5px;
+  background-clip: padding-box;
+  -webkit-box-shadow: inset 0 1px #fff,0 0 8px #c8cfe6;
+  -moz-box-shadow: inset 0 1px #fff,0 0 8px #c8cfe6;
+  box-shadow: inset 0 1px #fff,0 0 8px #c8cfe6;
+  color: inset 0 1px #fff,0 0 8px #c8cfe6;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  transition: all .5s ease;
+}
+.portfolio-item .portfolio-image {
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+}
+.portfolio-item .portfolio-image img {
+  max-width: 100%;
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  -ms-transition: all .25s ease;
+  transition: all .25s ease;
+}
+.portfolio-item:hover {
+  border: 8px solid #4f8db3;
+}
+.portfolio-item:hover .portfolio-image img {
+  position: relative;
+  -webkit-transform: scale(1.1) rotate(2deg);
+  -moz-transform: scale(1.1) rotate(2deg);
+  -o-transform: scale(1.1) rotate(2deg);
+  -ms-transform: scale(1.1) rotate(2deg);
+  transform: scale(1.1) rotate(2deg);
+}
+.portfolio-item ul {
+  list-style-type: none;
+  margin-left: 0;
+  margin-top: 20px;
+  text-align: center;
+  padding: 0;
+}
+.portfolio-item ul li {
+  line-height: 28px;
+}
+.portfolio-item .portfolio-project-name {
+  font-size: 1.3em;
+  text-transform: uppercase;
+}
+.portfolio-item .read-more {
+  text-align: center;
+  padding-top: 10px;
+}
+.portfolio-item .portfolio-info-fade {
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+  top: 0;
+  position: absolute;
+  background: #000;
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  color: #FFF;
+  text-shadow: 2px 2px 4px #000000;
+  filter: dropshadow(color=#000000, offx=2, offy=2);
+  -webkit-transition: opacity .25s linear;
+  -moz-transition: opacity .25s linear;
+  -o-transition: opacity .25s linear;
+  -ms-transition: opacity .25s linear;
+  transition: opacity .25s linear;
+}
+.portfolio-item .portfolio-info-fade ul {
+  margin-top: 10%;
+}
+.portfolio-item .portfolio-info-fade .btn:hover {
+  background: #4f8db3;
+}
+.portfolio-item .portfolio-info-fade ul {
+  margin: 10% 20px 0 20px;
+  padding: 0;
+}
+.portfolio-item .portfolio-info-fade ul li {
+  text-align: center;
+}
+.portfolio-item .portfolio-info-fade ul li:first-child {
+  border-bottom: 1px solid #CCC;
+}
+.portfolio-item:hover .portfolio-info-fade {
+  display: block;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+.lt-ie9 .portfolio-info-fade {
+  display: none;
+}
+.lt-ie9 .portfolio-item:hover .portfolio-info-fade {
+  display: block;
+}
+.portfolio-visit-btn {
+  padding-top: 15px;
+}
+.portfolio-item-description ul {
+  padding: 0;
+}
+
+
+
+/*--------------------------------------------------------------------------
++	Buttons Style
+--------------------------------------------------------------------------*/
+.btn {
+  border: 1px solid #4f8db3;
+  -webkit-border-radius: 2px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 2px;
+  -moz-background-clip: padding;
+  border-radius: 2px;
+  background-clip: padding-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  text-transform: none;
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  -ms-transition: all .25s ease;
+  transition: all .25s ease;
+  text-align: center;
+  background: none repeat scroll 0 0 #4f8db3;
+  text-shadow: none;
+  box-shadow: none;
+  color: #FFF;
+  white-space: nowrap;
+}
+.btn:hover {
+  background: none repeat scroll 0 0 #3b3c41;
+  color: #FFF;
+  text-decoration: none;
+  border: 1px solid #3b3c41;
+}
+.btn .caret {
+  border-top: 4px solid #FFF;
+}
+.btn-micro {
+  padding: 1px 8px;
+  font-size: 10px;
+}
+.btn-grey {
+  border: 1px solid #cecece;
+  color: #333;
+  background: none repeat scroll 0 0 #E7E7E7;
+}
+.btn-grey:hover {
+  background: none repeat scroll 0 0 #cecece;
+  color: #333;
+  text-decoration: none;
+  border: 1px solid #cecece;
+}
+.btn-grey .caret {
+  border-top: 4px solid #333;
+}
+.btn-blue {
+  border: 1px solid #3e7191;
+  color: #FFF;
+  background: none repeat scroll 0 0 #4F8DB3;
+}
+.btn-blue:hover {
+  background: none repeat scroll 0 0 #3b3c41;
+  color: #FFF;
+  text-decoration: none;
+  border: 1px solid #3b3c41;
+}
+.btn-orange {
+  border: 1px solid #cc5a00;
+  color: #FFF;
+  background: none repeat scroll 0 0 #FF7000;
+}
+.btn-orange:hover {
+  background: none repeat scroll 0 0 #3b3c41;
+  color: #FFF;
+  text-decoration: none;
+  border: 1px solid #3b3c41;
+}
+.btn-green {
+  border: 1px solid #4c5818;
+  color: #FFF;
+  background: none repeat scroll 0 0 #6E8023;
+}
+.btn-green:hover {
+  background: none repeat scroll 0 0 #3b3c41;
+  color: #FFF;
+  text-decoration: none;
+  border: 1px solid #3b3c41;
+}
+.btn-red {
+  border: 1px solid #ab0d0d;
+  color: #FFF;
+  background: none repeat scroll 0 0 #DA1111;
+}
+.btn-red:hover {
+  background: none repeat scroll 0 0 #3b3c41;
+  color: #FFF;
+  text-decoration: none;
+  border: 1px solid #3b3c41;
+}
+.btn-group.open .btn.dropdown-toggle {
+  background: none repeat scroll 0 0 #3b3c41;
+  color: #FFF;
+}
+.dropdown.open a.dropdown-toggle .caret {
+  border-top: 4px solid #FFF;
+}
+
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  margin-bottom: 30px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 1;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 400px;
+  background-color:#555;
+}
+.carousel img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 400px;
+}
+
+
+/*--------------------------------------------------------------------------
++	Services Style
+--------------------------------------------------------------------------*/
+/* Multicolumn */
+.service-wrapper {
+  background: #FFF;
+  -webkit-border-radius: 5px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 5px;
+  -moz-background-clip: padding;
+  border-radius: 5px;
+  background-clip: padding-box;
+  -webkit-box-shadow: 0 0 3px #999;
+  -moz-box-shadow: 0 0 3px #999;
+  box-shadow: 0 0 3px #999;
+  color: 0 0 3px #999;
+}
+.service-wrapper h3 {
+  font-size: 1.2em;
+  margin: 10px 0 !important;
+}
+.service-wrapper p {
+  margin-top: 0;
+}
+/* Row */
+.service-wrapper-row {
+  padding: 10px 0;
+}
+.service-wrapper-row h3 {
+  padding-top: 5px;
+}
+.service-wrapper-row .service-image {
+  padding-top: 15px;
+  text-align: center;
+}
+.service-wrapper-row .service-image img {
+  max-width: 80%;
+  vertical-align: bottom;
+  bottom: 0;
+  border: 7px solid #FFF;
+  -webkit-border-radius: 5px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 5px;
+  -moz-background-clip: padding;
+  border-radius: 5px;
+  background-clip: padding-box;
+  -webkit-box-shadow: 0 0 8px #999;
+  -moz-box-shadow: 0 0 8px #999;
+  box-shadow: 0 0 8px #999;
+  color: 0 0 8px #999;
+}
+
+/*--------------------------------------------------------------------------
++	Breadcrumbs Section Style
+--------------------------------------------------------------------------*/
+.section-breadcrumbs {
+  background: #222;
+  background: rgba(34, 34, 34, 0.8);
+  margin-bottom: 10px;
+}
+.section-breadcrumbs h1 {
+  color: #FAFAFA;
+  font-size: 1.6em;
+  margin-bottom: 0;
+  text-transform: none;
 }

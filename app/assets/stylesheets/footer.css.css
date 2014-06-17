@@ -13,7 +13,6 @@
   background-color: #e6e6e6;
   margin-right: auto;
   margin-left: auto;
-  height: 90px;
 }
 
 .footer-content {
@@ -22,8 +21,11 @@
   margin-right: auto;
   color: #333333;
   font-family: helvetica;
+  /*
   background: url(/assets/footer-spacer.png) no-repeat;
   background-position: right;
+  */
+  padding-top: 10px;
 }
 
 
