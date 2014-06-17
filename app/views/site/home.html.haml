@@ -1,24 +1,82 @@
 .row
   .col-md-10.col-md-offset-1
-    = link_to image_tag(@current_sermon_series.banner_image_url.to_s, :class => "caption img-responsive", 
+    .col-md-4.col-sm-12
+      .h3
+        Welcome!
+      %p
+        Because of the gospel, Crossway Church exists to love Jesus, love His people and live to make Him known, all to the glory of God. 
+      %p
+        We would love to have you join us on Sunday morning for our Worship Service.
+      %a{:href => "#", :class => "btn btn-grey", :role => "button"}
+        Visit Us  &nbsp;<i class="fa fa-compass"></i>
+
+      %a{:href => "#", :class => "btn btn-grey", :role => "button"}
+        Get Connected &nbsp;<i class="fa fa-chevron-circle-right"></i>
+
+    .col-md-8.col-sm-12
+      .portfolio-item
+        .portfolio-image
+          = link_to image_tag(@current_sermon_series.banner_image_url.to_s, :class => "caption img-responsive", 
                   :"data-caption" => "Most Recent Sermon", :id => "header-image"), @latest_sermon,
-      { :title => "Latest Sermon" } if @current_sermon_series.banner_image?
+                  { :title => "Latest Sermon" } if @current_sermon_series.banner_image?
+        .portfolio-info
+          %ul
+            %li{class:"portfolio-project-name"} 
+              = "Latest Sermon, #{@latest_sermon.date.strftime("%b %d, %Y")}"
+            %li
+              = @latest_sermon.title
+            %li{class:"read-more"}
+              %a{:href => "#", :class => "btn", :role => "button"}
+                Listen Now
+
 
 .row
   .col-md-12{style: "height: 20px;"}
 
 .row
-  .col-md-12.col-md-offset-1
-    .pull-left
-      = link_to image_tag(@previous_sermon_series.button_image_url.to_s, :class => "img-thumbnail",
-        :"data-caption" => "Sermon Series Archive"),
-        { :action => 'index', :controller => 'sermon_series', :title => "Sermon Archive"}
-    .pull-left
-      = link_to image_tag("home/meetthestaff_button.png", :class => "img-thumbnail", :"data-caption" => "Meet the Staff"), identity_staff_path
-    .pull-left
-      = link_to image_tag("home/home_blog.png", :class => "img-thumbnail", :"data-caption" => "Visit the Blog"), articles_path
-    .pull-left
-      = link_to image_tag("home/home_news.png", :class => "img-thumbnail", :"data-caption" => "Latest News"), news_path
+  .col-md-10.col-md-offset-1
+    .col-md-3.col-sm-6
+      .portfolio-item
+        .portfolio-image
+          = link_to image_tag(@previous_sermon_series.button_image_url.to_s, :class => "img-thumbnail",
+          :"data-caption" => "Sermon Series Archive", :"data-src" => @previous_sermon_series.button_image_url.to_s),
+          { :action => 'index', :controller => 'sermon_series', :title => "Sermon Archive"}
+        .portfolio-info-fade
+          %ul
+            %li{class:"portfolio-project-name"} Sermon Archive
+            %li{class:"read-more"}
+              %a{:href => "#", :class => "btn", :role => "button"}
+                Visit
+    .col-md-3.col-sm-6
+      .portfolio-item
+        .portfolio-image
+          = link_to image_tag("home/meetthestaff_button.png", :class => "img-thumbnail", :"data-caption" => "Meet the Staff"), identity_staff_path
+        .portfolio-info-fade
+          %ul
+            %li{class:"portfolio-project-name"} Staff
+            %li{class:"read-more"}
+              %a{:href => "#", :class => "btn", :role => "button"}
+                Button
+    .col-md-3.col-sm-6
+      .portfolio-item
+        .portfolio-image
+          = link_to image_tag("home/home_blog.png", :class => "img-thumbnail", :"data-caption" => "Visit the Blog"), articles_path
+        .portfolio-info-fade
+          %ul
+            %li{class:"portfolio-project-name"} Crossway Blog
+            %li{class:"read-more"}
+              %a{:href => "#", :class => "btn", :role => "button"}
+                Button
+    .col-md-3.col-sm-6
+      .portfolio-item
+        .portfolio-image
+          = link_to image_tag("home/home_news.png", :class => "img-thumbnail", :"data-caption" => "Latest News"), news_path
+        .portfolio-info-fade
+          %ul
+            %li{class:"portfolio-project-name"} Latest News
+            %li{class:"read-more"}
+              %a{:href => "#", :class => "btn", :role => "button"}
+                Button
 
 .row
   .col-md-12{style: "height: 40px;"}
