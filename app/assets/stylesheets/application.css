@@ -12,7 +12,6 @@
  *= require 'custom'
  *= require 'font-awesome'
  *= require mediaelement_rails
- *= require captionjs
  *= require 'article'
  *= require 'footer'
  */
