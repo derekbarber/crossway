@@ -42,10 +42,8 @@
                 %li
                   = link_to "Covenant Membership", :controller => 'site', :action => 'covenant_membership'
                 %li
-                  = link_to "Recommended Ministries", :controller => 'site', :action => 'recommended_ministries'
+                  = link_to "Partnerships", :controller => 'site', :action => 'partnerships'
                 %li
-                  = link_to "Staff", :controller => 'people', :action => 'staff'
-                %li
-                  = link_to "Lay Elders", :controller => 'people', :action => 'lay_elders'
+                  = link_to "Leadership", people_path
           %form{class:"navbar-form navbar-right"}
             %input{type:"text", class:"form-control", placeholder:"Search..."}

@@ -6,25 +6,27 @@
 .row
   .col-md-12{style: "height: 20px;"}
 
-.row
-  .col-md-10.col-md-offset-1
-    .images
-      = link_to image_tag(@current_sermon_series.banner_image_url, :class => "img-responsive",
-        :alt => "Current Sermon Series"), @current_sermon_series if @current_sermon_series.banner_image?
+.section
+  .container
+    .row
+      .col-md-4.col-sm-6
+        .service-wrapper
+          = link_to image_tag(@previous_sermon_series.button_image_url, :alt => "Sermon Library"), { :action => 'index', :controller => 'sermon_series', :title => "Sermon Library"}
 
-.row
-  .col-md-12{style: "height: 20px;"}
+          %h3 Sermon Library
+          %p Praesent rhoncus mauris ac sollicitudin vehicula. Nam fringilla turpis turpis, at posuere turpis aliquet sit amet condimentum
+          = link_to "Visit", { :action => 'index', :controller => 'sermon_series', :title => "Sermon Library"}, :class => "btn"
+      .col-md-4.col-sm-6
+        .service-wrapper
+          = link_to image_tag("home/home_blog.png", :alt => "The Crossway Blog"), articles_path
+          %h3 Recommended Ministries
+          %p Suspendisse eget libero mi. Fusce ligula orci, vulputate nec elit ultrices, ornare faucibus orci. Aenean lectus sapien, vehicula
+          = link_to "Read more", articles_path, :class => "btn"
+      .col-md-4.col-sm-6
+        .service-wrapper
+          = image_tag "resources/teaching.png", :class => "img-thumbnail", :alt => "Recommended Books"
+          %h3 Recommended Books
+          %p Phasellus posuere et nisl ac commodo. Nulla facilisi. Sed tincidunt bibendum cursus. Aenean vulputate aliquam risus rutrum scelerisque
+          = link_to "Read more", books_path, :class => "btn"
 
-.row
-  .col-md-10.col-md-offset-1
-    .pull-left
-      = link_to image_tag(@previous_sermon_series.button_image_url, :class => "img-thumbnail",
-        :alt => "Previous Sermon Series"), @previous_sermon_series
-    .pull-left
-      = link_to image_tag("home/home_nehemiah.png", :class => "img-thumbnail", :alt => "Sermon Archive"),
-        { :action => 'index', :controller => 'sermon_series', :title => "Sermon Archive"}
-    .pull-left
-      = link_to image_tag("home/home_blog.png", :class => "img-thumbnail", :alt => "The Crossway Blog"), articles_path
-    .pull-left
-      = image_tag "resources/teaching.png", :class => "img-thumbnail", :alt => "Teaching"
 

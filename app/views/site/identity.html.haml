@@ -2,15 +2,45 @@
   %li
     = link_to "Home", root_path
   %li.active Identity
-.row
-  .col-md-5.col-md-offset-1
-    = link_to image_tag("identity/statement-of-faith.png"), :controller => 'site', :action => 'statement_of_faith'
-  .col-md-5
-    = link_to image_tag("identity/recommended-ministries.png"), :controller => 'site', :action => 'recommended_ministries'
-.row
-  .col-md-12{style: "height: 20px;"}
-.row
-  .col-md-5.col-md-offset-1
-    = link_to image_tag("identity/staff.png"), :controller => 'people', :action => 'staff'
-  .col-md-5
-    = link_to image_tag("identity/lay-elders.png"), :controller => 'people', :action => 'lay_elders'
+  
+  
+.section
+  .container
+    .row
+      .col-sm-6
+        .portfolio-item
+          .portfolio-image
+            = link_to image_tag("identity/statement-of-faith.png"), :controller => 'site', :action => 'statement_of_faith'
+            .portfolio-info-fade
+              %ul
+                %li.portfolio-project-name Statement of Faith
+                %li.read-more
+                  = link_to "Read now", {:controller => 'site', :action => 'statement_of_faith'}, :class => "btn"
+      .col-sm-6
+        .portfolio-item
+          .portfolio-image
+            = link_to image_tag("identity/partnerships.png"), :controller => 'site', :action => 'partnerships'
+            .portfolio-info-fade
+              %ul
+                %li.portfolio-project-name Partnerships
+                %li.read-more
+                  = link_to "Read more", {:controller => 'site', :action => 'partnerships'}, :class => "btn"
+      .col-sm-6
+        .portfolio-item
+          .portfolio-image
+            = image_tag("identity/leadership.png")
+            .portfolio-info-fade
+              %ul
+                %li.portfolio-project-name Leadership
+                %li.read-more
+                  = link_to "Read more", people_path, :class => "btn"
+      .col-sm-6
+        .portfolio-item
+          .portfolio-image
+            = image_tag("identity/covenant-membership.png")
+            .portfolio-info-fade
+              %ul
+                %li.portfolio-project-name Covenant Membership
+                %li.read-more
+                  = link_to "Read more", {:controller => 'site', :action => 'covenant_membership'}, :class => "btn"
+

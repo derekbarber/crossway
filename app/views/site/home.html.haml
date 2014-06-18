@@ -53,10 +53,9 @@
           = link_to image_tag("home/meetthestaff_button.png", :class => "img-thumbnail", :"data-caption" => "Meet the Staff"), identity_staff_path
         .portfolio-info-fade
           %ul
-            %li{class:"portfolio-project-name"} Staff
+            %li{class:"portfolio-project-name"} Leadership
             %li{class:"read-more"}
-              %a{:href => "#", :class => "btn", :role => "button"}
-                Button
+              = link_to "Meet the Elders", people_path, :class => "btn", :role => "button"
     .col-md-3.col-sm-6
       .portfolio-item
         .portfolio-image
@@ -66,7 +65,7 @@
             %li{class:"portfolio-project-name"} Crossway Blog
             %li{class:"read-more"}
               %a{:href => "#", :class => "btn", :role => "button"}
-                Button
+                Visit the Blog
     .col-md-3.col-sm-6
       .portfolio-item
         .portfolio-image
@@ -76,7 +75,7 @@
             %li{class:"portfolio-project-name"} Latest News
             %li{class:"read-more"}
               %a{:href => "#", :class => "btn", :role => "button"}
-                Button
+                View News
 
 .row
   .col-md-12{style: "height: 40px;"}
@@ -86,7 +85,8 @@
     %table.table.table-striped
       %tr
         %th{colspan: "2"}
-          %h4 From the Blog
+          %h4
+            = link_to "From the Blog", articles_path
       - @articles.each do |article|
         %tr
           %td{style: "width: 110px;"}
@@ -97,7 +97,8 @@
     %table.table.table-striped
       %tr
         %th{colspan: "2"}
-          %h4 Latest News
+          %h4 
+            = link_to "Latest News", news_path
       - @entries.each do |entry|
         %tr
           %td{style: "width: 110px;"}

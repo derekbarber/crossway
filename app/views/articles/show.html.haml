@@ -2,13 +2,10 @@
 %ul.breadcrumb
   %li
     = link_to "Home", root_path
-    %span.divider /
   %li
     = link_to "Resources", root_path
-    %span.divider /
   %li
     = link_to "Blog", articles_path
-    %span.divider /
   %li.active= @article.title
 .row
   .col-sm-8.blog-main

@@ -3,43 +3,62 @@
     = link_to "Home", root_path
   %li
     = link_to "Identity", identity_path
-  %li.active Personnel
+  %li.active Leadership
+
 %h2 Staff
-.row
-  - row_count = 0
-  - @staff.each do |staff|
-    .span3
-      %ul.thumbnails
-        %li.span3
-          = link_to(person_path(staff), { :class => "thumbnail" }) do
-            - if staff.image_url
-              = image_tag(staff.image_url)
-            - else
-              %img{alt: "", src: "http://placehold.it/200x160"}/
-            %h4= staff.name
-            %p= staff.title
-    - if (((row_count+=1) % 4) == 0)
-.row
+
+.section
+  .container
+    .row
+      - @staff.each do |staff|
+        .col-md-4.col-sm-6
+          .team-member
+            / Team Member Photo
+            .team-member-image
+              - if staff.image_url
+                = image_tag(staff.image_url)
+              - else
+                %img{alt: "", src: "http://placehold.it/200x160"}/
+            .team-member-info
+              %ul
+                / Team Member Info & Social Links
+                %li.team-member-name
+                  = staff.name
+                  / Team Member Social Links
+                  %span.team-member-social
+                    %a{href: "#"}
+                      %i.icon-facebook
+                %li
+                  = staff.title
+
+
 .row
   .span12{style: "height: 40px;"}
-    \ 
-    %hr>/
-    \ 
+    %hr
+
 %h2 Lay Elders
+
+.section
+  .container
+    .row
+      - @lay_elders.each do |lay_elder|
+        .col-md-4.col-sm-6
+          .team-member
+            .team-member-image
+              - if lay_elder.image_url
+                = image_tag(lay_elder.image_url)
+              - else
+                %img{alt: "", src: "http://placehold.it/200x160"}/
+            .team-member-info
+              %ul
+                %li.team-member-name
+                  = lay_elder.name
+                  %span.team-member-social
+                    %a{href: "#"}
+                      %i.icon-facebook
+                %li
+                  = lay_elder.title
+
+
 .row
-  - row_count = 0
-  - @lay_elders.each do |lay_elder|
-    .span3
-      %ul.thumbnails
-        %li.span3
-          = link_to(person_path(lay_elder), { :class => "thumbnail" }) do
-            - if lay_elder.image_url
-              = image_tag(lay_elder.image_url)
-            - else
-              %img{alt: "", src: "http://placehold.it/200x160"}/
-            %h4= lay_elder.name
-            %p= lay_elder.title
-    - if (((row_count+=1) % 4) == 0)
-.row
-.row
-  .span12{style: "height: 40px;"}  
+  .span12{style: "height: 40px;"}
