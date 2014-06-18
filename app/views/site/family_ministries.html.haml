@@ -4,6 +4,7 @@
   %li
     = link_to "Connect", connect_path
   %li.active Family Ministries
+
 .row
   .col-md-4
     = image_tag("connect/family-ministries.png")
@@ -13,11 +14,11 @@
       %p
         We place a high value on families. We believe that strong marriages and families are
         the foundation of strong churches and communities.
-.row
-  .col-md-12
+
 .row
   .col-md-12
     %h3 Childrens Ministry
+
 .row
   .col-md-5
     %h4
@@ -41,13 +42,15 @@
           .well.well-small
             %p Crossculture is our youth ministry for ages 12 - 18 and Sojourn is our young adults ministry for ages 19 and up.
             %p
-              Please #{link_to get in touch with us, contact_path} if you would like details of these ministries and
+              = link_to "Please get in touch with us", connect_path
+              if you would like details of these ministries and
               to find out about any upcoming meetings or activities
       .row
         .col-md-12
           %h3 Mens  Womens Ministry
           .well.well-small
             %p
-              For information about our ministries and upcoming events for men and women, please #{link_to get in touch with us., contact_path}
+              For information about our ministries and upcoming events for men and women, 
+              = link_to "please get in touch with us.", contact_path
       .row
         .col-md-12{style: "height: 40px;"}  

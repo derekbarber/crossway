@@ -2,28 +2,22 @@
   %li= link_to "Home", root_path
   %li= link_to "Connect", connect_path
   %li.active Community Groups
+
+.jumbotron
+  .row
+    .col-md-6
+      .video-container
+        %iframe{allowfullscreen: "allowfullscreen", frameborder: "0", height: "281", src: "http://www.youtube.com/embed/L6cJj-Ku_e4", width: "500"}
+    .col-md-6
+      %p
+        %strong 
+          Community groups are the life blood of Crossway. It's where we share our lives together and seek to live out our calling as God's redeemed people.
+      %p
+        %small
+          If you are looking to get more connected at Crossway then you'll want to join a Community Group. We have groups located through the Surrey, Langley and Abbotsford areas and we encourage you to join a group near you so that you can be better connected to each other.
+
 .row
-  .col-md-12.section-header
-    .row
-      .col-md-7
-        %iframe{allowfullscreen: "allowfullscreen", frameborder: "0", height: "304", src: "http://www.youtube.com/embed/L6cJj-Ku_e4", width: "540"}
-      .col-md-4
-        %h4.section-header-text
-          Community groups are the life blood of Crossway. It's where we share our
-          
-          lives together and seek to live out our calling as God's redeemed people.
-        %br/
-        %p.section-header-text
-          If you are looking to get more connected at Crossway then you'll want
-          to join a Community Group. We have groups located through the Surrey, Langley
-          and Abbotsford areas and we encourage you to join a group near you so that
-          you can be better connected to each other.
-.row
-  .col-md-12{style: "text-align: center;"}
-.row
-  .col-md-12{style: "height: 40px;"}  
-.row
-  .col-md-12
+  .col-md-4.col-sm-12
     .content
       %h2
         Connect with a Community Group
@@ -37,77 +31,92 @@
         You can also contact the church at
         = succeed "," do
           %a{href: "mailto: info@crossway.ca"} info@crossway.ca
-.row
-  .col-md-12
-    %h3 Surrey Groups
-.row
-  .col-md-6
-    .well.well-small
-      %h4 Clayton
-      %p We have two Community Groups meeting in Clayton.
-      %ul
-        %li
-          Leader:
-          %a{href: "mailto: claytoncg1@crossway.ca"} Jordan Mayer
-        %li
-          Leader:
-          %a{href: "mailto: claytoncg2@crossway.ca"} Ben Evans
-  .col-md-6
-    .well.well-small
-      %h4 Cloverdale
-      %p We have three Community Groups meeting in the Cloverdale area.
-      %ul
-        %li
-          Leader:
-          %a{href: "mailto: cloverdalecg1@crosswy.ca"} Ben Kuwitzky
-        %li
-          Leader:
-          %a{href: "mailto: cloverdalecg2@crossway.ca"} Ralph Browns
-        %li
-          Leader:
-          %a{href: "mailto: cloverdalecg3@crossway.ca"} Aaron Meyerhoff
-.row
-  .col-md-12
-    %h3 Langley Groups
-.row
-  .col-md-6
-    .well.well-small
-      %h4 Murrayville
-      %p We have one Community Group meeting in the Murrayville area of Langley.
-      %ul
-        %li
-          Leader:
-          %a{href: "mailto: langleycg@crossway.ca"} David Smith
-  .col-md-6
-    .well.well-small
-      %h4 Walnut Grove
-      %p We have two Community Groups meeting in Walnut Grove.
-      %ul
-        %li
-          Leader:
-          %a{href: "mailto: walnutgrovecg1@crossway.ca"} Luke Koster
-        %li
-          Leaders:
-          %a{href: "mailto: walnutgrovecg2@crossway.ca"} Ken Brayton & Chris Maddocks
-.row
-  .col-md-12
-    %h3 Other Groups
-.row
-  .col-md-6
-    .well.well-small
-      %h4 White Rock
-      %p We have one Community Group meeting in White Rock.
-      %ul
-        %li
-          Leader:
-          %a{href: "mailto: whiterockcg@crossway.ca"} Cal Bergen
-  .col-md-6
-    .well.well-small
-      %h4 Abbotsford
-      %p We have one Community Group meeting in Abbotsford.
-      %ul
-        %li
-          Leader:
-          %a{href: "mailto: abbotsfordcg@crossway.ca"} Tim Thornton
+  .col-md-8.col-sm-12
+    #accordion.panel-group
+      .panel.panel-default
+        .panel-heading
+          %h4.panel-title
+            %a{"data-parent" => "#accordion", "data-toggle" => "collapse", href: "#collapseOne"}
+              Surrey - Clayton
+        #collapseOne.panel-collapse.collapse
+          .panel-body
+            %p We have two Community Groups meeting in Clayton.
+            %ul
+              %li
+                Leader:
+                %a{href: "mailto: claytoncg1@crossway.ca"} Jordan Mayer
+              %li
+                Leader:
+                %a{href: "mailto: claytoncg2@crossway.ca"} Ben Evans
+      .panel.panel-default
+        .panel-heading
+          %h4.panel-title
+            %a{"data-parent" => "#accordion", "data-toggle" => "collapse", href: "#collapseTwo"}
+              Surrey - Cloverdale
+        #collapseTwo.panel-collapse.collapse
+          .panel-body
+            %p We have three Community Groups meeting in the Cloverdale area.
+            %ul
+              %li
+                Leader:
+                %a{href: "mailto: cloverdalecg1@crosswy.ca"} Ben Kuwitzky
+              %li
+                Leader:
+                %a{href: "mailto: cloverdalecg2@crossway.ca"} Ralph Browns
+              %li
+                Leader:
+                %a{href: "mailto: cloverdalecg3@crossway.ca"} Aaron Meyerhoff
+      .panel.panel-default
+        .panel-heading
+          %h4.panel-title
+            %a{"data-parent" => "#accordion", "data-toggle" => "collapse", href: "#collapseThree"}
+              Langley - Murrayville
+        #collapseThree.panel-collapse.collapse
+          .panel-body
+            %p We have one Community Group meeting in the Murrayville area of Langley.
+            %ul
+              %li
+                Leader:
+                %a{href: "mailto: langleycg@crossway.ca"} David Smith
+      .panel.panel-default
+        .panel-heading
+          %h4.panel-title
+            %a{"data-parent" => "#accordion", "data-toggle" => "collapse", href: "#collapseFour"}
+              Langley - Walnut Grove
+        #collapseFour.panel-collapse.collapse
+          .panel-body
+            %p We have two Community Groups meeting in Walnut Grove.
+            %ul
+              %li
+                Leader:
+                %a{href: "mailto: walnutgrovecg1@crossway.ca"} Luke Koster
+              %li
+                Leaders:
+                %a{href: "mailto: walnutgrovecg2@crossway.ca"} Ken Brayton & Chris Maddocks
+      .panel.panel-default
+        .panel-heading
+          %h4.panel-title
+            %a{"data-parent" => "#accordion", "data-toggle" => "collapse", href: "#collapseFive"}
+              White Rock
+        #collapseFive.panel-collapse.collapse
+          .panel-body
+            %p We have one Community Group meeting in White Rock.
+            %ul
+              %li
+                Leader:
+                %a{href: "mailto: whiterockcg@crossway.ca"} Cal Bergen
+      .panel.panel-default
+        .panel-heading
+          %h4.panel-title
+            %a{"data-parent" => "#accordion", "data-toggle" => "collapse", href: "#collapseFive"}
+              Abbotsford
+        #collapseFive.panel-collapse.collapse
+          .panel-body
+            %p We have one Community Group meeting in Abbotsford.
+            %ul
+              %li
+                Leader:
+                %a{href: "mailto: abbotsfordcg@crossway.ca"} Tim Thornton
+
 .row
   .col-md-12{style: "height: 40px;"}  

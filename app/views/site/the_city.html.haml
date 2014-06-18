@@ -1,24 +1,21 @@
 %ul.breadcrumb
   %li
     = link_to "Home", root_path
-    %span.divider /
   %li
     = link_to "Connect", connect_path
-    %span.divider /
   %li.active The City
-.row
-  .col-md-12.section-header
-    .row
-      .col-md-7
-        %iframe{frameborder: "0", height: "304", src: "http://www.youtube.com/embed/S2cp77Kp4uQ", width: "540"}
-      .col-md-4
-        %h4.section-header-text
-          The City is an online tool to help members of our body connect with one another better,
-          build community and communicate effectively.
-        %br/
-        %p.section-header-text
-          If you are a member or regular attender you will want to make sure you are on The City. To get connected please
-          visit the Info Centre on a Sunday morning and someone will help you get signed up.
+
+.jumbotron
+  .row
+    .col-md-6
+      .video-container
+        %iframe{frameborder: "0", height: "281", src: "http://www.youtube.com/embed/S2cp77Kp4uQ", width: "500"}
+    .col-md-6
+      %p
+        %strong The City is an online tool to help members of our body connect with one another better, build community and communicate effectively.
+      %p
+        If you are a member or regular attender you will want to make sure you are on The City. To get connected please
+        visit the Info Centre on a Sunday morning and someone will help you get signed up.
 .row
   .col-md-12{style: "text-align: center;"}
 .row
@@ -26,7 +23,7 @@
     %div{style: "text-align: center;"}
       %a.btn.btn-large{href: "https://crosswaycc.onthecity.org/", target: "_blank"} Log in to The City >>
     .content
-      %h3 Questions  Answers
+      %h3 Questions & Answers
       %hr
         %h4 How do I join The City?
         %p
