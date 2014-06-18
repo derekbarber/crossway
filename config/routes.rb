@@ -3,9 +3,9 @@ Crossway::Application.routes.draw do
   devise_for :users
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
-  resources :books
+  resources :books, :only => [:index, :show]
   resources :articles, :only => [:index, :show]
-  resources :posts
+  resources :posts, :only => [:index, :show]
   resources :sermons, :only => [:index, :show]
   resources :sermon_series, :only => [:index, :show]
   resources :charges
@@ -16,7 +16,7 @@ Crossway::Application.routes.draw do
   #match 'contact' => 'contact#create', :as => 'contact', :via => :post
 
   get '/home',   to: 'site#home'
-  get '/news',   to: 'site#news'
+  get '/news',   to: 'site#news', as: 'news'
   get '/events',   to: 'site#events'
   get '/visit',   to: 'site#visit'
   get '/god',   to: 'site#god'
@@ -35,9 +35,6 @@ Crossway::Application.routes.draw do
   get '/identity/statement-of-faith',   to: 'site#statement_of_faith'
   get '/identity/recommended-ministries',   to: 'site#recommended_ministries'
   get '/identity/partnerships',   to: 'site#partnerships'
-
-  get '/identity/staff',   to: 'people#staff'
-  get '/identity/lay-elders',   to: 'people#lay_elders'
 
   get '/terms', to: 'site#terms'
   get '/sitemap', to: 'site#sitemap'
