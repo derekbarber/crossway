@@ -48,7 +48,7 @@
 
 a#social-twitter {
   display: block;
-  background: url(/assets/social-media-icons.png) no-repeat;
+  background: url('social-media-icons.png') no-repeat;
   height: 25px;
   width: 25px;
   float: left;
@@ -62,7 +62,7 @@ a#social-twitter:hover {
 
 a#social-facebook {
   display: block;
-  background: url(/assets/social-media-icons.png) no-repeat;
+  background: url('social-media-icons.png') no-repeat;
   height: 25px;
   width: 25px;
   background-position: -25px 0;
@@ -77,7 +77,7 @@ a#social-facebook:hover {
 
 a#social-thecity {
    display: block;
-   background: url(/assets/social-media-icons.png) no-repeat;
+   background: url('social-media-icons.png') no-repeat;
    height: 25px;
    width: 25px;
    background-position: -50px 0;
@@ -92,7 +92,7 @@ a#social-thecity:hover {
 
 a#social-vimeo {
   display: block;
-  background: url(/assets/social-media-icons.png) no-repeat;
+  background: url('social-media-icons.png') no-repeat;
   height: 25px;
   width: 25px;
   background-position: -75px 0;
