@@ -1,6 +1,6 @@
 root = "/home/deployer/apps/crossway/current"
 working_directory root
-pid "#{root}/tmp/pids/unicorn.pid"
+pid "/home/deployer/apps/crossway/current/tmp/pids/unicorn.pid"
 stderr_path "#{root}/log/unicorn.log"
 stdout_path "#{root}/log/unicorn.log"
 
