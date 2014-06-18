@@ -38,7 +38,7 @@
     .col-md-3.col-sm-6
       .portfolio-item
         .portfolio-image
-          = link_to image_tag(@previous_sermon_series.button_image_url.to_s, :class => "img-thumbnail",
+          = link_to image_tag(@previous_sermon_series.button_image_url.to_s,
           :"data-caption" => "Sermon Series Archive", :"data-src" => @previous_sermon_series.button_image_url.to_s),
           { :action => 'index', :controller => 'sermon_series', :title => "Sermon Archive"}
         .portfolio-info-fade
@@ -50,7 +50,7 @@
     .col-md-3.col-sm-6
       .portfolio-item
         .portfolio-image
-          = link_to image_tag("home/meetthestaff_button.png", :class => "img-thumbnail", :"data-caption" => "Meet the Leadership"), people_path
+          = link_to image_tag("home/meetthestaff_button.png", :"data-caption" => "Meet the Elders"), people_path
         .portfolio-info-fade
           %ul
             %li{class:"portfolio-project-name"} Leadership
@@ -59,7 +59,7 @@
     .col-md-3.col-sm-6
       .portfolio-item
         .portfolio-image
-          = link_to image_tag("home/home_blog.png", :class => "img-thumbnail", :"data-caption" => "Visit the Blog"), articles_path
+          = link_to image_tag("home/home_blog.png", :"data-caption" => "Visit the Blog"), articles_path
         .portfolio-info-fade
           %ul
             %li{class:"portfolio-project-name"} Crossway Blog
@@ -69,7 +69,7 @@
     .col-md-3.col-sm-6
       .portfolio-item
         .portfolio-image
-          = link_to image_tag("home/home_news.png", :class => "img-thumbnail", :"data-caption" => "Latest News"), news_path
+          = link_to image_tag("home/home_news.png", :"data-caption" => "Latest News"), news_path
         .portfolio-info-fade
           %ul
             %li{class:"portfolio-project-name"} Latest News
