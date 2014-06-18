@@ -34,6 +34,10 @@ end
 gem 'sass-rails', "~> 4.0.3"
 gem 'coffee-rails'
 
+group :production, :staging do
+  gem 'rails_12factor'
+end
+
 group :test do
   gem "factory_girl_rails"
   gem 'capybara'
