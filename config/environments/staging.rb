@@ -51,8 +51,10 @@ Crossway::Application.configure do
   config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
   config.assets.precompile += [ '.json', '.svg', '.eot', '.woff', '.ttf', '.png', '.jpg' ]
   config.assets.precompile += [
-    'article.css',
-    'custom.css'
+    'nevis-webfont.eot',
+    'nevis-webfont.svg',
+    'nevis-webfont.ttf',
+    'nevis-webfont.woff'
   ]
 
 
