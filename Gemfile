@@ -24,6 +24,7 @@ gem 'sitemap_generator'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'rails_admin'
 gem 'uglifier', '>= 1.3.0'
+gem 'will_paginate', '~> 3.0'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -31,7 +32,7 @@ end
 
 # Gems used only for assets and not required
 # in production environments by default.
-gem 'sass-rails', "~> 4.0.3"
+gem 'sass-rails'
 gem 'coffee-rails'
 
 group :production, :staging do
