@@ -13,7 +13,7 @@ set -e
 # Feel free to change any of the following variables for your app:
 TIMEOUT=${TIMEOUT-60}
 APP_ROOT=/home/deployer/apps/crossway-staging/current
-PID=$APP_ROOT/tmp/pids/unicorn.pid
+PID=$APP_ROOT/tmp/pids/unicorn-staging.pid
 CMD="cd $APP_ROOT; RAILS_ENV=staging; bundle exec unicorn -D -c $APP_ROOT/config/unicorn-staging.rb -E staging"
 AS_USER=deployer
 set -u
