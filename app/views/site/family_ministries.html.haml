@@ -5,19 +5,22 @@
     = link_to "Connect", connect_path
   %li.active Family Ministries
 
-.row
-  .col-md-4
-    = image_tag("connect/family-ministries.png")
-  .col-md-8
-    .alert.alert-block
-      %h2 Family Ministries
+.jumbotron
+  .row
+    .col-md-4
+      = image_tag("connect/family-ministries.png")
+    .col-md-8
       %p
-        We place a high value on families. We believe that strong marriages and families are
-        the foundation of strong churches and communities.
+        %strong 
+          Family Ministries
+      %p
+        %small
+          We place a high value on families. We believe that strong marriages and families are
+          the foundation of strong churches and communities.
 
-.row
-  .col-md-12
-    %h3 Childrens Ministry
+
+
+%h3 Childrens Ministry
 
 .row
   .col-md-5
@@ -29,28 +32,28 @@
       %blockquote
         %p The Bible is not a collection of stories. It is one story, the story of God’s plan to rescue His people from sin and death. It is the story of redemption, the gospel message of Jesus Christ. And it’s our story, too.
         %p The Gospel Project is a Bible study resource that invites Adults, Students, and Kids of all ages to dive deeply into God’s story of redemption through Jesus Christ. In every lesson, participants are immersed in the gospel and learn how when the gospel works on them, they become a part of the story, too, the very hands and feet in God’s gospel project.
-    .col-md-7
-      .well.well-small
-        %iframe{frameborder: "0", height: "281", src: "//www.youtube.com/embed/A4WL0w3it0s", width: "500"}
+  .col-md-7
+    .well.well-small
+      %iframe{frameborder: "0", height: "281", src: "//www.youtube.com/embed/A4WL0w3it0s", width: "500"}
+      %br
         %br
-          %br
-            %p
-              %strong Our Children's Ministry runs concurently with our worship service and is available for children from newborn to age eleven.
-      .row
-        .col-md-12
-          %h3 Crossculture (Youth)  Sojourn (Young Adults)
-          .well.well-small
-            %p Crossculture is our youth ministry for ages 12 - 18 and Sojourn is our young adults ministry for ages 19 and up.
-            %p
-              = link_to "Please get in touch with us", connect_path
-              if you would like details of these ministries and
-              to find out about any upcoming meetings or activities
-      .row
-        .col-md-12
-          %h3 Mens  Womens Ministry
-          .well.well-small
-            %p
-              For information about our ministries and upcoming events for men and women, 
-              = link_to "please get in touch with us.", contact_path
-      .row
-        .col-md-12{style: "height: 40px;"}  
+          %p
+            %strong Our Children's Ministry runs concurently with our worship service and is available for children from newborn to age eleven.
+.row
+  .col-md-12
+    %h3 Crossculture (Youth)  Sojourn (Young Adults)
+    .well.well-small
+      %p Crossculture is our youth ministry for ages 12 - 18 and Sojourn is our young adults ministry for ages 19 and up.
+      %p
+        = link_to "Please get in touch with us", connect_path
+        if you would like details of these ministries and
+        to find out about any upcoming meetings or activities
+.row
+  .col-md-12
+    %h3 Mens  Womens Ministry
+    .well.well-small
+      %p
+        For information about our ministries and upcoming events for men and women, 
+        = link_to "please get in touch with us.", contact_path
+.row
+  .col-md-12{style: "height: 40px;"}  
