@@ -1,0 +1,16 @@
+%div{id: 'footer'}
+  .container
+    .row
+      .col-md-12
+        .col-md-10.col-sm-9.col-xs-12
+          .p{class: "text-muted"}
+            Copyright &copy; #{Time.now.year} Crossway Church.
+            &nbsp;&nbsp;
+            = link_to "Contact Us", contact_path
+            &nbsp;|&nbsp;
+            = link_to "Terms of Use", terms_path
+        .col-md-2.col-sm-3.col-xs-12
+          %a#social-twitter{href: "http://twitter.com/crosswayonline"}
+          %a#social-facebook{href: "https://www.facebook.com/CrosswayOnline", target: "_blank"}
+          %a#social-thecity{href: "https://crosswaycc.onthecity.org", target: "_blank"}
+          %a#social-vimeo{href: "http://vimeo.com/user10992899", target: "_blank"}

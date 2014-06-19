@@ -1,5 +1,19 @@
 /** FOOTER **/
 
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 70px;
+
+  padding: 20px 15px;
+  color: #999;
+  background-color: #f9f9f9;
+  border-top: 1px solid #a5a5a5;
+}
+/*
+
 .footer-wrapper .container {
   padding-right: 0;
   padding-left: 0;
@@ -21,10 +35,6 @@
   margin-right: auto;
   color: #333333;
   font-family: helvetica;
-  /*
-  background: url(/assets/footer-spacer.png) no-repeat;
-  background-position: right;
-  */
   padding-top: 10px;
 }
 
@@ -37,7 +47,7 @@
 .footer-content a:hover {
   color: #666666;
 }
-
+*/
 
 .copyright {
   text-align: center;
