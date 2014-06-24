@@ -1,107 +1,169 @@
-.row
-  .col-md-10.col-md-offset-1
-    .col-md-4.col-sm-12
-      .h3
-        Welcome!
-      %p
-        Because of the gospel, Crossway Church exists to love Jesus, love His people and live to make Him known, all to the glory of God. 
-      %p
-        We would love to have you join us on Sunday morning for our Worship Service.
-      %a{:href => "#", :class => "btn btn-grey", :role => "button"}
-        Visit Us  &nbsp;<i class="fa fa-compass"></i>
+.section
+  .container
+    .row
+      .col.xs-12.col-md-10.col-md-offset-1
+        .portfolio-item
+          .portfolio-image
+            = link_to image_tag(@current_sermon_series.banner_image_url.to_s, :class => "caption img-responsive", 
+                    :"data-caption" => "Most Recent Sermon", :id => "header-image"), @latest_sermon,
+                    { :title => "Latest Sermon" } if @current_sermon_series.banner_image?
+          .portfolio-info-fade
+            %ul
+              %li.portfolio-project-name
+                = "Latest Sermon, #{@latest_sermon.date.strftime("%b %d, %Y")}"
+              %li
+                = @latest_sermon.title
+              %li
+                = @latest_sermon.speaker
+              %li.read-more
+                = link_to "Listen now", @latest_sermon, :class => "btn"
 
-      %a{:href => "#", :class => "btn btn-grey", :role => "button"}
-        Get Connected &nbsp;<i class="fa fa-chevron-circle-right"></i>
+-#
+  .row
+    .col-md-10.col-md-offset-1
+      .col-md-4.col-sm-12
+        .h3
+          Welcome!
+        %p
+          Because of the gospel, Crossway Church exists to love Jesus, love His people and live to make Him known, all to the glory of God. 
+        %p
+          We would love to have you join us on Sunday morning for our Worship Service.
+        %a{:href => "#", :class => "btn btn-grey", :role => "button"}
+          Visit Us  &nbsp;<i class="fa fa-compass"></i>
 
-    .col-md-8.col-sm-12
-      .portfolio-item
-        .portfolio-image
-          = link_to image_tag(@current_sermon_series.banner_image_url.to_s, :class => "caption img-responsive", 
-                  :"data-caption" => "Most Recent Sermon", :id => "header-image"), @latest_sermon,
-                  { :title => "Latest Sermon" } if @current_sermon_series.banner_image?
-        .portfolio-info
-          %ul
-            %li{class:"portfolio-project-name"} 
-              = "Latest Sermon, #{@latest_sermon.date.strftime("%b %d, %Y")}"
-            %li
-              = @latest_sermon.title
-            %li{class:"read-more"}
-              %a{:href => "#", :class => "btn", :role => "button"}
-                Listen Now
+        %a{:href => "#", :class => "btn btn-grey", :role => "button"}
+          Get Connected &nbsp;<i class="fa fa-chevron-circle-right"></i>
+
+      .col-md-8.col-sm-12
+        .portfolio-item
+          .portfolio-image
+            = link_to image_tag(@current_sermon_series.banner_image_url.to_s, :class => "caption img-responsive", 
+                    :"data-caption" => "Most Recent Sermon", :id => "header-image"), @latest_sermon,
+                    { :title => "Latest Sermon" } if @current_sermon_series.banner_image?
+          .portfolio-info
+            %ul
+              %li{class:"portfolio-project-name"} 
+                = "Latest Sermon, #{@latest_sermon.date.strftime("%b %d, %Y")}"
+              %li
+                = @latest_sermon.title
+              %li{class:"read-more"}
+                %a{:href => "#", :class => "btn", :role => "button"}
+                  Listen Now
 
 
-.row
-  .col-md-12{style: "height: 20px;"}
+.section
+  .container
+    .row
+      .col.xs-12.col-md-10.col-md-offset-1
+        .col-md-4.col-sm-6
+          .service-wrapper
+            = image_tag "icons/diamond.png"
+            %h3 Why we exist
+            %p Because of the gospel, Crossway Church exists to love Jesus, love His people and live to make Him known, all to the glory of God.
+            = link_to "Read more", god_path, :class => "btn"
+        .col-md-4.col-sm-6
+          .service-wrapper
+            = image_tag "icons/ruler.png"
+            %h3 Visit with us
+            %p Our worship service begins at 10AM on Sunday mornings, we'd love to have you join us as we gather as God's people.
+            = link_to "Find out more", visit_path, :class => "btn"
+        .col-md-4.col-sm-6
+          .service-wrapper
+            = image_tag "icons/box.png"
+            %h3 Get Connected
+            %p Beyond our Sunday morning worship services we have many opportunites for you to get connected and grow as a disciple of Christ.
+            = link_to "Read more", people_path, :class => "btn"
 
-.row
-  .col-md-10.col-md-offset-1
-    .col-md-3.col-sm-6
-      .portfolio-item
-        .portfolio-image
-          = link_to image_tag(@previous_sermon_series.button_image_url.to_s,
-          :"data-caption" => "Sermon Series Archive", :"data-src" => @previous_sermon_series.button_image_url.to_s),
-          { :action => 'index', :controller => 'sermon_series', :title => "Sermon Archive"}
-        .portfolio-info-fade
-          %ul
-            %li{class:"portfolio-project-name"} Sermon Archive
-            %li{class:"read-more"}
-              %a{:href => "#", :class => "btn", :role => "button"}
-                Visit
-    .col-md-3.col-sm-6
-      .portfolio-item
-        .portfolio-image
-          = link_to image_tag("home/meetthestaff_button.png", :"data-caption" => "Meet the Elders"), people_path
-        .portfolio-info-fade
-          %ul
-            %li{class:"portfolio-project-name"} Leadership
-            %li{class:"read-more"}
-              = link_to "Meet the Elders", people_path, :class => "btn", :role => "button"
-    .col-md-3.col-sm-6
-      .portfolio-item
-        .portfolio-image
-          = link_to image_tag("home/home_blog.png", :"data-caption" => "Visit the Blog"), articles_path
-        .portfolio-info-fade
-          %ul
-            %li{class:"portfolio-project-name"} Crossway Blog
-            %li{class:"read-more"}
-              %a{:href => "#", :class => "btn", :role => "button"}
-                Visit the Blog
-    .col-md-3.col-sm-6
-      .portfolio-item
-        .portfolio-image
-          = link_to image_tag("home/home_news.png", :"data-caption" => "Latest News"), news_path
-        .portfolio-info-fade
-          %ul
-            %li{class:"portfolio-project-name"} Latest News
-            %li{class:"read-more"}
-              %a{:href => "#", :class => "btn", :role => "button"}
-                View News
+-#
+  .row
+    .col-md-10.col-md-offset-1
+      .col-md-3.col-sm-6
+        .portfolio-item
+          .portfolio-image
+            = link_to image_tag(@previous_sermon_series.button_image_url.to_s,
+            :"data-caption" => "Sermon Series Archive", :"data-src" => @previous_sermon_series.button_image_url.to_s),
+            { :action => 'index', :controller => 'sermon_series', :title => "Sermon Archive"}
+          .portfolio-info-fade
+            %ul
+              %li{class:"portfolio-project-name"} Sermon Archive
+              %li{class:"read-more"}
+                %a{:href => "#", :class => "btn", :role => "button"}
+                  Visit
+      .col-md-3.col-sm-6
+        .portfolio-item
+          .portfolio-image
+            = link_to image_tag("home/meetthestaff_button.png", :"data-caption" => "Meet the Elders"), people_path
+          .portfolio-info-fade
+            %ul
+              %li{class:"portfolio-project-name"} Leadership
+              %li{class:"read-more"}
+                = link_to "Meet the Elders", people_path, :class => "btn", :role => "button"
+      .col-md-3.col-sm-6
+        .portfolio-item
+          .portfolio-image
+            = link_to image_tag("home/home_blog.png", :"data-caption" => "Visit the Blog"), articles_path
+          .portfolio-info-fade
+            %ul
+              %li{class:"portfolio-project-name"} Crossway Blog
+              %li{class:"read-more"}
+                %a{:href => "#", :class => "btn", :role => "button"}
+                  Visit the Blog
+      .col-md-3.col-sm-6
+        .portfolio-item
+          .portfolio-image
+            = link_to image_tag("home/home_news.png", :"data-caption" => "Latest News"), news_path
+          .portfolio-info-fade
+            %ul
+              %li{class:"portfolio-project-name"} Latest News
+              %li{class:"read-more"}
+                %a{:href => "#", :class => "btn", :role => "button"}
+                  View News
 
 .row
   .col-md-12{style: "height: 40px;"}
 
-.row
-  .col-md-5.col-md-offset-1
-    %table.table.table-striped
-      %tr
-        %th{colspan: "2"}
-          %h4
-            = link_to "From the Blog", articles_path
-      - @articles.each do |article|
-        %tr
-          %td{style: "width: 110px;"}
-            = article.published_at.strftime("%b %d, %Y")
-          %td
-            = link_to article.title, article
-  .col-md-5
-    %table.table.table-striped
-      %tr
-        %th{colspan: "2"}
-          %h4 
-            = link_to "Latest News", news_path
-      - @entries.each do |entry|
-        %tr
-          %td{style: "width: 110px;"}
-            = entry.published.strftime("%b %d, %Y")
-          %td
-            = link_to entry.title, entry.url
+.section
+  .container
+    .row
+      .col.xs-12.col-md-10.col-md-offset-1
+        .row
+          .col-md-6
+            %table.events-list
+              %thead
+                %tr
+                  %th{colspan: "3"}
+                    %h4
+                      = link_to "From the Blog", articles_path
+              %tbody
+                - @articles.each do |article|
+                  %tr
+                    %td
+                      .event-date
+                        .event-day
+                          = article.published_at.strftime("%d")
+                        .event-month
+                          = article.published_at.strftime("%b")
+                    %td
+                      = link_to article.title, article
+                    %td
+                      = link_to "Read More", article, :class => "btn btn-grey btn-sm event-more"
+          .col-md-6
+            %table.events-list
+              %thead
+                %tr
+                  %th{colspan: "3"}
+                    %h4 
+                      = link_to "Latest News", news_path
+              %tbody
+                - @entries.each do |entry|
+                  %tr
+                    %td
+                      .event-date
+                        .event-day
+                          = entry.published.strftime("%d")
+                        .event-month
+                          = entry.published.strftime("%b")
+                    %td
+                      = link_to entry.title, entry.url
+                    %td
+                      = link_to "Read More", entry.url, :class => "btn btn-grey btn-sm event-more"

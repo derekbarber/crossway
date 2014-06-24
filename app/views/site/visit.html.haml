@@ -19,31 +19,33 @@
           at the center of all that we do. It is what directs and defines us. It is our identity.
 
 
-.row
-  .col-md-5.col-md-offset-1
-    %h3 Join us on Sunday
-    .pull-right{style: "padding-top: 24px;"}
-      %h4 Meeting Location
-      %address
-        %strong Christ for the Nations Bible College
-        %br
-        19533 64th Avenue
-        %br
-        Surrey, B.C.
-    %hr
-    %h4 Sunday Class
-    %h5
-      8:45 AM
-      %strong *
-    %h4 Worship Service
-    %h5 10:00 AM
-    .clearfix
-    %p
-      %strong *
-      %em
-        Sunday Class does not occur every week, if you are a visitor interested
-        in attending this class please #{link_to "get in touch with us", contact_path} prior to coming for the latest schedule.
-  .col-md-5
-    %div{style: "text-align: center; padding-top: 30px"}
-      = link_to image_tag("visit/google-map.png"), "https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=19533+64+Ave+in+Surrey,+BC,+CAnada&aq=&sll=37.0625,-95.677068&sspn=55.937499,92.8125&ie=UTF8&hq=&hnear=19533+64+Ave,+Surrey,+British+Columbia+V3S+4J3,+Canada&ll=49.119096,-122.681317&spn=0.022863,0.045319&t=m&z=14", :target => "blank"
+.service-wrapper-simple
+  .container
+    .row.service-wrapper-row
+      .col-md-5.col-md-offset-1
+        %h3 Join us on Sunday
+        .pull-right{style: "padding-top: 24px;"}
+          %h4 Meeting Location
+          %address
+            %strong Christ for the Nations Bible College
+            %br
+            19533 64th Avenue
+            %br
+            Surrey, B.C.
+        %hr
+        %h4 Sunday Class
+        %h5
+          8:45 AM
+          %strong *
+        %h4 Worship Service
+        %h5 10:00 AM
+        .clearfix
+        %p
+          %strong *
+          %em
+            Sunday Class does not occur every week, if you are a visitor interested
+            in attending this class please #{link_to "get in touch with us", contact_path} prior to coming for the latest schedule.
+      .col-md-5
+        %div{style: "text-align: center; padding-top: 30px"}
+          = link_to image_tag("visit/google-map.png"), "https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=19533+64+Ave+in+Surrey,+BC,+CAnada&aq=&sll=37.0625,-95.677068&sspn=55.937499,92.8125&ie=UTF8&hq=&hnear=19533+64+Ave,+Surrey,+British+Columbia+V3S+4J3,+Canada&ll=49.119096,-122.681317&spn=0.022863,0.045319&t=m&z=14", :target => "blank"
 
