@@ -11,9 +11,8 @@
         = image_tag("crossway-logo.png", class: "mini-logo") 
     .navbar-collapse.collapse
       %ul.nav.navbar-nav
-        -#= navbar_list_item "HOME", root_path
-        = navbar_list_item "VISIT", visit_path
-        = navbar_list_item "GOD", god_path
+        = navbar_list_item "Visit", visit_path
+        = navbar_list_item "God", god_path
         %li{class: current_page?(connect_path) ? 'dropdown active' : 'dropdown'}
           = link_to "#", class: "dropdown-toggle", :"data-toggle" => "dropdown" do
             CONNECT <b class='caret'></b>
