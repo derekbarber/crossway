@@ -12,16 +12,17 @@ Crossway::Application.routes.draw do
   resources :people, :only => [:index, :show]
 
   match 'contact' => 'contact#new', :as => 'contact', :via => :get
-  resources :contact
-  #match 'contact' => 'contact#create', :as => 'contact', :via => :post
+  resources :contact, :only => [:new, :create]
 
   get '/home',   to: 'site#home'
   get '/news',   to: 'site#news', as: 'news'
   get '/events',   to: 'site#events'
   get '/visit',   to: 'site#visit'
-  get '/god',   to: 'site#god'
-  get '/connect',   to: 'site#connect'
+  get '/god',   to: 'site#god', as: 'god'
+  get '/connect',   to: 'site#connect', as: 'connect'
+  get '/connect/sunday-gatherings', to: 'site#sunday_gatherings'
   get '/connect/community-groups', to: 'site#community_groups'
+  get '/connect/discipleship-groups', to: 'site#discipleship_groups'
   get '/connect/ministries',   to: 'site#ministries'
   get '/connect/family-ministries',   to: 'site#family_ministries'
   get '/connect/outreach-ministries',   to: 'site#outreach_ministries'
@@ -30,11 +31,12 @@ Crossway::Application.routes.draw do
   get '/connect/the-city',   to: 'site#the_city'
   get '/give',   to: 'site#give'
   get '/resources',   to: 'site#resources'
-  get '/identity',   to: 'site#identity'
+  get '/about',   to: 'site#about'
   get '/covenant-membership',   to: 'site#covenant_membership'
+  get '/we-are-crossway',   to: 'site#covenant_membership'
   get '/identity/statement-of-faith',   to: 'site#statement_of_faith'
   get '/identity/recommended-ministries',   to: 'site#recommended_ministries'
-  get '/identity/partnerships',   to: 'site#partnerships'
+  get '/identity/affiliations',   to: 'site#affiliations'
 
   get '/terms', to: 'site#terms'
   get '/sitemap', to: 'site#sitemap'
