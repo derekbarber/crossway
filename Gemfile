@@ -2,11 +2,9 @@ source 'https://rubygems.org'
 
 ruby '2.1.1'
 
-gem 'rails', '4.1.1'
+gem 'rails', '4.1.4'
 
 gem 'bootstrap-sass', '~> 3.1.1'
-gem 'bootstrap_form'
-gem 'bourbon'
 gem 'carrierwave'
 gem 'devise'
 gem 'feedjira'
@@ -18,6 +16,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'mediaelement_rails'
 gem 'mini_magick'
+gem 'mail_form'
 gem 'pg'
 gem "ransack"
 gem 'sitemap_generator'
