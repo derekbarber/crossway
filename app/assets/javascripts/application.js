@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require modernizr
 //= require fitvids
-//= require_tree .
+//= require site

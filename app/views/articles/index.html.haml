@@ -5,9 +5,11 @@
   %li
     = link_to "Resources", root_path
   %li.active Blog
+
 .blog-header
   %h1.blog-title The Crossway Blog
   %p.lead.blog-description The official example template of creating a blog with Bootstrap.
+
 .row.one-column
   .col-sm-8.blog-main
     - @articles.each do |article|

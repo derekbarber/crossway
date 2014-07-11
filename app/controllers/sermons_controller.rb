@@ -13,7 +13,7 @@ class SermonsController < ApplicationController
   end
 
   def show
-    @sermon = Sermon.find(params[:id])
+    @sermon = Sermon.friendly.find(params[:id])
     @sermon_series = SermonSeries.find(@sermon.sermon_series_id)
     @sermons = @sermon_series.sermons.order("date asc").all
 

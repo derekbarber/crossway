@@ -60,9 +60,13 @@ body > .container {
 }
 
 .navbar .mini-logo {
-  height: 36px;
-  width: 316px;
-  margin-top: -7px;
+  height: 40px;
+  width: 142px;
+  margin-top: -5px;
+}
+
+.banner-image {
+  width: 100%;
 }
 
 /*
@@ -109,6 +113,11 @@ h1, h2, h3 {
 strong {
   font-family: 'Gibson-SemiBold';
   text-transform: uppercase;
+}
+
+p {
+  font-size: 16px;
+  line-height: 160%;
 }
 
 ul.breadcrumb li {

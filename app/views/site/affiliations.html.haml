@@ -1,0 +1,30 @@
+%ul.breadcrumb
+  %li
+    = link_to "Home", root_path
+  %li
+    = link_to "About", about_path
+  %li.active Affiliations
+
+
+%h2 Affiliations
+
+%hr
+
+.jumbotron
+  .row
+    .col-md-4
+      = image_tag("c2c-network.jpg", :class => 'media-object  img-responsive')
+    .col-md-8
+      %p
+        %strong C2C Network
+      %p
+        %small
+          Crossway Church is part the C2C Network which exists to be a catalyst for multiplication and church planting throughout Canada.
+      %p
+        %small
+          In the recent years, God has been calling a number of planters specifically to the cities, so we find ourselves focusing much time and energy these days on understanding and formulating “urban strategies.”   Our movement is built on a solid trust and dependence upon the Spirit of God.  We pray for workers, for finances, and for the appropriate locations and strategies, and God is answering those prayers!
+      %p
+        %small
+          To find out more, please visit the C2C Website
+      = link_to "Visit C2C Network Website", "http://www.c2cnetwork.ca/", :class => "btn btn-primary btn-large"
+

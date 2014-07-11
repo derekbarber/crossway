@@ -1,10 +1,10 @@
 .section
   .container
     .row
-      .col.xs-12.col-md-10.col-md-offset-1
+      .col.xs-12
         .portfolio-item
           .portfolio-image
-            = link_to image_tag(@current_sermon_series.banner_image_url.to_s, :class => "caption img-responsive", 
+            = link_to image_tag(@current_sermon_series.banner_image_url.to_s, :class => "banner-image img-responsive", 
                     :"data-caption" => "Most Recent Sermon", :id => "header-image"), @latest_sermon,
                     { :title => "Latest Sermon" } if @current_sermon_series.banner_image?
           .portfolio-info-fade
@@ -20,7 +20,7 @@
 
 -#
   .row
-    .col-md-10.col-md-offset-1
+    .col-sm-12
       .col-md-4.col-sm-12
         .h3
           Welcome!
@@ -54,7 +54,7 @@
 .section
   .container
     .row
-      .col.xs-12.col-md-10.col-md-offset-1
+      .col.xs-12
         .col-md-4.col-sm-6
           .service-wrapper
             = image_tag "icons/diamond.png"
@@ -119,8 +119,6 @@
                 %a{:href => "#", :class => "btn", :role => "button"}
                   View News
 
-.row
-  .col-md-12{style: "height: 40px;"}
 
 .section
   .container

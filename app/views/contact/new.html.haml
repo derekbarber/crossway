@@ -6,22 +6,40 @@
 %h2 Contact Us
 
 .row
-  .col-md-8
+  .col-xs-12.col-md-6
     = form_for @contact_form, :url => contact_path, :html => { :class => 'form-horizontal' }  do |f|
       -#= f.error_notification
-      .form-inputs
-        = f.text_field :name
-        = f.text_field :email
-        = f.text_area :content, :as => :text, :label => 'Message', :input_html => {  :class => 'span5', :rows => 6 }
-      .form-actions
-        = f.submit "Send Message"
-  .col-md-4
+      .form-group
+        %label.col-sm-2.control-label{for: "inputEmail3"} Name
+        .col-sm-10
+          = f.text_field :name, :class => "form-control"
+      .form-group
+        %label.col-sm-2.control-label{for: "inputPassword3"} Email
+        .col-sm-10
+          = f.text_field :email, :class => "form-control"
+      .form-group
+        %label.col-sm-2.control-label{for: "inputPassword3"} Subject
+        .col-sm-10
+          = f.select :subject, ["General Inquiry", "Covenant Membership", "Pastoral Visit", "Community Groups", "Discipleship Groups", "Other"], :class => "form-control"
+      .form-group
+        %label.col-sm-2.control-label{for: "inputPassword3"} Message
+        .col-sm-10
+          = f.text_area :content, :as => :text, :label => 'Message', :class => 'form-control', :rows => 6
+      .hidden 
+        = f.hidden_field :nickname, :hint => 'Leave this field blank!'
+      .form-group
+        .col-sm-offset-2.col-sm-10
+          = f.submit "Send Message", :class => "btn btn-primary btn-large"
+
+  .col-md-1
+    
+  .col-md-5
     .well
       %h3 Church Office
       %address
-        \#201 - 20334 56th Ave.
+        \19533 64 Avenue
         %br/
-        Langley, B.C.
+        Surrey BC V3S 4J3
       %h4 Email
       info@crossway.ca
       %h4 Phone

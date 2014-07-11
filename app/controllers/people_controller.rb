@@ -17,9 +17,9 @@ class PeopleController < ApplicationController
   # GET /people/1.json
   def show
     if (params[:id])
-      @person = Person.find(params[:id])
+      @person = Person.friendly.find(params[:id])
     end
-    
+
     @staff = Person.staff
     @lay_elders = Person.lay_elders
 

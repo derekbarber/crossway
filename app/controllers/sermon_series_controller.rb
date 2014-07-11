@@ -14,7 +14,7 @@ class SermonSeriesController < ApplicationController
   end
 
   def show
-    @sermon_series = SermonSeries.find(params[:id])
+    @sermon_series = SermonSeries.friendly.find(params[:id])
     @sermons = @sermon_series.sermons.order("date asc").all
 
     respond_to do |format|

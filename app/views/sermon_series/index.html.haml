@@ -6,10 +6,23 @@
   %li.active Sermon Series
 
 %h2 Sermon Series Archive
-.row
-  - @sermon_series.each do |sermon_series|
-    .col-sm-4.col-md-3
-      .images
-        = link_to image_tag(sermon_series.button_image_url, :class => "captify", |
-                      :alt => "#{sermon_series.title}"), sermon_series,          |
-          { :title => "#{sermon_series.title}"} if sermon_series.button_image?   |
+
+
+.section
+  .container
+    .row
+      - @sermon_series.each do |sermon_series|
+        .col.xs-12.col-md-3
+          .portfolio-item
+            .portfolio-image
+              = link_to image_tag(sermon_series.button_image_url, :class => "banner-image img-responsive", |
+                            :alt => "#{sermon_series.title}"), sermon_series,          |
+                { :title => "#{sermon_series.title}"} if sermon_series.button_image?   |
+            .portfolio-info-fade
+              %ul
+                %li.portfolio-project-name
+                  = sermon_series.title
+                %li.read-more
+                  = link_to "View", sermon_series, :class => "btn"
+
+

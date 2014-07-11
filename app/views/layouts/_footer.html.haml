@@ -1,28 +1,16 @@
-.footer-wrapper
+%div{id: 'footer'}
   .container
-    .footer
-      .row
-        .col-md-10.col-md-offset-1
-          .col-md-3.col-sm-6.col-xs-12
-            .footer-content
-              = link_to "Contact Us", contact_path, :class => "footer-link"
-          .col-md-3.col-sm-6.col-xs-12
-            .footer-content
-              = link_to "Terms of Use", terms_path, :class => "footer-link"
-          .col-md-3.col-sm-6.col-xs-12
-            .footer-content
-              = link_to "Site Map", sitemap_path, :class => "footer-link"
-          .col-md-3.col-sm-6.col-xs-12
-            .footer-content{style: "width: 100px;"}
-              %a#social-twitter{href: "http://twitter.com/crosswayonline"}
-              %a#social-facebook{href: "https://www.facebook.com/CrosswayOnline", target: "_blank"}
-              %a#social-thecity{href: "https://crosswaycc.onthecity.org", target: "_blank"}
-              %a#social-vimeo{href: "http://vimeo.com/user10992899", target: "_blank"}
-      .row{style: "height: 30px;"}
-        .col-md-12  
-      .row
-        .col-md-12
-          .copyright
+    .row
+      .col-md-12
+        .col-md-10.col-sm-9.col-xs-12
+          .p{class: "text-muted"}
             Copyright &copy; #{Time.now.year} Crossway Church.
-      .row{style: "height: 30px;"}
-        .col-md-12  
+            &nbsp;&nbsp;
+            = link_to "Contact Us", contact_path
+            &nbsp;|&nbsp;
+            = link_to "Terms of Use", terms_path
+        .col-md-2.col-sm-3.col-xs-12
+          %a#social-twitter{href: "http://twitter.com/crosswayonline"}
+          %a#social-facebook{href: "https://www.facebook.com/CrosswayOnline", target: "_blank"}
+          %a#social-thecity{href: "https://crosswaycc.onthecity.org", target: "_blank"}
+          %a#social-vimeo{href: "http://vimeo.com/user10992899", target: "_blank"}
