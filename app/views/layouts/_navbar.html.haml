@@ -24,7 +24,9 @@
             %li
               = link_to "Discipleship Groups", :controller => 'site', :action => 'discipleship_groups'
             %li
-              = link_to "Children & Families", :controller => 'site', :action => 'family_ministries'
+              = link_to "CrosswayKids", :controller => 'site', :action => 'crosswaykids'
+            %li
+              = link_to "Ministries", :controller => 'site', :action => 'ministries'
             %li
               = link_to "The City", :controller => 'site', :action => 'the_city'
         = navbar_list_item "Resources", resources_path
@@ -43,5 +45,5 @@
               = link_to "Leadership", people_path
             %li
               = link_to "Contact Us", contact_path
-      %ul.nav.navbar-nav.navbar-right
+      %ul.nav.navbar-nav.navbar-right.hidden-sm
         = navbar_list_item "The City", "https://crosswaycc.onthecity.org", :target => "blank"
