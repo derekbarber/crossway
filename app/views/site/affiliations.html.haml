@@ -1,30 +1,50 @@
 %ul.breadcrumb
   %li
     = link_to "Home", root_path
-  %li
-    = link_to "About", about_path
+  %li About
   %li.active Affiliations
 
 
-%h2 Affiliations
+.service-wrapper-simple
+  .container
+    .row.service-wrapper-row
+      .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12
+        %h2 Affiliations
 
-%hr
+        %p
+          %strong C2C Network
 
-.jumbotron
-  .row
-    .col-md-4
-      = image_tag("c2c-network.jpg", :class => 'media-object  img-responsive')
-    .col-md-8
-      %p
-        %strong C2C Network
-      %p
-        %small
-          Crossway Church is part the C2C Network which exists to be a catalyst for multiplication and church planting throughout Canada.
-      %p
-        %small
-          In the recent years, God has been calling a number of planters specifically to the cities, so we find ourselves focusing much time and energy these days on understanding and formulating “urban strategies.”   Our movement is built on a solid trust and dependence upon the Spirit of God.  We pray for workers, for finances, and for the appropriate locations and strategies, and God is answering those prayers!
-      %p
-        %small
-          To find out more, please visit the C2C Website
-      = link_to "Visit C2C Network Website", "http://www.c2cnetwork.ca/", :class => "btn btn-primary btn-large"
+        %p Crossway Church is affiliated with the C2C Network and shares C2C’s values, described below:
 
+    .row
+      .col-md-3.col-md-offset-1.col-xs-12
+        = image_tag("c2c-network.jpg", :class => 'media-object  img-responsive')
+      .col-md-7.col-xs-12
+
+        %ul
+          %li 
+            %h4 GOSPEL CENTERED
+
+            %p Gospel Centered means that the person and work of Jesus Christ MUST be at the center in each of our plants. Rather than focusing on some particular “cause” we want to focus on a “person.” That person, and His NAME is where salvation is found, so we unapologetically keep the gospel message at the center of our mission, our preaching, our lives, and our strategies.
+
+          %li 
+            %h4 SPIRIT LED
+
+            %p Being Spirit-Led simply means that we rely totally upon the Spirit of God to call planters into the harvest, to lead us to the locations where He has already chosen to establish His church, and to provide all the resources we need to carry out His work. This IS after all HIS church, so we strive to depend totally upon the leadership of the Holy Spirit, through His Word, His people, and the clarion call of His voice! Prayer saturation is perhaps the key “spiritual strategy” that we see as our part – the rest we rely totally upon Him!
+
+          %li 
+            %h4 MISSION FOCUSED
+
+            %p “Mission-focused” reminds us of the outward “face” the church MUST have if we are going to be faithful to the commission of Jesus Christ. We are a SENT people and are called to live “on mission” for Him.
+
+    .row
+      .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12
+        %p
+          %strong
+            To find out more, please visit the C2C Website
+
+        = link_to "Visit C2C Network Website", "http://www.c2cnetwork.ca/", :class => "btn btn-primary btn-large"
+
+
+  %br
+  %br

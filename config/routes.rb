@@ -31,7 +31,7 @@ Crossway::Application.routes.draw do
   get '/connect/the-city',   to: 'site#the_city'
   get '/give',   to: 'site#give'
   get '/resources',   to: 'site#resources'
-  get '/about',   to: 'site#about'
+  get '/about',   to: 'site#covenant_membership'
   get '/covenant-membership',   to: 'site#covenant_membership'
   get '/we-are-crossway',   to: 'site#covenant_membership'
   get '/identity/statement-of-faith',   to: 'site#statement_of_faith'
