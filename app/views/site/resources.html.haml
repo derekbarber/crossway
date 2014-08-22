@@ -3,30 +3,27 @@
     = link_to "Home", root_path
   %li.active Resources
 
-.row
-  .col-md-12{style: "height: 20px;"}
-
 .section
   .container
     .row
       .col-md-4.col-sm-6
-        .service-wrapper
-          = link_to image_tag(@previous_sermon_series.button_image_url, :alt => "Sermon Library"), { :action => 'index', :controller => 'sermon_series', :title => "Sermon Library"}
+        .service-wrapper{style: "height: 320px;"}
+          = image_tag "icons/chat.png"
 
           %h3 Sermon Library
-          %p Praesent rhoncus mauris ac sollicitudin vehicula. Nam fringilla turpis turpis, at posuere turpis aliquet sit amet condimentum
+          %p Explore Crossway's extensive sermon library and freely listen online or download sermons.
           = link_to "Visit", { :action => 'index', :controller => 'sermon_series', :title => "Sermon Library"}, :class => "btn"
       .col-md-4.col-sm-6
-        .service-wrapper
-          = link_to image_tag("home/home_blog.png", :alt => "The Crossway Blog"), articles_path
-          %h3 Recommended Ministries
-          %p Suspendisse eget libero mi. Fusce ligula orci, vulputate nec elit ultrices, ornare faucibus orci. Aenean lectus sapien, vehicula
+        .service-wrapper{style: "height: 320px;"}
+          = image_tag "icons/ruler.png", :alt => "The Crossway Blog"
+          %h3 The Crossway Blog
+          %p Read blog articles written by Crossway staff and covenant members.
           = link_to "Read more", articles_path, :class => "btn"
       .col-md-4.col-sm-6
-        .service-wrapper
-          = image_tag "resources/teaching.png", :class => "img-thumbnail", :alt => "Recommended Books"
-          %h3 Recommended Books
-          %p Phasellus posuere et nisl ac commodo. Nulla facilisi. Sed tincidunt bibendum cursus. Aenean vulputate aliquam risus rutrum scelerisque
+        .service-wrapper{style: "height: 320px;"}
+          = image_tag "icons/box.png", :alt => "Recommended Resources"
+          %h3 Recommended Resources
+          %p We have compiled a list of recommended resources for you including websites and books.
           = link_to "Read more", books_path, :class => "btn"
 
 
