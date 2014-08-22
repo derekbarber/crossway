@@ -1,6 +1,9 @@
 $link-color: #4E4B4C;
 $link-color-hover: #AB1013;
 
+$jumbotron-bg: #fcfcfc;
+$jumbotron-font-size: 200%;
+
 $nav-link-padding: 10px 20px;
 
 @import "bootstrap";
@@ -42,11 +45,6 @@ body {
   color: #555;
 }
 
-/*
-body > .container {
-  background-color: #ffffff;
-}
-*/
 
 /* NAVBAR */
 
@@ -112,12 +110,20 @@ h1, h2, h3 {
 
 strong {
   font-family: 'Gibson-SemiBold';
-  text-transform: uppercase;
 }
 
 p {
-  font-size: 16px;
+  font-size: 120%;
   line-height: 160%;
+  margin-top: 10px;
+  margin-bottom: 24px;
+}
+
+ul.large li {
+  font-size: 120%;
+  line-height: 140%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 ul.breadcrumb li {
@@ -127,21 +133,6 @@ ul.breadcrumb li {
 .img-thumbnail {
   margin: 3px;
 }
-/*
-p {
-  color: #333333;
-}
-
-a {
-  border-bottom: 1px dotted #BBB;
-}
-
-a:hover {
-  border-bottom: 1px dotted #AB1013;
-  text-decoration: none;
-}
-*/
-
 
 .aside {
   margin: 0;
@@ -164,6 +155,13 @@ a:hover {
   width: 250px;
 
 }
+
+
+.jumbotron {
+  border: 1px #cccccc solid;
+  //background-color:rgba(255, 255, 255, 0.9);
+}
+
 
 
 /* Ministries Page */
@@ -581,6 +579,7 @@ a:hover {
   box-shadow: 0 0 3px #999;
   color: 0 0 3px #999;
 }
+
 .service-wrapper h3 {
   font-size: 1.2em;
   margin: 10px 0 !important;
@@ -614,6 +613,19 @@ a:hover {
   -moz-box-shadow: 0 0 8px #999;
   box-shadow: 0 0 8px #999;
   color: 0 0 8px #999;
+}
+
+.service-wrapper-plain {
+  background: #FFF;
+  margin: 10px 0px;
+  text-align: center;
+  padding: 20px 20px;
+  color: 0 0 3px #999;
+}
+
+.service-wrapper-plain h3 {
+  font-size: 1.2em;
+  margin: 10px 0 !important;
 }
 
 /*--------------------------------------------------------------------------
