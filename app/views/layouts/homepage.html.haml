@@ -1,0 +1,95 @@
+!!! 5
+%html{lang: "en"}
+  %head
+    %title Welcome to Crossway Church | Surrey, BC Canada
+
+    %meta{charset: "utf-8"}
+    %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}
+    %meta{name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0'}
+    %meta{name: "description", content: "Crossway is a Christian Church in Surrey, British Columbia."}
+    %meta{content: "Crossway Church", name: "author"}
+
+    = stylesheet_link_tag    "application", media: "all"
+    = javascript_include_tag "application"
+    = javascript_include_tag "https://checkout.stripe.com/v2/checkout.js"
+    = csrf_meta_tags
+
+    / HTML5 shim, for IE6-8 support of HTML5 elements
+    /[if lt IE 9]
+      %script{:type => "text/javascript", :src => "http://html5shim.googlecode.com/svn/trunk/html5.js"}
+    / Fav and touch icons
+    = favicon_link_tag "ico/favicon.ico"
+    = favicon_link_tag 'ico/apple-touch-icon-144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'
+    = favicon_link_tag 'ico/apple-touch-icon-114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114'
+    = favicon_link_tag 'ico/apple-touch-icon-72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72'
+    = favicon_link_tag 'ico/apple-touch-icon-57-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '57x57'
+  %body
+    = render 'layouts/navbar'
+
+  .homepage-slider
+    #sequence
+      %ul.sequence-canvas
+        / Slide 1
+        %li.bg4.animate-in{style: "display: list-item; opacity: 1; z-index: 3;"}
+          / Slide Title
+          %h2.title{style: ""} 
+            = "Latest Sermon, #{@latest_sermon.date.strftime("%b %d, %Y")}"
+          / Slide Text
+          %h3.subtitle{style: ""}
+            = @latest_sermon.title
+          / Slide Image
+          = image_tag @current_sermon_series.banner_image_url.to_s, :class => "slide-img", :alt => "Slide 1"
+        / End Slide 1
+        -#
+          / Slide 2
+          %li.bg3{style: "display: list-item;"}
+            / Slide Title
+            %h2.title Color Schemes
+            / Slide Text
+            %h3.subtitle Comes with 5 color schemes and it's easy to make your own!
+            / Slide Image
+            = image_tag "homepage-slider/slide2.png", :class => "slide-img", :alt => "Slide 2"
+          / End Slide 2
+          / Slide 3
+          %li.bg1{style: "display: list-item;"}
+            / Slide Title
+            %h2.title Feature Rich
+            / Slide Text
+            %h3.subtitle Huge amount of components and over 30 sample pages!
+            / Slide Image
+            = image_tag "homepage-slider/slide3.png", :class => "slide-img", :alt => "Slide 3"
+          / End Slide 3
+      .sequence-pagination-wrapper
+        %ul.sequence-pagination{style: "display: block;"}
+          %li.current 1
+          -#
+            %li 2
+            %li 3
+  
+    .container.main-content
+      = render 'layouts/flash_messages'
+      = yield
+      %hr/
+    = render 'layouts/footer'
+
+    %script
+      var refTagger = { settings: { bibleVersion: "ESV" } };
+      (function(d, t) {
+      var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      g.src = "//api.reftagger.com/v2/RefTagger.js";
+      s.parentNode.insertBefore(g, s);
+      }(document, "script"));
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-38453405-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    -#= javascript_include_tag '//platform.twitter.com/widgets.js'
+    -#= javascript_include_tag 'social-sharing'
+

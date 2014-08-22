@@ -1,7 +1,7 @@
 .section
   .container
     .row
-      .col.xs-12
+      .col.sm-12.visible-sm-12.hidden-xs
         .portfolio-item
           .portfolio-image
             = link_to image_tag(@current_sermon_series.banner_image_url.to_s, :class => "banner-image img-responsive", 
@@ -17,38 +17,22 @@
                 = @latest_sermon.speaker
               %li.read-more
                 = link_to "Listen now", @latest_sermon, :class => "btn"
-
--#
-  .row
-    .col-sm-12
-      .col-md-4.col-sm-12
-        .h3
-          Welcome!
-        %p
-          Because of the gospel, Crossway Church exists to love Jesus, love His people and live to make Him known, all to the glory of God. 
-        %p
-          We would love to have you join us on Sunday morning for our Worship Service.
-        %a{:href => "#", :class => "btn btn-grey", :role => "button"}
-          Visit Us  &nbsp;<i class="fa fa-compass"></i>
-
-        %a{:href => "#", :class => "btn btn-grey", :role => "button"}
-          Get Connected &nbsp;<i class="fa fa-chevron-circle-right"></i>
-
-      .col-md-8.col-sm-12
+      .col.xs-12.hidden-sm.hidden-md.hidden-lg
         .portfolio-item
           .portfolio-image
-            = link_to image_tag(@current_sermon_series.banner_image_url.to_s, :class => "caption img-responsive", 
+            = link_to image_tag(@current_sermon_series.button_image_url.to_s, :class => "banner-image img-responsive", 
                     :"data-caption" => "Most Recent Sermon", :id => "header-image"), @latest_sermon,
                     { :title => "Latest Sermon" } if @current_sermon_series.banner_image?
-          .portfolio-info
+          .portfolio-info-fade
             %ul
-              %li{class:"portfolio-project-name"} 
+              %li.portfolio-project-name
                 = "Latest Sermon, #{@latest_sermon.date.strftime("%b %d, %Y")}"
               %li
                 = @latest_sermon.title
-              %li{class:"read-more"}
-                %a{:href => "#", :class => "btn", :role => "button"}
-                  Listen Now
+              %li
+                = @latest_sermon.speaker
+              %li.read-more
+                = link_to "Listen now", @latest_sermon, :class => "btn"
 
 
 .section
@@ -57,22 +41,22 @@
       .col.xs-12
         .col-md-4.col-sm-6
           .service-wrapper
-            = image_tag "icons/diamond.png"
-            %h3 Why we exist
-            %p Because of the gospel, Crossway Church exists to love Jesus, love His people and live to make Him known, all to the glory of God.
-            = link_to "Read more", god_path, :class => "btn"
-        .col-md-4.col-sm-6
-          .service-wrapper
-            = image_tag "icons/ruler.png"
-            %h3 Visit with us
-            %p Our worship service begins at 10AM on Sunday mornings, we'd love to have you join us as we gather as God's people.
+            = image_tag "icons/visit.png"
+            %h3 Visit
+            %p Our worship service begins at 10AM on Sundays, we'd love you to join us. Everyone is welcome.
             = link_to "Find out more", visit_path, :class => "btn"
         .col-md-4.col-sm-6
           .service-wrapper
-            = image_tag "icons/box.png"
-            %h3 Get Connected
-            %p Beyond our Sunday morning worship services we have many opportunites for you to get connected and grow as a disciple of Christ.
-            = link_to "Read more", people_path, :class => "btn"
+            = image_tag "icons/info_centre.png"
+            %h3 Connect
+            %p Learn more about Crossway and our ministries and find out how you can get involved.
+            = link_to "Connect with us", visit_path, :class => "btn"
+        .col-md-4.col-sm-6
+          .service-wrapper
+            = image_tag "icons/resources.png"
+            %h3 Resources
+            %p Explore our sermon archive, visit our blog and explore some recommended resources.
+            = link_to "Visit Resources", resources_path, :class => "btn"
 
 -#
   .row
