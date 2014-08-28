@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
   def index
-    @articles = Article.order("published_at desc").paginate(:page => params[:page], :per_page => 4)
+    @articles = Article.order("published_at desc").page(params[:page])
 
     @recent_articles = Article.last(4)
 

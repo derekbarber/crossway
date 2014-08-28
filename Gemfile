@@ -14,6 +14,7 @@ gem 'haml-rails'
 gem 'inherited_resources'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'kaminari'
 gem 'mediaelement_rails'
 gem 'mini_magick'
 gem 'mail_form'
@@ -23,7 +24,7 @@ gem 'sitemap_generator'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'rails_admin'
 gem 'uglifier', '>= 1.3.0'
-gem 'will_paginate', '~> 3.0'
+
 
 group :development, :test do
   gem 'rspec-rails'

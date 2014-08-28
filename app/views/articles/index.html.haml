@@ -22,7 +22,7 @@
           %div
             = image_tag article.image_url if article.image?
           = simple_format(article.content, {}, {:sanitize => false})
-      = will_paginate @articles
+      = paginate @articles
     .col-sm-3.col-sm-offset-1.blog-sidebar
       .sidebar-module.sidebar-module-inset
         %h4 About
