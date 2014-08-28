@@ -39,19 +39,5 @@ Crossway::Application.routes.draw do
   get '/terms', to: 'site#terms'
   get '/sitemap', to: 'site#sitemap'
 
-  namespace :manage do
-    root to: "home#index"
-    resources :users
-    resources :people
-    resources :sessions, :only => [:create]
-    get 'signup', to: 'users#new', as: 'signup'
-    get 'login', to: 'sessions#new', as: 'login'
-    get 'logout', to: 'sessions#destroy', as: 'logout'
-
-    resources :articles
-    resources :sermons
-    resources :sermon_series
-  end
-
   root :to => 'site#home'
 end
