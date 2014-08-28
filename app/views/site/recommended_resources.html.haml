@@ -1,0 +1,42 @@
+%ul.breadcrumb
+  %li
+    = link_to "Home", root_path
+  %li
+    = link_to "Resources", resources_path
+  %li.active Recommended Resources
+
+
+
+.service-wrapper-simple
+  .container
+  
+    .row.service-wrapper-row
+      .col-md-10.col-md-offset-1.col-xs-12
+
+        %h2 Recommended Ministries
+
+        .row
+          .col-md-4
+            = link_to image_tag("recommended/desiringgod-logo.jpg", :class => "captify", :alt => "Desiring God"), |
+              "http://www.desiringgod.org", :target => "blank"                                                   |
+          .col-md-4
+            = link_to image_tag("recommended/church-planting-bc.jpg", :class => "captify", :alt => "Church Planting BC"), |
+              "http://www.churchplantingbc.com/", :target => "blank"                                                     |
+          .col-md-4
+            = link_to image_tag("recommended/the-gospel-coalition.jpg", :class => "captify", :alt => "The Gospel Coalition"), |
+              "http://thegospelcoalition.org/", :target => "blank"                                                           |
+
+%br
+
+.service-wrapper-simple
+  .container
+  
+    .row.service-wrapper-row
+      .col-md-10.col-md-offset-1.col-xs-12
+
+        %h2 Recommended Books
+        
+        - @books.each do |book|
+          .col-md-4
+            = book.title
+

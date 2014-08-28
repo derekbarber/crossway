@@ -28,5 +28,9 @@ class SiteController < ApplicationController
     @current_sermon_series = SermonSeries.where(:current_series => true).first
     @previous_sermon_series = SermonSeries.order("start_date desc").second
   end
+  
+  def recommended_resources
+    @books = Book.all
+  end
 
 end
