@@ -1,7 +1,7 @@
 .section
   .container
     .row
-      .col.sm-12.visible-sm-12.hidden-xs
+      .col-sm-12.visible-sm-12.hidden-xs
         .portfolio-item
           .portfolio-image
             = link_to image_tag(@current_sermon_series.banner_image_url.to_s, :class => "banner-image img-responsive", 
@@ -17,7 +17,7 @@
                 = @latest_sermon.speaker
               %li.read-more
                 = link_to "Listen now", @latest_sermon, :class => "btn"
-      .col.xs-12.hidden-sm.hidden-md.hidden-lg
+      .col-xs-12.hidden-sm.hidden-md.hidden-lg
         .portfolio-item
           .portfolio-image
             = link_to image_tag(@current_sermon_series.button_image_url.to_s, :class => "banner-image img-responsive", 

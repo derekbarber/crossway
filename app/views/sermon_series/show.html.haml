@@ -7,29 +7,39 @@
     = link_to "Sermon Series", { :action => 'index', :controller => 'sermon_series' }
   %li.active= @sermon_series.title
 
-.row
-  .col-md-3
-    = image_tag @sermon_series.button_image_url
-  .col-md-9
-    %h2= @sermon_series.title
-    %h5= @sermon_series. description
-    %p
-      %i
-        = @sermon_series.start_date.strftime("%b %d, %Y")
-        \-   #{@sermon_series.end_date.strftime("%b %d, %Y")}
-.row
-  .span12{style: "height: 40px;"}
 
 .row
-  - sermon_count = 1
-  - @sermons.each do |sermon|
-    .col-sm-6.col-md-4
-      .thumbnail
-        = link_to(sermon, { :class => "thumbnail" }) do
-          = image_tag(@sermon_series.button_image_url, :alt => @sermon_series.title)
-        .caption
-          %h4= "#{sermon_count}. #{sermon.title}"
-          %p
-            %strong= sermon.speaker
-          %p= sermon.scripture_reference
+  .col-sm-12.visible-sm-12.hidden-xs
+    = image_tag @sermon_series.banner_image_url, :class => "banner-image img-responsive"
+  .col-xs-10.col-xs-offset-1.hidden-sm.hidden-md.hidden-lg
+    = image_tag @sermon_series.button_image_url.to_s, :class => "banner-image img-responsive"
+
+%br
+
+.service-wrapper-simple
+  .container
+    .row.service-wrapper-row
+      .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12
+        %h1= @sermon_series.title
+        %h4= @sermon_series. description
+
+    .row
+      .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12
+        %table.events-list
+          %tbody
+            - @sermons.each_with_index do |sermon, index|
+              %tr
+                %td
+                  .event-date
+                    .event-day
+                      = index+1
+                    .event-month
+                      = sermon.scripture_reference
+                %td
+                  = link_to sermon.title, sermon
+                  %br
+                  =  sermon.speaker
+                %td
+                  = link_to "Listen Now", sermon, :class => "btn btn-grey btn-sm event-more"
+
 
