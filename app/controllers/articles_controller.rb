@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
   def index
-    @articles = Article.order("published_at desc").page(params[:page])
+    @articles = Article.order("published_at desc").per_page_kaminari(params[:page])
 
     @recent_articles = Article.last(4)
 
