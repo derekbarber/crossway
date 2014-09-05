@@ -1,49 +1,32 @@
 %ul.breadcrumb
   %li
     = link_to "Home", root_path
-    %span.divider /
   %li
     = link_to "About", about_path
-    %span.divider /
-  - if @person.is_staff?
-    %li
-      = link_to "Staff", :controller => "people", :action => "staff"
-      %span.divider /
-    %li.active= @person.name
-  - elsif @person.is_lay_elder?
-    %li
-      = link_to "Lay Elders", :controller => "people", :action => "lay_elders"
-      %span.divider /
-    %li.active= @person.name
-.row
-  .span9
-    .media
-      %a.pull-left
-        - if @person.image_url
-          = image_tag(@person.image_url, :class => 'media-object')
-        - else
-          = image_tag("http://placehold.it/200x160", :class => 'media-object')
-      .media-body
-        %h3.media-heading= @person.name
-        %h4= @person.title
-  .span3
-    .aside
-      - if @person.is_staff?
-        %h5 Staff
-        %ul.unstyled
-          - @staff.each do |staff|
-            %li{style: "margin-bottom: 10px;"}
-              %i.icon-chevron-right>
-               #{link_to staff.name, person_path(staff)}
-      - elsif @person.is_lay_elder?
-        %h5 Lay Elders
-        %ul.unstyled
-          - @lay_elders.each do |lay_elder|
-            %li{style: "margin-bottom: 10px;"}
-              %i.icon-chevron-right>
-               #{link_to lay_elder.name, person_path(lay_elder)}
-.row
-  .span12
-    = @person.content.html_safe
-.row
-  .span12{style: "height: 40px;"}  
+  %li
+    = link_to "People", people_path
+  %li.active= @person.name
+
+
+.service-wrapper-simple
+  .container
+    .row.service-wrapper-row
+      .col-md-6.col-md-offset-2
+        %h2
+          = @person.name
+        %hr
+
+        %h3
+          = @person.title
+
+      .col-md-4
+        %div{style: "text-align: center; padding-top: 30px"}
+          - if @person.image_url
+            = image_tag(@person.image_url, :class => 'media-object')
+          - else
+            = image_tag("http://placehold.it/200x160", :class => 'media-object')
+
+    .row.service-wrapper-row
+      .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12
+        = @person.content.html_safe
+

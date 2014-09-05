@@ -12,21 +12,15 @@
       - @staff.each do |staff|
         .col-md-4.col-sm-6
           .team-member
-            / Team Member Photo
             .team-member-image
               - if staff.image_url
-                = image_tag(staff.image_url)
+                = link_to image_tag(staff.image_url), person_path(staff)
               - else
                 %img{alt: "", src: "http://placehold.it/200x160"}/
             .team-member-info
               %ul
-                / Team Member Info & Social Links
                 %li.team-member-name
-                  = staff.name
-                  / Team Member Social Links
-                  %span.team-member-social
-                    %a{href: "#"}
-                      %i.icon-facebook
+                  = link_to staff.name, person_path(staff)
                 %li
                   = staff.title
 
@@ -45,19 +39,12 @@
           .team-member
             .team-member-image
               - if lay_elder.image_url
-                = image_tag(lay_elder.image_url)
+                = link_to image_tag(lay_elder.image_url), person_path(lay_elder)
               - else
                 %img{alt: "", src: "http://placehold.it/200x160"}/
             .team-member-info
               %ul
                 %li.team-member-name
-                  = lay_elder.name
-                  %span.team-member-social
-                    %a{href: "#"}
-                      %i.icon-facebook
+                  = link_to lay_elder.name, person_path(lay_elder)
                 %li
-                  = lay_elder.title
-
-
-.row
-  .span12{style: "height: 40px;"}
+                  = link_to lay_elder.title, person_path(lay_elder)
