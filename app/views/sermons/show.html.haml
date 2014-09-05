@@ -9,31 +9,52 @@
     = link_to "#{@sermon_series.title}", @sermon_series
   %li.active= @sermon.title
 
+.service-wrapper-simple
+  .container
+    .row.service-wrapper-row
+      .col-md-4.col-xs-11
+        = image_tag @sermon_series.button_image_url.to_s, :class => "banner-image img-responsive"
+      .col-md-7.col-xs-11
+        %h3= @sermon.title
+        %h4 #{@sermon.speaker}
+        %h5 #{@sermon.scripture_reference}
+        %p
+          %i #{@sermon.date.strftime("%b %d, %Y")}
 
-.row
-  .col-md-8.col-md-offset-1
-    .pull-left{style: "margin: 14px;"}
-      = image_tag @sermon_series.button_image_url
-    .media-body
-      %h4= @sermon.title
-      %p= @sermon.scripture_reference
-      %p= @sermon.speaker
-      %p
-        %i= @sermon.date.strftime("%b %d, %Y")
-    .clearfix
-    .well.well-small.span5
-      %h3 Listen
-      %audio{controls: "controls", loop: "loop"}
-        %source{src: @sermon.audio_file_url, type: "audio/mpeg"}
-      %p= link_to "Download MP3 (Right-click and click 'Save As')", @sermon.audio_file_url
-    - if @sermon.video_embed.length > 0
-      .well.well-small.span7
-        %h3 Watch Clip
-        %iframe{allowfullscreen: "", frameborder: "0", height: "304", mozallowfullscreen: "", src: "http://player.vimeo.com/video/#{@sermon.video_embed}?byline=0&portrait=0", webkitallowfullscreen: "", width: "540"}
-  .col-md-3
-    .aside-sermons
-      %h5= @sermon_series.title
-      %ol
-        - @sermons.each do |sermon|
-          %li{style: "margin-bottom: 10px;"}
-            \ #{link_to "#{sermon.full_title}", sermon}
+        %h3 Listen
+        - if @sermon.audio_file_url
+          %audio{controls: "controls", loop: "loop"}
+            %source{src: @sermon.audio_file_url, type: "audio/mpeg"}
+          %p= link_to "Download MP3 (Right-click and click 'Save As')", @sermon.audio_file_url
+        - else
+          %p We're sorry but the audio is unavailable for this message
+        - if @sermon.video_embed.length > 0
+          %h3 Watch
+          .video-container
+            %iframe{allowfullscreen: "", frameborder: "0", height: "304", mozallowfullscreen: "", src: "http://player.vimeo.com/video/#{@sermon.video_embed}?byline=0&portrait=0", webkitallowfullscreen: "", width: "540"}
+
+%br
+
+.service-wrapper-simple
+  .container
+    .row.service-wrapper-row
+      .col-lg-10.col-lg-offset-1.col-md-12
+        %h3 Check out other sermons in "#{@sermon_series.title}"
+    .row
+      .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12
+        %table.events-list
+          %tbody
+            - @sermons.each_with_index do |sermon, index|
+              %tr
+                %td
+                  .event-date
+                    .event-day
+                      = index+1
+                    .event-month
+                      = sermon.scripture_reference
+                %td
+                  = link_to sermon.title, sermon
+                  %br
+                  =  sermon.speaker
+                %td
+                  = link_to "Listen Now", sermon, :class => "btn btn-grey btn-sm event-more"
