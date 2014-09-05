@@ -308,11 +308,11 @@ ul.breadcrumb li {
 }
 .portfolio-item:hover .portfolio-image img {
   position: relative;
-  -webkit-transform: scale(1.1) rotate(2deg);
-  -moz-transform: scale(1.1) rotate(2deg);
-  -o-transform: scale(1.1) rotate(2deg);
-  -ms-transform: scale(1.1) rotate(2deg);
-  transform: scale(1.1) rotate(2deg);
+  -webkit-transform: scale(1.1); // rotate(2deg);
+  -moz-transform: scale(1.1);// rotate(2deg);
+  -o-transform: scale(1.1);// rotate(2deg);
+  -ms-transform: scale(1.1);// rotate(2deg);
+  transform: scale(1.1);// rotate(2deg);
 }
 .portfolio-item ul {
   list-style-type: none;
