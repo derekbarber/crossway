@@ -21,7 +21,8 @@
             .input-group
               .input-group-addon $
               %input#charge_amount.form-control{name: "charge_amount", type: "text"}
-            %button#donateButton.btn.btn-primary Donate
+
+          %button#donateButton.btn.btn-primary Donate
 
           %script{src: "https://checkout.stripe.com/checkout.js"}
 
@@ -33,7 +34,7 @@
               };
 
               StripeCheckout.open({
-                key:         ' Rails.configuration.stripe[:publishable_key] ',
+                key:         '#{Rails.configuration.stripe[:publishable_key]}',
                 address:     true,
                 amount:      $('#charge_amount').val()*100,
                 name:        'Crossway Church',
