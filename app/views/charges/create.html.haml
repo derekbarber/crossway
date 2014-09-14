@@ -1,0 +1,15 @@
+%ul.breadcrumb
+  %li
+    = link_to "Home", root_path
+  %li.active Give
+
+.service-wrapper-simple
+  .container
+    .row.service-wrapper-row
+      .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12
+        %h2 Give
+
+        %h3
+          Thank you for your donation of
+          %strong
+            $#{@amount}.00
