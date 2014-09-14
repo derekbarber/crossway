@@ -20,28 +20,17 @@
           .form-group
             .input-group
               .input-group-addon $
-              %input#charge_amount.form-control{name: "charge_amount", type: "text"}
+              %input#charge_amount.form-control{name: "charge-amount", type: "text"}
 
-          %button#donateButton.btn.btn-primary Donate
+          %script.stripe-button{id: "donate-button", "data-amount" => "", "data-description" => "Online Donation", "data-key" => Rails.configuration.stripe[:publishable_key], src: "https://checkout.stripe.com/checkout.js",  style:"stripe-button"}
+
           :javascript
-            $('#donateButton').click(function(){
-              var token = function(res){
-                var $input = $('hidden name=stripeToken />').val(res.id);
-                $('form').append($input).submit();
-              };
-
-              StripeCheckout.open({
-                key:         ' Rails.configuration.stripe[:publishable_key] ',
-                address:     true,
-                amount:      $('#charge_amount').val()*100,
-                name:        'Crossway Church',
-                description: 'Online Donation',
-                panelLabel:  'Checkout',
-                token:       token
-              });
-
-              return false;
+            $('#charge-amount').on('focusout', function(){
+              if typoeof($(this).val()） == 'number'
+                $('#donate-button').data('amount', $(this).val())
             });
+
+
     .col-md-4.col-sm-6
       .service-wrapper{style: "height: 280px;"}
         %h3 Debit / Preauthorized Payment
