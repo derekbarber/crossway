@@ -22,8 +22,6 @@
               .input-group-addon $
               %input#charge_amount.form-control{name: "charge_amount", type: "text"}
 
-          %button#donateButton.btn.btn-primary Donate
-
           %script.stripe-button{id: "donate-button", "data-amount" => "", "data-description" => "Online Donation", "data-key" => Rails.configuration.stripe[:publishable_key], src: "https://checkout.stripe.com/checkout.js",  style:"stripe-button", "data-currency" => "cad", "data-address" => true}
 
           :javascript
