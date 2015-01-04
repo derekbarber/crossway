@@ -1,7 +1,7 @@
 title = "Crossway Church Sermons"
 author = "Crossway Church"
-description = "The Crossway Church podcast features audio sermons from our weekly worship gathering. We are located on the border of Surrey and Langley in British Columbia, Canada. Our vision as a church can be summarized, 'Because of the gospel, Crossway Church exists to love Jesus, love His people and live to make Him known, all to the glory of God.'"
-keywords = "Christianity, Trinity, God, Jesus, Holy Spirit,Crossway Church, sermons, teaching, theology, surrey, langley"
+description = "The Crossway Church podcast features audio sermons from our weekly worship gathering. We are located on the border of Surrey and Langley in British Columbia, Canada. Because of the Gospel, Crossway Church exists to make disciples who love Jesus, love His people, and live to make Him known – all to the glory of God."
+keywords = "Christianity, Trinity, God, Jesus, Holy Spirit, Crossway Church, sermons, teaching, theology, surrey, langley"
 image = "http://www.crossway.ca/img/cc_podcast.jpg"
 ext = 'mp3'
 
