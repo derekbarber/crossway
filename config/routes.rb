@@ -9,6 +9,8 @@ Crossway::Application.routes.draw do
   resources :charges
   resources :people, :only => [:index, :show]
 
+  get '/podcast', to: 'sermons#index', :defaults => { :format => 'rss' }
+
   match 'contact' => 'contact#new', :as => 'contact', :via => :get
   resources :contact, :only => [:new, :create]
 
