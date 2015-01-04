@@ -11,7 +11,7 @@ atom_feed({'xmlns:itunes' => 'http://www.itunes.com/dtds/podcast-1.0.dtd', 'vers
 
   feed.tag!('itunes:subtitle', "Sermons from Crossway Church")
   feed.tag!('itunes:author', "Crossway Church")
-  feed.tag!('media:copyright', "Copyright 2013 Crossway Church")
+  feed.tag!('media:copyright', "Copyright 2015 Crossway Church")
   feed.tag!('itunes:summary', "The Crossway Church podcast features sermons from our weekly worship gathering. We are located on the border of Surrey and Langley in British Columbia, Canada. Our vision as a church can be summarized, 'Because of the gospel, Crossway Church exists to love Jesus, love His people and live to make Him known, all to the glory of God.'")
   feed.tag!('itunes:keywords', "Trinity,God,Jesus,Holy,Spirit,Crossway,Church,Sermons,Teaching,Theology,Surrey,Langley")
 
