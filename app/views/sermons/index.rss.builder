@@ -32,7 +32,7 @@ xml.rss "xmlns:itunes" => "http://www.itunes.com/dtds/podcast-1.0.dtd",  "xmlns:
         xml.title sermon.title
         xml.description "#{sermon.title}: #{sermon.scripture_reference}"
         xml.pubDate sermon.date.strftime("%a, %d %b %Y %H:%M:%S %Z")
-        xml.enclosure :url => "http://www.crossway.ca#{sermon.audio_file_url}", :type => 'audio/mpeg'
+        xml.enclosure :url => "http://www.crossway.ca#{sermon.audio_file_url}", :type => 'audio/mpeg', :length => sermon.audio_file.size
         xml.link sermon_url(sermon)
         xml.guid({:isPermaLink => "false"}, sermon_url(sermon))
         xml.itunes :author, sermon.speaker
