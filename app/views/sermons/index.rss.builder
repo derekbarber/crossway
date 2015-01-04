@@ -1,8 +1,8 @@
-title = "Crossway Church Podcast"
+title = "Crossway Church Sermons"
 author = "Crossway Church"
-description = "The Crossway Church podcast features sermons from our weekly worship gathering. We are located on the border of Surrey and Langley in British Columbia, Canada. Our vision as a church can be summarized, 'Because of the gospel, Crossway Church exists to love Jesus, love His people and live to make Him known, all to the glory of God.'"
+description = "The Crossway Church podcast features audio sermons from our weekly worship gathering. We are located on the border of Surrey and Langley in British Columbia, Canada. Our vision as a church can be summarized, 'Because of the gospel, Crossway Church exists to love Jesus, love His people and live to make Him known, all to the glory of God.'"
 keywords = "Christianity, Trinity, God, Jesus, Holy Spirit,Crossway Church, sermons, teaching, theology, surrey, langley"
-image = "http://www.crossway.ca/img/cc_podcast.jpg"
+image = "https://www.crossway.ca/img/cc_podcast.jpg"
 ext = 'mp3'
 
 xml.rss "xmlns:itunes" => "http://www.itunes.com/dtds/podcast-1.0.dtd",  "xmlns:media" => "http://search.yahoo.com/mrss/",  :version => "2.0" do
