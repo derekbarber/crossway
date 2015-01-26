@@ -3,7 +3,8 @@
     %h3=sermon.title
 
     %h4 Watch
-    %iframe{allowfullscreen: "", frameborder: "0", height: "304", mozallowfullscreen: "", src: "https://player.vimeo.com/video/#{sermon.video_embed}?byline=0&portrait=0", webkitallowfullscreen: "", width: "540"}
+    .video-container
+      %iframe{allowfullscreen: "", frameborder: "0", height: "304", mozallowfullscreen: "", src: "https://player.vimeo.com/video/#{sermon.video_embed}?byline=0&portrait=0", webkitallowfullscreen: "", width: "540"}
     %h4 Listen
     %audio{controls: "controls", loop: "loop"}
       %source{src: sermon.audio_file_url, type: "audio/mpeg"}
