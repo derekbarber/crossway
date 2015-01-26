@@ -23,9 +23,9 @@ Crossway::Application.routes.draw do
   get '/connect/sunday-gatherings', to: 'site#sunday_gatherings'
   get '/connect/community-groups', to: 'site#community_groups'
   get '/connect/discipleship-groups', to: 'site#discipleship_groups'
-  get '/connect/ministries',   to: 'site#ministries'
+  get '/connect/ministries',   to: 'site#ministries', as: "ministries"
   get '/connect/crosswaykids',   to: 'site#crosswaykids'
-  get '/connect/outreach-ministries',   to: 'site#outreach_ministries'
+  get '/connect/ministries/missions',   to: 'site#missions', as: "missions"
   get '/connect/service-ministries',   to: 'site#service_ministries'
   get '/connect/creative-ministries',   to: 'site#creative_ministries'
   get '/connect/the-city',   to: 'site#the_city'
@@ -33,13 +33,15 @@ Crossway::Application.routes.draw do
   get '/resources',   to: 'site#resources'
   get '/about',   to: 'site#covenant_membership'
   get '/covenant-membership',   to: 'site#covenant_membership'
-  get '/we-are-crossway',   to: 'site#covenant_membership'
   get '/identity/statement-of-faith',   to: 'site#statement_of_faith'
   get '/identity/recommended-resources',   to: 'site#recommended_resources', as: "recommended_resources"
   get '/identity/affiliations',   to: 'site#affiliations'
 
   get '/terms', to: 'site#terms'
   get '/sitemap', to: 'site#sitemap'
+
+  get '/missions',   to: redirect(path: '/connect/ministries/missions')
+  get '/we-are-crossway',   to: redirect(path: 'covenant-membership')
 
   root :to => 'site#home'
 end

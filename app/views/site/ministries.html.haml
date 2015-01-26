@@ -42,8 +42,9 @@
         %h3 Discipleship Groups
     .col-md-3.col-sm-6
       .service-wrapper-plain
-        = image_tag "ministries/global_missions.png"
-        %h3 Global Missions
+        %a{href: "#{missions_path}", data: { toggle: "popover", trigger: "hover focus", placement: "top", title: "Global Missions", content: "View Crossway's Local and Global Missions Ministry page"}}
+          = image_tag "ministries/global_missions.png"
+          %h3 Global Missions
   .row
     .col-md-3.col-sm-6
       .service-wrapper-plain
@@ -55,8 +56,9 @@
         %h3 Info Centre
     .col-md-3.col-sm-6
       .service-wrapper-plain
-        = image_tag "ministries/local_missions.png"
-        %h3 Local Missions
+        %a{href: "#{missions_path}", data: { toggle: "popover", trigger: "hover focus", placement: "top", title: "Local Missions", content: "View Crossway's Local and Global Missions Ministry page"}}
+          = image_tag "ministries/local_missions.png"
+          %h3 Local Missions
     .col-md-3.col-sm-6
       .service-wrapper-plain
         = image_tag "ministries/lords_supper.png"
@@ -96,3 +98,8 @@
       .service-wrapper-plain
         = image_tag "ministries/setup.png"
         %h3 Setup
+        
+:javascript
+  $(function () {
+    $('[data-toggle="popover"]').popover()
+  })
