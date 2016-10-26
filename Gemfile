@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-ruby '2.1.4'
+ruby '2.3.1'
 
-gem 'rails', '4.1.9'
+gem 'rails', '4.2.7.1'
 
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'carrierwave'
