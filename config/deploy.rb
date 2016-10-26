@@ -1,7 +1,7 @@
 require "bundler/capistrano"
 require "capistrano-rbenv"
 require 'capistrano/ext/multistage'
-set :rbenv_ruby_version, "2.1.1"
+set :rbenv_ruby_version, "2.3.1"
 set :stages, %w(production staging)
 set :default_stage, "staging"
 
