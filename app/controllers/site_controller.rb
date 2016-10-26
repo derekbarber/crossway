@@ -34,9 +34,9 @@ class SiteController < ApplicationController
   end
 
   def covenant_membership
-    @sermon1 = Sermon.find_by(title: "We Are Crossway - Introduction")
-    @sermon2 = Sermon.find_by(title: "We Are Crossway - The Benefits of Covenant Membership")
-    @sermon3 = Sermon.find_by(title: "We Are Crossway - The Responsibilities of Covenant Membership")
-    @sermon4 = Sermon.find_by(title: "We Are Crossway - Our Common Mission")
+    @sermon1 = Sermon.find_by(title: "We Are Crossway Part 1 - Introduction")
+    @sermon2 = Sermon.find_by(title: "We Are Crossway Part 2 - The Benefits of Covenant Membership")
+    @sermon3 = Sermon.find_by(title: "We Are Crossway Part 3 - The Responsibilities of Covenant Membership")
+    @sermon4 = Sermon.find_by(title: "We Are Crossway Part 4 - The Purpose of Covenant Membership")
   end
 end

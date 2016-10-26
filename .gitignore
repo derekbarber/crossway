@@ -17,4 +17,3 @@
 .DS_Store
 public/uploads
 /config/database.yml
-/config/initializers/stripe.rb

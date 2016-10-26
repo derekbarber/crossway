@@ -4,7 +4,7 @@ ruby '2.3.1'
 
 gem 'rails', '4.2.7.1'
 
-gem 'bootstrap-sass', '~> 3.1.1'
+gem 'bootstrap-sass', '~> 3.3.3'
 gem 'carrierwave'
 gem 'devise'
 gem 'feedjira'
