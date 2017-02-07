@@ -35,7 +35,7 @@ Crossway::Application.routes.draw do
   get '/covenant-membership',   to: 'site#covenant_membership'
   get '/identity/statement-of-faith',   to: 'site#statement_of_faith'
   get '/identity/recommended-resources',   to: 'site#recommended_resources', as: "recommended_resources"
-  get '/identity/affiliations',   to: 'site#affiliations'
+  get '/identity/affiliations',   to: redirect(path: '/identity/recommended-resources')
 
   get '/terms', to: 'site#terms'
   get '/sitemap', to: 'site#sitemap'

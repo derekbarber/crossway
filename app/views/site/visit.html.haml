@@ -6,8 +6,8 @@
 .jumbotron
   .row
     .col-md-6
-      .video-container
-        %iframe{allowfullscreen: "", frameborder: "0", height: "281", mozallowfullscreen: "", src: "https://player.vimeo.com/video/49493666?byline=0&portrait=0&title=0", webkitallowfullscreen: "", width: "500"}
+      %div{style: "text-align: left"}
+        = image_tag "large-logo.png" # prev image: height 287 width 500
     .col-md-6
       %p
         %strong Because of the Gospel, Crossway Church exists to make disciples who love Jesus, love His people, and live to make Him known – all to the glory of God.
@@ -27,14 +27,6 @@
           %span{class: "glyphicon glyphicon-time"}
           %strong &nbsp;WHEN:
           10:00 AM 
-        %hr
-        %p
-          %strong ADULT SUNDAY SCHOOL:
-          8:45 AM
-          %br
-          %em
-            Please note: Adult Sunday school class does not occur every week, if you want to
-            attend please #{link_to "contact us", contact_path} for the latest schedule.
       .col-md-4
         %div{style: "text-align: center; padding-top: 30px"}
           = link_to image_tag("visit/google-map.png"), "https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=19533+64+Ave+in+Surrey,+BC,+CAnada&aq=&sll=37.0625,-95.677068&sspn=55.937499,92.8125&ie=UTF8&hq=&hnear=19533+64+Ave,+Surrey,+British+Columbia+V3S+4J3,+Canada&ll=49.119096,-122.681317&spn=0.022863,0.045319&t=m&z=14", :target => "blank"
