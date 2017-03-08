@@ -48,7 +48,7 @@ end
 
 gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'unicorn'
-gem 'capistrano', '2.15.5'
+gem 'capistrano', '2.15.9'
 gem 'capistrano-ext'
 gem 'capistrano-rbenv', '1.0.5'
 
