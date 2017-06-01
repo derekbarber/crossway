@@ -21,7 +21,6 @@ gem 'mail_form'
 gem 'pg'
 gem "ransack"
 gem 'sitemap_generator'
-gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'rails_admin'
 gem 'uglifier', '>= 1.3.0'
 

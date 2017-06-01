@@ -9,34 +9,26 @@
       .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12
         %h2 Give
 
-        %h4 Once someone decides to call Crossway their church home there are three ways they are able to respond to the gospel by giving generously and faithfully. 
+        %h4 Once someone decides to call Crossway their church home, there are three ways they are able to respond to the gospel by giving generously and faithfully. 
 
   .row
     .col-md-4.col-sm-6
       .service-wrapper{style: "height: 280px;"}
         %h3 Online Giving
-        %p To give online, please use our secure payment form below.
-        = form_tag charges_path do
-          .form-group
-            .input-group
-              .input-group-addon $
-              %input#charge_amount.form-control{name: "charge_amount", type: "text"}
-
-          %script.stripe-button{id: "donate-button", "data-amount" => "", "data-description" => "Online Donation", "data-key" => Rails.configuration.stripe[:publishable_key], src: "https://checkout.stripe.com/checkout.js",  style:"stripe-button", "data-currency" => "cad", "data-address" => true}
-
-          :javascript
-            $('#charge_amount').on('focusout', function(){
-              $('#donate-button').data('amount', $(this).val());
-            });
+        %p You can give online with your credit card through our secure PushPay service. This is the easiest way to give!
+        %div
+          %center
+            %a{:href => "https://pushpay.com/pay/crosswaysurrey"}
+              %input{:formtarget => "_blank", :rel => "noopener noreferrer", :style => "\r\n\t\t\talign-content: center;\r\n\t\t\tbackground: #1275ff;\r\n\t\t\tbackground-image: linear-gradient(#7dc5ee,#008cdd 85%,#30a2e4);\r\n\t\t\tfont-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n\t\t\tfont-size: 1.60em;\r\n\t\t\tborder-bottom-left-radius: 5px;\r\n\t\t\tborder-top-left-radius: 5px;\r\n\t\t\tborder-bottom-right-radius: 5px;\r\n\t\t\tborder-top-right-radius: 5px;\r\n\t\t\theight: 50px;\r\n\t\t\twidth: 150px;\r\n\t\t\tborder: none;\r\n\t\t\tcolor: white;\r\n\t\t\tfont-weight: 500;\r\n\t\t\tletter-spacing: 1px;\r\n\t\t\tcursor: pointer;\r\n\t\t\t-webkit-appearance: none", :type => "button", :value => "Give"}/
 
     .col-md-4.col-sm-6
       .service-wrapper{style: "height: 280px;"}
-        %h3 Debit / Preauthorized Payment
+        %h3 Interac / Pre-authorized Debit
         %p
-          Please visit the Info Centre on a Sunday to give using our debit machine. You can also sign up there for a pre-authorized monthly payment plan.
+          Please visit the Info Centre on a Sunday morning to give using our Interac terminal or credit card kiosk. We also have pre-authorized debit forms available at the Info Centre for monthly recurring gifts.
     .col-md-4.col-sm-6
       .service-wrapper{style: "height: 280px;"}
         %h3 Cash / Cheques
         %p
-          Cash & cheques can be deposited in the baskets during our Sunday gathering. Please use the envelopes provided at the back and at the visitor information center. Please make cheques payable to ‘Crossway Church’. 
+          Cash & cheques can be deposited in the baskets during our Sunday gathering. Please use the envelopes provided at the back and at the Info Centre. Please make cheques payable to ‘Crossway Church’.
 
